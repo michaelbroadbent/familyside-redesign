@@ -1,0 +1,58 @@
+<!-- Start Not Filed Taxes -->
+<div ng-show="notRequired != true">
+	<div class="row">
+		<div class="col-md-12">
+			<br>
+			<a class="btn btn-default" href="" ui-sref="quickProcessing">Back</a>
+		</div>
+		<div class="col-xs-12 masthead">
+			<h2>Taxes Not Yet Filed</h2>
+		</div>
+		<div class="col-md-12">
+			<br>
+			<p>To complete the processing of your FAST application, FAST Demonstration School requires that you send the following documents immediately, even if you have not yet completed the <strong>2016</strong> Tax Return.</p>
+			<p>It is important to send these documents immediately after completing your FAST application.
+			Extra documents requested by your school.</p>
+			<strong>Extra documents requested by your school.</strong>
+			<ul>
+				<li>Mortgage Statement</li>
+				<li>Character Reference Letter from Pastor</li>
+			</ul>
+			<p><u>When you have completed the <strong>2016</strong> tax forms</u>, please sign back into your application and click on the FAST Quick Processing link for instructions on mailing your completed tax
+			return for <strong>2016</strong>. If you are not required to file taxes <a ng-click="notRequired = true">click here</a>. Click the print icon for the cover page and mail copies of the request documentation to the address below.</p>
+
+			<address>
+				ATTN: FAST Processing<br>
+				1316 North Union Street<br>
+				Wilmington DE 19806-2594
+			</address>
+		</div>
+	</div>
+</div>
+
+<div ng-show="notRequired == true">
+	<div class="row">
+		<div class="col-md-12">
+			<br>
+			<button class="btn btn-default" ng-click="notRequired = false">Back</button>
+		</div>
+		<div class="col-md-12">
+			<br>
+			<p>To complete processing of your FAST application, FAST Demonstration School is requesting you send your 2016 Taxes.</p>
+			<p>If you are not required to file taxes we will accept the following:</p>
+			<ul>
+				<li>SSI/SSDI Benefits Summary</li>
+				<li>TANIF Benefits Summary</li>
+				<li>Workers Compensation Benefits Summary</li>
+			</ul>
+			<strong>Please mail your documents to:</strong>
+			<address>
+				ATTN: FAST Processing<br>
+				1316 North Union Street<br>
+				Wilmington DE 19806-2594
+			</address>
+			<p>Please read all instructions carefully to avoid <strong>processing delays</strong>. If you have any questions call FAST Client Services at 877-326 FAST.</p>
+		</div>
+	</div>
+</div>
+<!-- End Not Filed Taxes -->

@@ -1,0 +1,166 @@
+<div class="instructions" ng-show="!EULA">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<!-- <div class="button-group">
+				<button class="btn btn-default" ui-sref="instructions"><i class="fa fa-arrow-left"></i> Back</button>
+			</div> -->
+			<h2>Account Setup</h2>
+			<p>&nbsp;</p>
+			<div ng-include="" src=" 'instructions/formSetupSteps.html' "></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<form name="accountSetup">
+				<div class="form-group-wrapper">
+					<fieldset class="form-group" ng-class="{ 'has-error' : accountSetup.userAgreement.$invalid && (accountSetup.userAgreement.$touched || accountSetup.userAgreement.$dirty) }">
+						<div class="row">
+							<p class="col-md-12">In order to use this product to apply for financial aid, you must agree to the terms and conditions of the <a href="" ng-click="EULA = true">ISM FAST End User License Agreement</a></p>
+							<ul class="col-md-12 checkboxset-wrapper">
+								<li>
+									<div class="checkboxset">
+										<input type="checkbox" id="userAgreement" value="userAgreement" required ng-model="userAgreement" name="userAgreement">
+										<label for="userAgreement"><span class="label-text">I agree</span></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<hr />
+					</fieldset>
+
+					<fieldset class="form-group">
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupNumberApplying.$invalid && (accountSetup.setupNumberApplying.$touched || accountSetup.setupNumberApplying.$dirty) }">
+								<label for="setupNumberApplying">How many students will be applying? <span class="required-field">*</span></label>
+								<input type="number" class="form-control" id="setupNumberApplying" required name="setupNumberApplying" ng-model="setupNumberApplying">
+								<div ng-if="accountSetup.setupNumberApplying.$touched || accountSetup.setupNumberApplying.$dirty">
+									<p class="help-block" ng-if="accountSetup.setupNumberApplying.$error.required">This field cannot be blank</p>
+								</div>
+							</div>
+						</div>
+					
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupEmail.$invalid && (accountSetup.setupEmail.$touched || accountSetup.setupEmail.$dirty) }">
+								<label for="setupEmail">Email Address <span class="required-field">*</span></label>
+								<input type="email" class="form-control" id="setupEmail" name="setupEmail" ng-model="setupEmail" required>
+								<div ng-if="accountSetup.setupEmail.$touched || accountSetup.setupEmail.$dirty">
+									<p class="help-block" ng-if="accountSetup.setupEmail.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="accountSetup.setupEmail.$error.email">
+									<p class="help-block">Must be a valid email address</p>
+								</div>
+							</div>
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupEmailConfirm.$invalid && (accountSetup.setupEmailConfirm.$touched || accountSetup.setupEmailConfirm.$dirty) }">
+								<label for="setupEmailConfirm">Confirm Email <span class="required-field">*</span></label>
+								<input type="email" class="form-control" id="setupEmailConfirm" name="setupEmailConfirm" ng-model="setupEmailConfirm" placeholder="Confirm email address" required>
+								<div ng-if="accountSetup.setupEmailConfirm.$touched || accountSetup.setupEmailConfirm.$dirty">
+									<p class="help-block" ng-if="accountSetup.setupEmailConfirm.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="accountSetup.setupEmailConfirm.$dirty && accountSetup.setupEmailConfirm.$dirty && setupEmail != setupEmailConfirm">
+									<p class="help-block">Email addresses do not match!</p>
+								</div>
+							</div>
+						</div>
+		
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupUsername.$invalid && (accountSetup.setupUsername.$touched || accountSetup.setupUsername.$dirty) }">
+								<label for="setupUsername">Create a Username <small>(min 6 characters)</small> <span class="required-field">*</span></label>
+								<input type="text" class="form-control" pattern=".{6,}" id="setupUsername" name="setupUsername" ng-model="setupUsername" required>
+								<div ng-if="accountSetup.setupUsername.$touched || accountSetup.setupUsername.$dirty">
+									<p class="help-block" ng-if="accountSetup.setupUsername.$error.required">This field cannot be blank</p>
+									<p class="text-danger" ng-if="accountSetup.setupUsername.$error.pattern">Minumim 6 characters</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupPassword.$invalid && (accountSetup.setupPassword.$touched || accountSetup.setupPassword.$dirty) }">
+								<label for="setupPassword">Create a Password <small>(min 6 characters)</small> <span class="required-field">*</span></label>
+								<input type="password" class="form-control" id="setupPassword" name="setupPassword" ng-model="setupPassword" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="6" ng-maxlength="12" required>
+								<div class="validation-errors">
+									<div ng-if="accountSetup.setupPassword.$touched || accountSetup.setupPassword.$dirty">
+										<p class="help-block" ng-if="accountSetup.setupPassword.$error.required">This field cannot be blank</p>
+									</div>
+									<div ng-if="accountSetup.setupPassword.$error.minlength">
+										<p class="help-block">Passwords must be at least 6 characters long</p>
+									</div>
+									<div ng-if="accountSetup.setupPassword.$error.pattern">
+										<p class="help-block">Please use numbers and letters only</p>
+									</div>
+									<div ng-if="accountSetup.setupPassword.$error.maxlength">
+										<p class="help-block">Passwords cannot be longer than 12 characters long</p>
+									</div>
+								</div>
+							</div>
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupPasswordConfirm.$invalid && (accountSetup.setupPasswordConfirm.$touched || accountSetup.setupPasswordConfirm.$dirty) || setupPassword != setupPasswordConfirm }">
+								<label for="setupPasswordConfirm">Confirm Password <span class="required-field">*</span></label>
+								<input type="password" class="form-control" id="setupPasswordConfirm" ng-model="setupPasswordConfirm" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="6" name="setupPasswordConfirm" ng-maxlength="12" required>
+								<div class="validation-errors">
+									<div ng-if="accountSetup.setupPasswordConfirm.$touched || accountSetup.setupPasswordConfirm.$dirty">
+										<p class="help-block" ng-if="accountSetup.setupPasswordConfirm.$error.required">This field cannot be blank</p>
+									</div>
+									<div ng-if="accountSetup.setupPasswordConfirm.$error.minlength">
+										<p class="help-block">Passwords must be at least 6 characters long</p>
+									</div>
+									<div ng-if="accountSetup.setupPasswordConfirm.$error.pattern">
+										<p class="help-block">Please use numbers and letters only</p>
+									</div>
+									<div ng-if="accountSetup.setupPasswordConfirm.$error.maxlength">
+										<p class="help-block">Passwords cannot be longer than 12 characters long</p>
+									</div>
+									<div ng-if="accountSetup.setupPassword.$dirty && accountSetup.setupPasswordConfirm.$dirty && setupPassword != setupPasswordConfirm">
+										<p class="help-block">Passwords do not match!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="button-group clearfix">
+					<a ng-if="accountSetup.$valid" class="btn btn-success btn-lg pull-right" ui-sref="formSetup4">Proceed</a>
+					<a ng-if="accountSetup.$invalid" class="btn btn-success btn-lg pull-right" ng-disabled="accountSetup.$invalid">Proceed</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<div ng-show="EULA">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="button-group">
+				<button class="btn btn-default" ng-click="EULA = false"><i class="fa fa-arrow-left"></i> Back</button>
+			</div>
+			<h2>ISM FAST End User License Agreement</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<p><strong>IMPORTANT! PLEASE READ CAREFULLY!</strong> This End-User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity, hereinafter known as End User) and Independent School Management, Inc. (ISM) for the use of the web-based program FAST, which includes incorporates computer software and may include associated media, printed materials, and "online" or electronic documentation ("Product"). </p>
+
+			<p><strong>BY USING THE PRODUCT, YOU AGREE TO BE BOUND BY THE TERMS OF THIS EULA. IF YOU DO NOT AGREE, DO NOT USE THE PRODUCT.</strong>
+
+			<p>Ownership. The Product and any authorized copies that you make are the intellectual property of and are owned by Independent School Management, Inc. The structure, organization and code of the Product are the valuable trade secrets and confidential information of ISM. The Product is protected by law, including without limitation the copyright laws of the United States and other countries, and by international treaty provisions. Except as expressly stated herein, this Agreement does not grant you any intellectual property rights in the Product and all rights not expressly granted are reserved by ISM.</p>
+
+			<p>Security. ISM acknowledges that the End User is entrusting ISM with sensitive financial information and agrees to maintain the confidentiality of any data relating to the usage of the Product. Access to the Product requires the use of a valid username and password, and access by non-registered users is restricted. ISM will use industry standard measures to protect the End User's privacy, including, but not limited to, 128 bit encryption and various security programs to monitor, filter and prevent unauthorized access. </p>
+
+			<p>End User understands that FAST is a web-based product that holds information in cookies, and, that in order to safeguard the End User's privacy, the End User who is using an unsecure, public computer must delete those cookies in order to maintain privacy. End Users should not share or disclose their user names or passwords to any other party; loss of control of a password may result in loss of control of End User's account, and subject End User to legally binding actions taken on End User's behalf.</p>
+
+			<p>Unauthorized Access. In the event that End User attempts unauthorized access which shall include, but not be limited to, (a) attempting to use a network service other than Product on the ismfast server, (b) denial of service (DOS) attacks, (c) port scans, and (d) brute force dictionary attacks, ISM reserves the right to deny End User access to the Product.</p>
+
+			<p>As Is. Licensor makes no representation or warranty with respect to the Product, and expressly disclaims any liability in connection therewith, including but not limited to errors or omissions contained therein, libel, infringement of rights of publicity, privacy, patent, trademark or copyright rights, moral rights, or the disclosure of confidential information. The Product is provided on an "as is" basis, and ISM disclaims any and all other warranties, conditions, or representations (express, implied, oral or written), relating to the Product, or any part thereof, including, without limitation, any and all implied warranties of quality, performance, or fitness for a particular purpose. ISM makes no warranties respecting any harm that may be caused by the transmission of a computer virus, worm, time bomb, logic bomb or other such computer program. ISM further expressly disclaims any warranty or representation to any third party.</p>
+
+			<p>Limitation of Liability. End User acknowledges and agrees that the consideration, which ISM is charging hereunder, does not include any consideration for assumption by ISM of the risk of End User's consequential or incidental damages which may arise in connection with End User's use of the Product.</p>
+
+			<p>ISM bills a <strong>$43</strong> US application fee for processing which is non-refundable. All of the tax documents received before payment of the application will be deleted for security purpose.</p> 
+
+			<p>Accordingly, End User agrees that ISM shall not be responsible to End User for any indirect, incidental, special, or consequential damages arising out of the use of the Product, including the ismfast server or any associated software or documentation. In any case, ISM's entire liability under this Agreement, or for any action, cause of action or claim brought by End User in connection with their use of the Product, shall be limited to the greater of the consideration actually paid by End User or five U.S. dollars (US $5.00).</p>
+
+			<p>Severability. If any provision or provisions of this Agreement shall be held to be invalid, illegal, unenforceable or in conflict with the law of any jurisdiction, the validity, legality and enforceability of the remaining provisions shall not in any way be affected or impaired thereby.</p>
+
+			<p>Governing Law. This Agreement shall be interpreted and construed according to, and governed by, the laws of the state of Delaware, excluding any such laws that might direct the application of the laws of another jurisdiction. The federal or state courts located in Delaware shall have jurisdiction to hear any dispute under this Agreement.</p>
+		</div>
+	</div>
+</div>

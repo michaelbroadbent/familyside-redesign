@@ -1,0 +1,404 @@
+<!-- Start Applicant Info -->
+<div class="row">
+	<div class="col-xs-12 masthead">
+		<div class="masthead-title">
+			<h2 class="hidden-xs">Applicant Information</h2>
+			<h2 class="hidden-sm hidden-md hidden-lg pull-left">Applicant Information</h2>
+			<h3 class="hidden-sm hidden-md hidden-lg pull-right">1/9</h3>
+		</div>
+		<p>This section is where information about the student or students who is/are applying is collected. The asterisked fields below need to be filled out for this section to be considered complete:</p>
+	</div>
+</div>
+
+<!-- Applicant Info tabs -->
+<div class="row">
+	<div class="col-xs-12">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="applicantInfo/#student1" aria-controls="student1" role="tab" data-toggle="tab"><img src="img/people-icons-individual/applicant-son.png" class="user-icon" /> Jake</a></li>
+			<li role="presentation"><a href="applicantInfo/#student2" aria-controls="student2" role="tab" data-toggle="tab"><img src="img/people-icons-individual/applicant-daughter.png" class="user-icon" /> Jessica</a></li>
+			<li role="presentation" class="add-tab"><a href="applicantInfo/#add" aria-controls="add" role="tab" data-toggle="tab"><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;</a></li>
+		</ul>
+
+		<!-- Applicant Info tab panes -->
+		<div class="tab-content">
+			<!-- Tab 1 -->
+			<div role="tabpanel" class="tab-pane active" id="student1">
+				<div ng-hide="review">
+					<p>Please fill out all fields for the student applying. If you do not know the dollar amount, place a question mark (?) in the box. This will put the field on hold. You can return later and fill in the dollar amount. If a question does not pertain to you, please enter a zero "0".</p>
+					<form name="student1Info">
+						<div class="form-group-wrapper">
+							<fieldset class="form-group">
+								<legend>101 - Name</legend>
+								<div class="row">
+									<div class="form-group col-md-3" ng-class="{ 'has-error' : student1Info.firstName101.$invalid && (student1Info.firstName101.$dirty || student1Info.firstName101.$touched) }">
+										<label for="firstName101">First <span class="required-field">*</span></label>
+										<input type="text" class="form-control" id="firstName101" placeholder="First Name" required ng-model="firstName101" ng-pattern="/^[a-zA-Z\s]*$/" name="firstName101">
+										<div ng-if="student1Info.firstName101.$touched || student1Info.firstName101.$dirty">
+											<p class="help-block" ng-if="student1Info.firstName101.$error.required">This field cannot be blank</p>
+										</div>
+										<div ng-if="student1Info.firstName101.$error.pattern">
+											<p class="help-block">Letters only (a-z) in this field</p>
+										</div>
+									</div>
+									<div class="form-group col-md-3" ng-class="{ 'has-error' : student1Info.middle101.$invalid && student1Info.middle101.$touched}">
+										<label for="middle101">Middle</label>
+										<input type="text" class="form-control" id="middle101" placeholder="Middle" ng-pattern="/^[a-zA-Z\s]*$/" name="middle101" ng-model="middle101">
+										<div ng-if="student1Info.middle101.$error.pattern">
+											<p class="help-block">Letters only (a-z) in this field</p>
+										</div>
+									</div>
+									<div class="form-group col-md-3" ng-class="{ 'has-error' : student1Info.lastName101.$invalid && (student1Info.lastName101.$touched || student1Info.lastName101.$dirty) }">
+										<label for="lastName101">Last <span class="required-field">*</span></label>
+										<input type="text" class="form-control" id="lastName101" placeholder="First Name" required ng-model="lastName101" ng-pattern="/^[a-zA-Z\s]*$/" name="lastName101">
+										<div ng-if="student1Info.lastName101.$touched || student1Info.lastName101.$dirty">
+											<p class="help-block" ng-if="student1Info.lastName101.$error.required">This field cannot be blank</p>
+										</div>
+										<div ng-if="student1Info.lastName101.$error.pattern">
+											<p class="help-block">Letters only (a-z) in this field</p>
+										</div>
+									</div>
+									<div class="form-group col-md-2">
+										<label for="suffix101">Suffix</label>
+										<select class="form-control" id="suffix101" ng-model="suffix101" name="suffix101">
+											<option value="" selected>None</option>
+											<option value="Jr">Jr</option>
+											<option value="Sr">Sr</option>
+											<option value="II">II</option>
+											<option value="III">III</option>
+											<option value="IV">IV</option>
+											<option value="V">V</option>
+										</select>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+
+						<div class="form-group-wrapper">
+							<fieldset class="form-group">
+								<legend>102 - Birth Date</legend>
+								<div class="row">
+									<div class="form-group col-md-4" ng-class="{ 'has-error' : student1Info.month102.$invalid && (student1Info.month102.$dirty || student1Info.month102.$touched) }">
+										<label for="month102">Month <span class="required-field">*</span></label>
+										<select name="month102" id="month102" class="form-control" required name="month102" ng-model="month102">
+											<option value=""></option>
+											<option value="01">January</option>
+											<option value="02">February</option>
+											<option value="03">March</option>
+											<option value="04">April</option>
+											<option value="05">May</option>
+											<option value="06">June</option>
+											<option value="07">July</option>
+											<option value="08">August</option>
+											<option value="09">September</option>
+											<option value="10">October</option>
+											<option value="11">November</option>
+											<option value="12">December</option>
+										</select>
+										<div ng-if="student1Info.month102.$touched || student1Info.month102.$dirty">
+											<p class="help-block" ng-if="student1Info.month102.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+									<div class="form-group col-md-4" ng-class="{ 'has-error' : student1Info.day102.$invalid && (student1Info.day102.$dirty || student1Info.day102.$touched) }">
+										<label for="day102">Day <span class="required-field">*</span></label>
+										<select name="day102" id="day102" class="form-control" required name="day102" ng-model="day102">
+											<option value=""></option>
+											<option value="01">01</option>
+											<option value="02">02</option>
+											<option value="03">03</option>
+											<option value="04">04</option>
+											<option value="05">05</option>
+											<option value="06">06</option>
+											<option value="07">07</option>
+											<option value="08">08</option>
+											<option value="09">09</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+											<option value="15">15</option>
+											<option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+											<option value="20">20</option>
+											<option value="21">21</option>
+											<option value="22">22</option>
+											<option value="23">23</option>
+											<option value="24">24</option>
+											<option value="25">25</option>
+											<option value="26">26</option>
+											<option value="27">27</option>
+											<option value="28">28</option>
+											<option value="29">29</option>
+											<option value="30">30</option>
+											<option value="31">31</option>
+										</select>
+										<div ng-if="student1Info.day102.$touched || student1Info.day102.$dirty">
+											<p class="help-block" ng-if="student1Info.day102.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+									<div class="form-group col-md-4" ng-class="{ 'has-error' : student1Info.year102.$invalid && (student1Info.year102.$dirty || student1Info.year102.$touched) }">
+										<label for="year102">Year <span class="required-field">*</span></label>
+										<select name="year102" id="year102" class="form-control" required name="year102" ng-model="year102">
+											<option value=""></option>
+											<option value="2017">2017</option>
+											<option value="2016">2016</option>
+											<option value="2015">2015</option>
+											<option value="2014">2014</option>
+											<option value="2013">2013</option>
+											<option value="2012">2012</option>
+											<option value="2011">2011</option>
+											<option value="2010">2010</option>
+											<option value="2009">2009</option>
+											<option value="2008">2008</option>
+											<option value="2007">2007</option>
+											<option value="2006">2006</option>
+											<option value="2005">2005</option>
+											<option value="2004">2004</option>
+											<option value="2003">2003</option>
+											<option value="2002">2002</option>
+											<option value="2001">2001</option>
+											<option value="2000">2000</option>
+											<option value="1999">1999</option>
+											<option value="1998">1998</option>
+											<option value="1997">1997</option>
+											<option value="1996">1996</option>
+											<option value="1995">1995</option>
+											<option value="1994">1994</option>
+											<option value="1993">1993</option>
+											<option value="1992">1992</option>
+											<option value="1991">1991</option>
+											<option value="1990">1990</option>
+											<option value="1989">1989</option>
+										</select>
+										<div ng-if="student1Info.year102.$touched || student1Info.year102.$dirty">
+											<p class="help-block" ng-if="student1Info.year102.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group" ng-class="{ 'has-error' : (student1Info.gender103m.$invalid || student1Info.gender103f.$invalid || student1Info.gender103other.$invalid) && (student1Info.gender103m.$dirty || student1Info.gender103m.$touched) && (student1Info.gender103f.$dirty || student1Info.gender103f.$touched) && (student1Info.gender103other.$dirty || student1Info.gender103other.$touched)}">
+										<legend>103 - Gender</legend>
+										<div class="row">
+											<label class="col-md-12">Please select one: <span class="required-field">*</span></label>
+											<ul class="radioset-wrapper form-group col-xs-12">
+												<li>
+													<div class="radioset">
+														<input type="radio" name="gender103m" id="male103" required ng-model="gender103" value="Male">
+														<label><span class="label-text">Male</span></label>
+													</div>
+												</li>
+												<li>
+													<div class="radioset">
+														<input type="radio" name="gender103f" id="female103" ng-model="gender103" required value="Female">
+														<label><span class="label-text">Female</span></label>
+													</div>
+												</li>
+												<li>
+													<div class="radioset">
+														 <input type="radio" name="gender103other" id="other103" ng-model="gender103" required value="other103">
+														 <label><span class="label-text">Prefer Not to Say/Other</span></label>
+													</div>
+												</li>
+												<div ng-if="(student1Info.gender103m.$touched || student1Info.gender103m.$dirty) && (student1Info.gender103f.$touched || student1Info.gender103f.$dirty) && (student1Info.gender103other.$touched || student1Info.gender103other.$dirty)">
+													<p class="help-block" ng-if="(student1Info.gender103m.$error.required || student1Info.gender103f.$error.required || student1Info.gender103other.$error.required)">This field cannot be blank</p>
+  												</div>
+											</ul>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>104 - Grade Entering</legend>
+										<div class="row">
+											<div class="form-group col-md-6" ng-class="{ 'has-error' : student1Info.gradeEntering104.$invalid && (student1Info.gradeEntering104.$dirty || student1Info.gradeEntering104.$touched) }">
+												<label for="gradeEntering104">Grade Entering <span class="required-field">*</span></label>
+												<select name="gradeEntering104" id="gradeEntering104" required ng-model="gradeEntering104" class="form-control">
+													<option value=""></option>
+													<option value="Pre-School">Pre-school</option>
+													<option value="Sixth">Sixth</option>
+													<option value="Seventh">Seventh</option>
+													<option value="Eighth">Eighth</option>
+													<option value="Ninth">Ninth</option>
+													<option value="Eleventh">Eleventh</option>
+													<option value="Twelfth">Twelfth</option>
+												</select>
+												<div ng-if="student1Info.gradeEntering104.$touched || student1Info.gradeEntering104.$dirty">
+													<p class="help-block" ng-if="student1Info.gradeEntering104.$error.required">This field cannot be blank</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>105 - 529 Savings
+											<i class="fa fa-info-circle" uib-tooltip="Please enter total amount of money in all 529 College Savings Plans."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : student1Info.savings529105.$invalid && (student1Info.savings529105.$touched || student1Info.savings529105.$dirty) }">
+												<label for="savings529105">529 Savings <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" class="form-control input-prefix" id="savings529105" ng-model="savings529105" name="savings529105" ng-pattern="/^[0-9,]+$/" required>
+												<div ng-if="student1Info.savings529105.$touched || student1Info.savings529105.$dirty">
+													<p class="help-block" ng-if="student1Info.savings529105.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="student1Info.savings529105.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>106 - Social Security Income
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount this student receives annually in benefits from the Social Security Administration."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : student1Info.ssIncome106.$invalid && (student1Info.ssIncome106.$touched || student1Info.ssIncome106.$dirty) }">
+												<label for="ssIncome106">Social Security Income <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" class="form-control input-prefix" id="ssIncome106" ng-model="ssIncome106" name="ssIncome106" ng-pattern="/^[0-9,]+$/" required>
+												<div ng-if="student1Info.ssIncome106.$touched || student1Info.ssIncome106.$dirty">
+													<p class="help-block" ng-if="student1Info.ssIncome106.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="student1Info.ssIncome106.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group-wrapper">
+							<fieldset class="form-group">
+								<legend>107 - Child Trust
+									<i class="fa fa-info-circle" uib-tooltip="If a trust is held in this child's name, please enter the amount here and explain in detail below"></i>
+								</legend>
+								
+								<div class="row">
+									<div class="form-group col-md-4" ng-class="{ 'has-error' : student1Info.childTrust107.$invalid && (student1Info.childTrust107.$touched || student1Info.childTrust107.$dirty) }">
+										<label for="childTrust107">Child Trust <span class="required-field">*</span></label>
+										<strong class="prefix">$</strong>
+										<input type="text" format="number" class="form-control input-prefix" id="childTrust107" ng-model="childTrust107" name="childTrust107" ng-pattern="/^[0-9,]+$/" required>
+										<div ng-if="student1Info.childTrust107.$touched || student1Info.childTrust107.$dirty">
+											<p class="help-block" ng-if="student1Info.childTrust107.$error.required">This field cannot be blank</p>
+										</div>
+										<div ng-if="student1Info.childTrust107.$error.pattern">
+											<p class="help-block">Numbers only in this field</p>
+										</div>
+									</div>
+									<div class="form-group col-md-12">
+										<label for="childTrustDetail107">Please explain in detail</label>
+										<textarea class="form-control" rows="2" id="childTrustDetail107" name="childTrustDetail107" ng-model="childTrustDetail107"></textarea>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="student1Info.$invalid" ng-click="review=true">Proceed</button>
+							<button type="submit" class="btn btn-default btn-lg pull-right">Delete</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Tab 1 Review -->
+				<div ng-show="review">
+					<table class="table table-striped table-review">
+						<thead>
+							<tr>
+								<th colspan="2">Review the information below:</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="form-section-label">
+									<strong>101 - Name</strong>
+								</td>
+								<td>{{student1Info.firstName101.$viewValue}} {{student1Info.middle101.$viewValue}} {{student1Info.lastName101.$viewValue}} {{student1Info.suffix101.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>102 - Birth Date</strong>
+								</td>
+								<td>{{student1Info.month102.$viewValue}}/{{student1Info.day102.$viewValue}}/{{student1Info.year102.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>103 - Gender</strong>
+								</td>
+								<td>{{student1Info.gender103m.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>104 - Grade Entering</strong>
+								</td>
+								<td>{{student1Info.gradeEntering104.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>105 - 529 Savings</strong>
+								</td>
+								<td>${{student1Info.savings529105.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>106 - Social Security Income</strong>
+								</td>
+								<td>${{student1Info.ssIncome106.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>107 - Child Trust</strong>
+									<br><strong>Please explain in detail</strong>
+								</td>
+								<td>
+									${{student1Info.childTrust107.$viewValue}}
+									<br>{{student1Info.childTrustDetail107.$viewValue}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<form>
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right">Proceed</button>
+							<button type="submit" class="btn btn-default btn-lg pull-right" ng-click="review=false">Edit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Tab 2 -->
+			<div role="tabpanel" class="tab-pane" id="student2">
+			</div>
+			
+			<!-- Tab 3 -->
+			<div role="tabpanel" class="tab-pane" id="add">
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- End Applicant Info

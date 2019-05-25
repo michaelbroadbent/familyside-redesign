@@ -1,0 +1,84 @@
+<!-- Start Letter / Agreement -->
+<div class="row">
+	<div class="col-xs-12 masthead">
+		<div class="masthead-title">
+			<h2 class="hidden-xs">Letter/Agreement for FAST Demonstration School</h2>
+			<h2 class="hidden-sm hidden-md hidden-lg pull-left">School Letter</h2>
+			<h3 class="hidden-sm hidden-md hidden-lg pull-right">9/9</h3>
+		</div>
+		<p>Please use the space below as an open letter to state anything that you would like the school to know regarding your financial aid application/situation.</p>
+	</div>
+</div>
+
+<form name="letterAgreement" class="letter-agreement">
+	<div class="row">
+		<div class="col-md-12">
+			<fieldset class="form-group">
+				<textarea class="form-control" rows="15" id="family-letter"></textarea>
+			</fieldset>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<fieldset class="form-group">
+				<label for="educationContribution">How much money are you able to contribute towards total tuitions at this school? (per year) <span class="required-field">*</span></label>
+				<div class="row">
+					<div class="col-md-4" ng-class="{ 'has-error' : letterAgreement.educationContribution.$invalid && (letterAgreement.educationContribution.$touched || letterAgreement.educationContribution.$dirty) }">
+						<strong class="prefix">$</strong>
+						<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="educationContribution" ng-model="educationContribution" name="educationContribution" required>
+						<div ng-if="letterAgreement.educationContribution.$touched || letterAgreement.educationContribution.$dirty">
+							<p class="help-block" ng-if="letterAgreement.educationContribution.$error.required">This field cannot be blank</p>
+						</div>
+						<div ng-if="letterAgreement.educationContribution.$error.pattern">
+							<p class="help-block">Numbers only in this field</p>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<p>By clicking "I agree" below and typing your initials in the box, you are signifying that the information you have submitted is as accurate and truthful as possible. This does not bind you to accept any aid that may be offered, nor does it bind you to enroll your children in this school.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<hr class="darker" />
+			<br>
+		</div>
+
+		<div class="col-xs-12 col-md-4" ng-class="{ 'has-error' : letterAgreement.iAgree.$invalid && (letterAgreement.iAgree.$touched || letterAgreement.iAgree.$dirty) }">
+			<div class="checkboxset">
+				<input type="checkbox" id="iAgree" value="iAgree" required ng-model="iAgree" name="iAgree" =>
+				<label for="iAgree"><h4 class="label-text agreement-text">I Agree <span class="required-field">*</span></h4></label>
+				<div ng-if="letterAgreement.iAgree.$touched || letterAgreement.iAgree.$dirty">
+					<p class="help-block" ng-if="letterAgreement.iAgree.$error.required">This form can not be completed without clicking 'I Agree'</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-md-8" ng-class="{ 'has-error' : letterAgreement.initials.$invalid && (letterAgreement.initials.$touched || letterAgreement.initials.$dirty) }">
+			<div class="">
+				<div class="pull-left">
+					<h4>Initials: <span class="required-field">*</span></h4>
+				</div>
+				<div class="pull-left">
+					<input type="text" class="form-control initials" id="initials" name="initials" ng-model="initials" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12" ng-if="letterAgreement.initials.$touched || letterAgreement.initials.$dirty">
+					<p class="help-block" ng-if="letterAgreement.initials.$error.required">Please put your initials in the appropriate field to signal your consent</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="button-group clearfix">
+		<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="letterAgreement.$invalid">Proceed</button>
+	</div>
+</form>
+<!-- End Letter / Agreement -->

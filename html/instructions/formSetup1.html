@@ -1,0 +1,57 @@
+<div class="instructions" ng-controller="formSetup">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+<!-- 			<div class="button-group">
+				<button class="btn btn-default" ui-sref="instructions"><i class="fa fa-arrow-left"></i> Back</button>
+			</div> -->
+			<h2>Form Setup</h2>
+			<p>To process your application, we need to collect some information about the family of the applicant(s).</p>
+
+			<div ng-include="" src=" 'instructions/formSetupSteps.html' "></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- Step 1 -->
+			<form name="application">
+				<div class="form-group-wrapper">
+					<fieldset class="form-group" ng-class="{ 'has-error' : (application.appSetupYes.$invalid || application.appSetupNo.$invalid) && (application.appSetupYes.$dirty || application.appSetupYes.$touched) && (application.appSetupNo.$dirty || application.appSetupNo.$touched)}">
+						<div class="row">
+							<label class="col-md-12">Is your family comprised of two biological and/or adoptive parents who reside in the same household and have sole custody of all applicants? <span class="required-field">*</span></label>
+							<ul class="radioset-wrapper col-xs-12" ng-class="{ 'has-error' : (application.appSetupYes.$invalid || application.appSetupNo.$invalid) && (application.appSetupYes.$dirty || application.appSetupYes.$touched) && (application.appSetupNo.$dirty || application.appSetupNo.$touched)}">
+								<li>
+									<div class="form-group radioset">
+										<input type="radio" name="appSetupYes" id="appSetupYes" value="appSetupYes" ng-model="appSetup" required>
+										<label><span class="label-text">Yes</span></label>
+									</div>
+								</li>
+								<li>
+									<div class="form-group radioset">
+										<input type="radio" name="appSetupNo" id="appSetupNo" value="appSetupNo" ng-model="appSetup" required>
+										<label><span class="label-text">No</span></label>
+									</div>
+								</li>
+								<div ng-if="(application.appSetupYes.$touched || application.appSetupYes.$dirty) && (application.appSetupNo.$touched || application.appSetupNo.$dirty)">
+									<p class="help-block" ng-if="(application.appSetupYes.$error.required || application.appSetupNo.$error.required)">This field cannot be blank</p>
+								</div>
+							</ul>
+						</div>
+					</fieldset>
+
+				</div>
+				<div class="button-group clearfix">
+					<span ng-if="!(appSetup=='appSetupYes' || appSetup=='appSetupNo')">
+						<button class="btn btn-success btn-lg pull-right" disabled>Proceed</button>
+					</span>
+					<span ng-if="appSetup=='appSetupYes'">
+						<a class="btn btn-success btn-lg pull-right" ui-sref="formSetup2a" ng-disabled="application.$invalid">Proceed</a>
+					</span>
+					<span ng-if="appSetup=='appSetupNo'">
+						<a class="btn btn-success btn-lg pull-right" ui-sref="formSetup2" ng-disabled="application.$invalid">Proceed</a>
+					</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

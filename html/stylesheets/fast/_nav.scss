@@ -1,0 +1,211 @@
+.navbar-toggle {
+	float: left;
+}
+
+.nav.language-toggle {
+	float: right;
+	margin-right: -15px;
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+
+	> li {
+		> a {
+			background-color: $dark-background-color;
+			color: #ddd;
+			padding: 7px 15px;
+
+			&:focus, &:active, &:hover {
+				background-color: $dark-background-color;
+			}
+		}
+	}
+
+	.open {
+		> a {
+			background-color: $dark-background-color;
+			color: $primary-color;
+
+			&:focus, &:active, &:hover {
+				background-color: $dark-background-color;
+			}
+		}
+	}
+
+	.dropdown-toggle {
+		font-size: 25px;
+
+		.caret {
+			border-top: 7px dashed;
+			border-top: 7px solid \9;
+			border-right: 7px solid transparent;
+			border-left: 7px solid transparent;
+		}
+	}
+
+	.dropdown-menu {
+		right: 0;
+		left: auto;
+		min-width: 120px;
+	}
+}
+
+.navbar-collapse {
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+
+	@media (min-width: 768px) {
+		&.mobile {
+			display: none !important;
+		}
+
+		&.desktop {
+			display: block;
+		}
+	}
+}
+
+.navbar.navbar-fast {
+	background-color: $dark-background-color;
+	border-color: $dark-background-color;
+
+	.navbar-nav {
+		> li > a {
+			color: $navbar-fast-link-color;
+			padding: 15px;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: ($font-size-small + 1);
+
+			&:after {
+				// content: "";
+				// display: block;
+				// position: absolute;
+				// bottom: 0;
+				// left: 15px;
+				// border-bottom: 1px solid #ccc;
+				// height: 1px;
+				// width: 100%;
+			}
+		}
+
+		> li > a:hover, a:focus {
+			color: $navbar-fast-link-hover-color;
+			background-color: transparent;
+		}
+	}
+
+	.navbar-brand {
+		padding: 10px;
+		img {
+			height: 35px;
+			margin-top: -3px;
+		}
+	}
+
+	.divider {
+		height: 1px;
+		margin: 9px 0;
+		overflow: hidden;
+		background-color: #e5e5e5;
+	}
+
+	.mobile {
+		&.navbar-collapse {
+			background: #f1f1f1;
+			margin-left: -15px;
+			margin-right: -15px;
+			margin-bottom: -2px;
+			margin-top: 1px;
+		}
+
+		.navbar-nav {
+			> li > a {
+				color: #333;
+				padding: 8px 15px;
+				font-weight: 400;
+				text-transform: capitalize;
+				font-size: ($font-size-small + 3);
+			}
+
+			> li > a:hover, a:focus {
+				color: $navbar-fast-link-hover-color;
+				background-color: transparent;
+			}
+		}
+		.nav {
+			> li {
+				> a {
+					padding: 10px 15px 10px 35px;
+					font-weight: 600;
+					font-size: 14px;
+					color: $dark-background-color;
+					
+					.status {
+						position: relative;
+					}
+
+					.status.complete {
+						color: $primary-color;
+					}
+
+					.status.locked {
+						color: lighten($dark-background-color, 45%);
+						cursor: not-allowed;
+					}
+
+					.status.open::after, .status.complete::after, .status.locked::after {
+						position: absolute;
+						top: 1px;
+						left: -18px;
+						font-family: FontAwesome;
+					}
+
+					.status.open::after {
+						content: $fa-var-circle-o;
+					}
+
+					.status.complete::after {
+						content: $fa-var-check-circle;
+					}
+
+					.status.locked::after {
+						content: $fa-var-ban;
+					}
+				}
+
+				> a:hover, a:focus {
+					color: $secondary-color;
+					background-color: $secondary-color-hover;
+				}
+
+				> a:active {
+					color: darken($secondary-color, 5%);
+					background-color: darken($secondary-color-hover, 5%);
+				}
+			}
+
+			> li::before {
+				content : "";
+				position: absolute;
+				left    : 5%;
+				bottom  : 0;
+				height  : 1px;
+				width   : 90%;  /* or 100px */
+				border-bottom: 1px solid darken($light-grey-background, 5%);
+
+			}
+			> li.unavailable-step {
+				cursor: not-allowed;
+				> a:hover, a:focus {
+					color: lighten($dark-background-color, 45%);
+					background-color: transparent;
+					cursor: not-allowed;
+				}
+			}
+		}
+	}
+}

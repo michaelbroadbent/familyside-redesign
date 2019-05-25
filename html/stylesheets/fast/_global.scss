@@ -1,0 +1,461 @@
+html, .off-canvas-wrap, .off-canvas-wrap > .container-fluid, .off-canvas-wrap > .container-fluid > .row {
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
+	height: 100%;
+	padding-top: 51px;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+a {
+	color: $primary-color;
+}
+
+a:hover, a:focus {
+	cursor: pointer;
+}
+
+.main-content {
+	height: 100%;
+	padding-bottom: 20px;
+	overflow-y: scroll;
+}
+
+.masthead {
+	padding-bottom: 25px;
+	.masthead-title {
+		background-color: $title-background;
+		color: white;
+		margin: 0 -15px 7px;
+		padding: 15px;
+	}
+
+	h2 {
+		margin-top: 10px;
+	}
+
+	.button-group {
+		padding-top: 6px;
+		float: left;
+	}
+
+	p {
+		padding-top: 10px;
+	}
+	@media (max-width: $screen-sm) { 
+		.masthead-title {
+			height: 73px;
+			h2 {
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+// Family Colors
+.family-one {
+	color: $primary-color;
+}
+
+.family-two {
+	color: $system-color;
+}
+
+// Status Icons
+.status-icon {
+	position: relative;
+	font-weight: bold;
+}
+
+.status-icon.complete {
+	color: $primary-color;
+}
+
+.status-icon.complete::after, .status-icon.open::after, .status-icon.locked::after {
+	font-family: FontAwesome;
+}
+
+.status-icon.complete::after {
+	content: $fa-var-check-circle;
+}
+
+.status-icon.open::after {
+	content: $fa-var-circle-o;
+}
+
+.status-icon.locked::after {
+	content: $fa-var-ban;
+	color: #adb7c0;
+}
+
+hr.darker {
+	border-top: 1px solid #ccc;
+	margin-bottom: 0;
+}
+
+ul.centered-list {
+	text-align: center;
+
+	li {
+		display: inline-block;
+
+		&:not(:last-child) {
+			padding-right: 30px;
+
+			&:after {
+				content: "\f111";
+				position: relative;
+				top: -2px;
+				right: -15px;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: 8px;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+		}
+	}
+}
+
+.tab-content {
+	background-color: $light-grey-background;
+	padding: 20px 12px;
+}
+
+.nav-tabs {
+	width: 100%;
+
+	.user-icon {
+		width: 29px;
+		height: 29px;
+	}
+
+	> li {
+		font-size: 12px;
+
+		> a {
+			background: lighten($dark-background-color, 15%);
+			border-radius: 12px 12px 0 0;
+			color: white;
+			font-size: 16px;
+			margin-right: 1px;
+			padding: 10px 20px;
+		}
+
+		> a:hover,
+		> a:focus {
+			color: #333;
+			background: $secondary-color-hover;
+			border-color: $secondary-color-hover;
+		}
+
+	}
+
+	> li.active {
+		> a,
+		> a:hover,
+		> a:focus {
+			color: $secondary-color;
+			background-color: $light-grey-background;
+			border: 1px solid transparent;
+			border-bottom-color: $light-grey-background;
+		}
+	}
+
+	> li.add-tab {
+		> a {
+			font-size: 22px;
+			padding: 9px 10px 9px 17px;
+		}
+	}
+}
+
+.required-field,
+.text-danger {
+	color: $brand-danger;
+}
+
+// Special Dropdowns
+.nav-tabs {
+	> li {
+		> .dropdown {
+			float: left;
+			// padding: 0;
+			margin-top: 7px;
+
+			> a.dropdown-toggle {
+				background: #5c6a78;
+				border-radius: 12px 12px 0 0;
+				color: white;
+				font-size: 22px;
+				margin-right: 1px;
+				padding: 7px 10px 6px 17px;
+				line-height: 1.42857;
+				border: 1px solid transparent;
+
+				&:hover,
+				&:focus {
+					color: #333;
+					background: $secondary-color-hover;
+					border-color: $secondary-color-hover;
+				}
+			}
+
+			&.open {
+				> a.dropdown-toggle {
+					&:hover,
+					&:focus {
+						color: #333;
+						background: $secondary-color-hover;
+						border-color: $secondary-color-hover;
+					}
+				}
+			}
+		}
+	}
+
+	.dropdown-menu {
+		// make dropdown border overlap tab border
+		margin-top: -1px;
+		// Remove the top rounded corners here since there is a hard edge above the menu
+		@include border-top-radius(0);
+
+		&.add-dropdown {
+			margin-top: 17px;
+			right: -15px;
+			left: initial;
+			min-width: 151px;
+		}
+
+		.arrow {
+			border-color: rgba(0, 0, 0, 0);
+			border-bottom-color: #FFF;
+			border-style: dashed dashed solid;
+			border-width: 0 10px 8px;
+			position: absolute;
+			right: 9%;
+			top: -7px;
+			z-index: 2;
+			height: 0;
+			width: 0;
+			-webkit-animation: gb__a .2s;
+			-ms-animation: gb__a .2s;
+			animation: gb__a .2s;
+		}
+
+		.arrow-border {
+			border-color: rgba(0, 0, 0, 0);
+			border-style: dashed dashed solid;
+			border-width: 0 10px 8px;
+			position: absolute;
+			right: 9%;
+			z-index: 1;
+			height: 0;
+			width: 0;
+			-webkit-animation: gb__a .2s;
+			-ms-animation: gb__a .2s;
+			animation: gb__a .2s;
+			border-bottom-color: #CCC;
+			border-bottom-color: rgba(0, 0, 0, 0.2);
+			top: -8px;
+		}
+
+		// Dividers (basically an hr) within the dropdown
+		.divider {
+			@include nav-divider($dropdown-divider-bg);
+			margin: 0;
+		}
+	}
+}
+
+
+.icon-tabs {
+	> li {
+		> a {
+			padding: 14px 20px 13px;
+		}
+
+		> .dropdown {
+			margin-top: 11px;
+
+			a.dropdown-toggle {
+				padding: 10px 12px 9px 17px;
+			}
+		}
+	}
+	
+	.icon-tab {
+		margin-right: 7px;
+		margin-top: -4px;
+	}
+}
+
+
+// Tables
+
+.table {
+	margin-bottom: 0;
+}
+
+.table-striped {
+	> tbody {
+		> tr:nth-of-type(odd) {
+			background-color: white;
+		}
+	}
+}
+
+.table-review {
+	> thead {
+		> tr {
+			> th {
+				background: lighten($dark-background-color, 45%);
+				border-bottom-width: 1px;
+				color: #333333;
+				padding: 8px 12px;
+				font-size: 18px;
+				font-weight: normal;
+			}
+		}
+
+	}
+
+	td.form-section-label {
+		width: 25%;
+	}
+}
+
+// Icon styles
+
+.circled-icon {
+	display: block;
+	width: 30px;
+	height: 30px;
+	color: #FFF;
+	font-size: $font-size-large;
+	border-radius: 3px;
+	text-align: center;
+	padding-top: 8%;
+	&.vehicles {
+		background-color: #B56EC7;
+	}
+	&.dependant {
+		background-color: #6EB5C7;
+	}
+	&.othchild {
+		background-color: #6EC7AB;
+	}
+	&.letter {
+		background-color: #C77;
+	}
+	&.schoolspec {
+		background-color: #778FCC;
+	}
+	&.realestates {
+		background-color: #C78E6E ;
+	}
+}
+
+//  Help Center
+.helpcenter, .instructions {
+	.form-group-wrapper {
+		padding: 12px;
+	}
+}
+
+.btn-primary-fast {
+	color: #fff;
+	background-color: darken($primary-color, 5%);
+}
+
+.btn-primary-fast:hover, .btn-primary-fast:focus {
+	color: darken(#fff, 5%);
+	background-color: $primary-color;
+}
+
+.completed-step {
+	margin-left: 70px;
+	color: $primary-color;
+	font-family: FontAwesome;
+}
+
+.completed-step::after {
+	content: $fa-var-check;
+}
+
+.uncompleted-step {
+	margin-left: 72px;
+	color: $not-received;
+	font-family: FontAwesome;
+}
+
+.uncompleted-step::after {
+	content: $fa-var-close;
+}
+
+.status-complete {
+	margin-left: 55px;
+	color: $primary-color;
+	font-weight: 600;
+}
+
+.status-complete::after {
+	content: "Ready";
+}
+
+.status-incomplete {
+	margin-left: 40px;
+	color: $not-received;
+	font-weight: 600;
+}
+
+.status-incomplete::after {
+	content: "Not Ready";
+}
+
+.table-status {
+	background-color: lighten($dark-background-color, 70%);
+}
+
+.quick-processing {
+	.taxes-container {
+		padding: 15px;
+		margin-bottom: 10px;
+		background-color: $light-grey-background;
+		border: 1px solid darken($light-grey-background, 5%);
+		border-radius: 2px;
+	}
+}
+
+.helpcenter {
+	.panel-heading {
+		padding: 0;
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.checklist-title {
+	padding: 10px 15px;
+	color: #333333;
+	overflow: hidden;
+	&:hover {
+		background: $secondary-color-hover;
+		color: $secondary-color;
+	}
+}
+
+.has-error {
+	.radioset {
+		label::before {
+			border: 2px solid $brand-danger;
+		}
+	}
+}

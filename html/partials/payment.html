@@ -1,0 +1,512 @@
+<!-- Start Payment -->
+<div ng-hide="altpayment">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Application Payment</h2>
+			</div>
+			<p>Your application will be sent to FAST Demonstration School upon completion of this payment portion. Please make sure that you have correctly entered all the required information. Once you have completed this payment section, changes to your financial information may only be made by contacting your school.</p>
+			<p>In order to complete this payment section, you must have a Visa, a MasterCard, an American Express or a <a ng-click="altpayment = true">voucher</a> number from your school. If you do not have any of these, please contact your school for <a ng-click="altpayment = true">alternate forms of payment</a>.</p>
+			<p>The fee for this application is $43.00</p>
+		</div>
+	</div>
+
+	<!-- Payment Form Container -->
+	<form class="payment-form" name="payment" role="form">
+		<div class="form-group-wrapper">
+			<fieldset class="form-group">
+				<legend>Credit Card Information</legend>
+				<div class="row">
+					<div class="form-group col-sm-12" ng-class="{ 'has-error' : payment.cardname.$invalid && (payment.cardname.$touched || payment.cardname.$dirty) }">
+						<label for="cardname">Name of Cardholder <span class="required-field">*</span></label>
+						<input type="text" class="form-control" name="cardname" ng-pattern="/^[a-zA-Z\s]*$/" id="cardname" ng-model="cardname" required>
+						<div ng-if="payment.cardname.$touched || payment.cardname.$dirty">
+							<p class="help-block" ng-if="payment.cardname.$error.required">This field cannot be blank</p>
+						</div>
+						<div ng-if="payment.cardname.$error.pattern">
+							<p class="help-block">Letters only (a-z) in this field</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-sm-5" ng-class="{ 'has-error' : payment.cardnumber.$invalid && (payment.cardnumber.$touched || payment.cardnumber.$dirty) }">
+						<label for="cardnumber">Credit Card Number <span class="required-field">*</span></label>
+						<input type="text" class="form-control" name="cardnumber" id="cardnumber" ng-model="cardnumber" cc-number cc-eager-type cc-format required ng-minlength="15">
+						<div class="cc-icon" ng-if="payment.cardnumber.$ccEagerType == 'Visa'">
+							<i class="fa fa-cc-visa" aria-hidden="true"></i>
+						</div>
+						<div class="cc-icon" ng-if="payment.cardnumber.$ccEagerType == 'American Express'">
+							<i class="fa fa-cc-amex" aria-hidden="true"></i>
+						</div>
+						<div class="cc-icon" ng-if="payment.cardnumber.$ccEagerType == 'MasterCard'">
+							<i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+						</div>
+						<div class="cc-icon" ng-if="payment.cardnumber.$ccEagerType == 'Discover'">
+							<i class="fa fa-cc-discover" aria-hidden="true"></i>
+						</div>
+						<div ng-if="payment.cardnumber.$touched || payment.cardnumber.$dirty">
+							<p class="help-block" ng-if="payment.cardnumber.$error.required">This field cannot be blank</p>
+							<p class="help-block" ng-if="payment.cardnumber.$invalid && payment.cardnumber.$dirty">Invalid credit card number</p>
+                            <p class="help-block" ng-if="!(payment.cardnumber.$ccEagerType == 'Visa' || payment.cardnumber.$ccEagerType == 'American Express' || payment.cardnumber.$ccEagerType == 'MasterCard' || payment.cardnumber.$ccEagerType == 'Discover') && payment.cardnumber.$valid && !payment.cardnumber.$error.minlength">We can only process Visa, MasterCard, American Express or Discover cards</p>
+						</div>
+					</div>
+
+					<div class="form-group col-sm-7">
+						<div class="row">
+							<div class="form-group col-sm-4" ng-class="{ 'has-error' : payment.cvc.$invalid && (payment.cvc.$touched || payment.cvc.$dirty) }">
+								<label for="cvc">CVC <span class="required-field">*</span></label>
+								<input type="text" class="form-control" name="cvc" id="cvc" cc-cvc ng-model="cvc" required>
+								<div ng-if="payment.cvc.$touched || payment.cvc.$dirty">
+									<p class="help-block" ng-if="payment.cvc.$error.required">This field cannot be blank</p>
+								</div>
+							</div>
+							<div class="col-sm-8 col-xs-12">
+								<div class="row">
+									<label class="control-label col-xs-12" for="cardmonth">Expiration Date <span class="required-field">*</span></label>
+									<div class="col-xs-6" ng-class="{ 'has-error' : payment.cardmonth.$invalid && (payment.cardmonth.$dirty || payment.cardmonth.$touched) }">
+										<select class="form-control" cc-exp-month name="cardmonth" id="cardmonth" ng-model="cardmonth" required>
+											<option value="" disabled>Month</option>
+											<option value="01">Jan (01)</option>
+											<option value="02">Feb (02)</option>
+											<option value="03">Mar (03)</option>
+											<option value="04">Apr (04)</option>
+											<option value="05">May (05)</option>
+											<option value="06">June (06)</option>
+											<option value="07">July (07)</option>
+											<option value="08">Aug (08)</option>
+											<option value="09">Sep (09)</option>
+											<option value="10">Oct (10)</option>
+											<option value="11">Nov (11)</option>
+											<option value="12">Dec (12)</option>
+										</select>
+										<div ng-if="payment.cardmonth.$touched || payment.cardmonth.$dirty">
+											<p class="help-block" ng-if="payment.cardmonth.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+									<div class="col-xs-6" ng-class="{ 'has-error' : payment.cardyear.$invalid && (payment.cardyear.$dirty || payment.cardyear.$touched) }">
+										<select class="form-control" name="cardyear" id="cardyear" ng-model="cardyear" cc-exp-year required>
+											<option value="" disabled>Year</option>
+											<option value="17">2017</option>
+											<option value="18">2018</option>
+											<option value="19">2019</option>
+											<option value="20">2020</option>
+											<option value="21">2021</option>
+											<option value="22">2022</option>
+											<option value="23">2023</option>
+											<option value="21">2024</option>
+											<option value="22">2025</option>
+											<option value="23">2026</option>
+											<option value="22">2026</option>
+											<option value="23">2027</option>
+										</select>
+										<div ng-if="payment.cardyear.$touched || payment.cardyear.$dirty">
+											<p class="help-block" ng-if="payment.cardyear.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+
+		<div class="form-group-wrapper">
+			<fieldset class="form-group">
+				<legend>Billing Address</legend>
+				<div class="row">
+					<div class="form-group col-sm-12" ng-class="{ 'has-error' : payment.cardaddress.$invalid && (payment.cardaddress.$touched || payment.cardaddress.$dirty) }">
+						<label for="cardaddress">Address <span class="required-field">*</span></label>
+						<input type="text" class="form-control" name="cardaddress" id="cardaddress" ng-model="cardaddress" required>
+						<div ng-if="payment.cardaddress.$touched || payment.cardaddress.$dirty">
+							<p class="help-block" ng-if="payment.cardaddress.$error.required">This field cannot be blank</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-sm-6" ng-class="{ 'has-error' : payment.cardcity.$invalid && (payment.cardcity.$touched || payment.cardcity.$dirty) }">
+						<label for="cardcity">City <span class="required-field">*</span></label>
+						<input type="text" class="form-control" name="cardcity" id="cardcity" ng-model="cardcity" required>
+						<div ng-if="payment.cardcity.$touched || payment.cardcity.$dirty">
+							<p class="help-block" ng-if="payment.cardcity.$error.required">This field cannot be blank</p>
+						</div>
+					</div>
+
+					<div class="form-group col-sm-6" ng-class="{ 'has-error' : payment.cardstate.$invalid && (payment.cardstate.$dirty || payment.cardstate.$touched) }">
+						<label for="cardstate">State/Province <span class="required-field">*</span></label>
+						<select class="form-control" name="cardstate" id="cardstate" ng-model="cardstate" required>
+							<option value="" disabled>Select Your State</option>
+							<option value="AL">Alabama</option> 
+							<option value="AK">Alaska</option> 
+							<option value="AZ">Arizona</option> 
+							<option value="AR">Arkansas</option> 
+							<option value="CA">California</option> 
+							<option value="CO">Colorado</option> 
+							<option value="CT">Connecticut</option> 
+							<option value="DE">Delaware</option> 
+							<option value="DC">District Of Columbia</option> 
+							<option value="FL">Florida</option> 
+							<option value="GA">Georgia</option> 
+							<option value="HI">Hawaii</option> 
+							<option value="ID">Idaho</option> 
+							<option value="IL">Illinois</option> 
+							<option value="IN">Indiana</option> 
+							<option value="IA">Iowa</option> 
+							<option value="KS">Kansas</option> 
+							<option value="KY">Kentucky</option> 
+							<option value="LA">Louisiana</option> 
+							<option value="ME">Maine</option> 
+							<option value="MD">Maryland</option> 
+							<option value="MA">Massachusetts</option> 
+							<option value="MI">Michigan</option> 
+							<option value="MN">Minnesota</option> 
+							<option value="MS">Mississippi</option> 
+							<option value="MO">Missouri</option> 
+							<option value="MT">Montana</option> 
+							<option value="NE">Nebraska</option> 
+							<option value="NV">Nevada</option> 
+							<option value="NH">New Hampshire</option> 
+							<option value="NJ">New Jersey</option> 
+							<option value="NM">New Mexico</option> 
+							<option value="NY">New York</option> 
+							<option value="NC">North Carolina</option> 
+							<option value="ND">North Dakota</option> 
+							<option value="OH">Ohio</option> 
+							<option value="OK">Oklahoma</option> 
+							<option value="OR">Oregon</option> 
+							<option value="PA">Pennsylvania</option> 
+							<option value="RI">Rhode Island</option> 
+							<option value="SC">South Carolina</option> 
+							<option value="SD">South Dakota</option> 
+							<option value="TN">Tennessee</option> 
+							<option value="TX">Texas</option> 
+							<option value="UT">Utah</option> 
+							<option value="VT">Vermont</option> 
+							<option value="VA">Virginia</option> 
+							<option value="WA">Washington</option> 
+							<option value="WV">West Virginia</option> 
+							<option value="WI">Wisconsin</option> 
+							<option value="WY">Wyoming</option>
+							<option disabled> - Province - </option>
+							<option value="AB">Alberta</option>
+							<option value="BC">British Columbia</option>
+							<option value="MB">Manitoba</option>
+							<option value="NB">New Brunswick</option>
+							<option value="NL">Newfoundland and Labrador</option>
+							<option value="NS">Nova Scotia</option>
+							<option value="NT">Northwest Territories</option>
+							<option value="NU">Nunavut</option>
+							<option value="ON">Ontario</option>
+							<option value="PE">Prince Edward Island</option>
+							<option value="QC">Quebec</option>
+							<option value="SK">Saskatchewan</option>
+							<option value="YT">Yukon</option>
+						</select>
+						<div ng-if="payment.cardstate.$touched || payment.cardstate.$dirty">
+							<p class="help-block" ng-if="payment.cardstate.$error.required">This field cannot be blank</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-sm-6" ng-class="{ 'has-error' : payment.cardzip.$invalid && (payment.cardzip.$touched || payment.cardzip.$dirty) }">
+						<label for="cardzip">Zip Code <span class="required-field">*</span></label>
+						<input type="text" class="form-control" name="cardzip" id="cardzip" ng-model="cardzip" ng-pattern="/^([a-zA-Z0-9]+\s?)*$/" required>
+						<div ng-if="payment.cardzip.$error.pattern">
+							<p class="help-block">Please use numbers and letters only</p>
+						</div>
+						<div ng-if="payment.cardzip.$touched || payment.cardzip.$dirty">
+							<p class="help-block" ng-if="payment.cardzip.$error.required">This field cannot be blank</p>
+						</div>
+					</div>
+
+					<div class="form-group col-sm-6" ng-class="{ 'has-error' : payment.cardcountry.$invalid && (payment.cardcountry.$dirty || payment.cardcountry.$touched) }">
+						<label for="cardcountry">Country <span class="required-field">*</span></label>
+						<select class="form-control" name="cardcountry" id="cardcountry" ng-model="cardcountry" required>
+							<option value="" disabled>Select Country</option>
+							<option value="AF">Afghanistan</option>
+							<option value="AL">Albania</option>
+							<option value="DZ">Algeria</option>
+							<option value="AD">Andorra</option>
+							<option value="AO">Angola</option>
+							<option value="AI">Anguilla</option>
+							<option value="AQ">Antarctica</option>
+							<option value="AG">Antigua and Barbuda</option>
+							<option value="AR">Argentina</option>
+							<option value="AM">Armenia</option>
+							<option value="AW">Aruba</option>
+							<option value="AU">Australia</option>
+							<option value="AT">Austria</option>
+							<option value="AZ">Azerbaijan</option>
+							<option value="BS">Bahamas</option>
+							<option value="BH">Bahrain</option>
+							<option value="BD">Bangladesh</option>
+							<option value="BB">Barbados</option>
+							<option value="BY">Belarus</option>
+							<option value="BE">Belgium</option>
+							<option value="BZ">Belize</option>
+							<option value="BJ">Benin</option>
+							<option value="BM">Bermuda</option>
+							<option value="BT">Bhutan</option>
+							<option value="BO">Bolivia</option>
+							<option value="BA">Bosnia</option>
+							<option value="BW">Botswana</option>
+							<option value="BV">Bouvet Island</option>
+							<option value="BR">Brazil</option>
+							<option value="BN">Brunei Darussalam</option>
+							<option value="BG">Bulgaria</option>
+							<option value="BF">Burkina Faso</option>
+							<option value="BI">Burundi</option>
+							<option value="KH">Cambodia</option>
+							<option value="CM">Cameroon</option>
+							<option value="CA">Canada</option>
+							<option value="CV">Cape Verde</option>
+							<option value="KY">Cayman Islands</option>
+							<option value="CF">Central African Republic</option>
+							<option value="TD">Chad</option>
+							<option value="CL">Chile</option>
+							<option value="CN">China</option>
+							<option value="CX">Christmas Island</option>
+							<option value="CC">Cocos Islands</option>
+							<option value="CO">Colombia</option>
+							<option value="KM">Comoros</option>
+							<option value="CG">Congo</option>
+							<option value="CK">Cook Islands</option>
+							<option value="CR">Costa Rica</option>
+							<option value="HR">Croatia</option>
+							<option value="CU">Cuba</option>
+							<option value="CY">Cyprus</option>
+							<option value="CZ">Czech Republic</option>
+							<option value="DK">Denmark</option>
+							<option value="DJ">Djibouti</option>
+							<option value="DM">Dominica</option>
+							<option value="DO">Dominican Republic</option>
+							<option value="TL">East Timor</option>
+							<option value="EC">Ecuador</option>
+							<option value="EG">Egypt</option>
+							<option value="SV">El Salvador</option>
+							<option value="GQ">Equatorial Guinea</option>
+							<option value="ER">Eritrea</option>
+							<option value="EE">Estonia</option>
+							<option value="ET">Ethiopia</option>
+							<option value="FK">Falkland Islands</option>
+							<option value="FO">Faroe Islands</option>
+							<option value="FJ">Fiji</option>
+							<option value="FI">Finland</option>
+							<option value="FR">France</option>
+							<option value="GF">French Guiana</option>
+							<option value="PF">French Polynesia</option>
+							<option value="TF">French Southern Territories</option>
+							<option value="GA">Gabon</option>
+							<option value="GM">Gambia</option>
+							<option value="GE">Georgia</option>
+							<option value="DE">Germany</option>
+							<option value="GH">Ghana</option>
+							<option value="GI">Gibraltar</option>
+							<option value="GR">Greece</option>
+							<option value="GL">Greenland</option>
+							<option value="GD">Grenada</option>
+							<option value="GP">Guadeloupe</option>
+							<option value="GU">Guam</option>
+							<option value="GT">Guatemala</option>
+							<option value="GN">Guinea</option>
+							<option value="GW">Guinea-Bissau</option>
+							<option value="GY">Guyana</option>
+							<option value="HT">Haiti</option>
+							<option value="HM">Heard Island</option>
+							<option value="HN">Honduras</option>
+							<option value="HK">Hong Kong</option>
+							<option value="HU">Hungary</option>
+							<option value="IS">Iceland</option>
+							<option value="IN">India</option>
+							<option value="ID">Indonesia</option>
+							<option value="IR">Iran</option>
+							<option value="IQ">Iraq</option>
+							<option value="IE">Ireland</option>
+							<option value="IL">Israel</option>
+							<option value="IT">Italy</option>
+							<option value="CI">Ivory Coast</option>
+							<option value="JM">Jamaica</option>
+							<option value="JP">Japan</option>
+							<option value="JO">Jordan</option>
+							<option value="KZ">Kazakhstan</option>
+							<option value="KE">Kenya</option>
+							<option value="KI">Kiribati</option>
+							<option value="KW">Kuwait</option>
+							<option value="KG">Kyrgyzstan</option>
+							<option value="LA">Laos</option>
+							<option value="LV">Latvia</option>
+							<option value="LB">Lebanon</option>
+							<option value="LS">Lesotho</option>
+							<option value="LR">Liberia</option>
+							<option value="LY">Libya</option>
+							<option value="LI">Liechtenstein</option>
+							<option value="LT">Lithuania</option>
+							<option value="LU">Luxembourg</option>
+							<option value="MO">Macao</option>
+							<option value="MK">Macedonia</option>
+							<option value="MG">Madagascar</option>
+							<option value="MW">Malawi</option>
+							<option value="MY">Malaysia</option>
+							<option value="MV">Maldives</option>
+							<option value="ML">Mali</option>
+							<option value="MT">Malta</option>
+							<option value="MP">Mariana Islands</option>
+							<option value="MH">Marshall Islands</option>
+							<option value="MQ">Martinique</option>
+							<option value="MR">Mauritania</option>
+							<option value="MU">Mauritius</option>
+							<option value="YT">Mayotte</option>
+							<option value="MX">Mexico</option>
+							<option value="FM">Micronesia</option>
+							<option value="MD">Moldova</option>
+							<option value="MC">Monaco</option>
+							<option value="MN">Mongolia</option>
+							<option value="MS">Montserrat</option>
+							<option value="MA">Morocco</option>
+							<option value="MZ">Mozambique</option>
+							<option value="MM">Myanmar</option>
+							<option value="NA">Namibia</option>
+							<option value="NR">Nauru</option>
+							<option value="NP">Nepal</option>
+							<option value="NL">Netherlands</option>
+							<option value="AN">Netherlands Antilles</option>
+							<option value="NC">New Caledonia</option>
+							<option value="NZ">New Zealand</option>
+							<option value="NI">Nicaragua</option>
+							<option value="NE">Niger</option>
+							<option value="NG">Nigeria</option>
+							<option value="NU">Niue</option>
+							<option value="NF">Norfolk Island</option>
+							<option value="KP">North Korea</option>
+							<option value="NO">Norway</option>
+							<option value="OM">Oman</option>
+							<option value="PK">Pakistan</option>
+							<option value="PW">Palau</option>
+							<option value="PS">Palestinian Authority </option>
+							<option value="PA">Panama</option>
+							<option value="PG">Papua New Guinea</option>
+							<option value="PY">Paraguay</option>
+							<option value="PE">Peru</option>
+							<option value="PH">Philippines</option>
+							<option value="PN">Pitcairn</option>
+							<option value="PL">Poland</option>
+							<option value="PT">Portugal</option>
+							<option value="PR">Puerto Rico</option>
+							<option value="QA">Qatar</option>
+							<option value="RE">Reunion</option>
+							<option value="RO">Romania</option>
+							<option value="RU">Russia</option>
+							<option value="RW">Rwanda</option>
+							<option value="SH">Saint Helena</option>
+							<option value="KN">Saint Kitts And Nevis</option>
+							<option value="LC">Saint Lucia</option>
+							<option value="PM">Saint Pierre and Miquelon</option>
+							<option value="VC">Saint Vincent</option>
+							<option value="WS">Samoa</option>
+							<option value="SM">San Marino</option>
+							<option value="ST">Sao Tome</option>
+							<option value="SA">Saudi Arabia</option>
+							<option value="SN">Senegal</option>
+							<option value="RS">Serbia</option>
+							<option value="SC">Seychelles</option>
+							<option value="SL">Sierra Leone</option>
+							<option value="SG">Singapore</option>
+							<option value="SK">Slovakia</option>
+							<option value="SI">Slovenia</option>
+							<option value="SB">Solomon Islands</option>
+							<option value="SO">Somalia</option>
+							<option value="ZA">South Africa</option>
+							<option value="GS">South Georgia</option>
+							<option value="KR">South Korea</option>
+							<option value="ES">Spain</option>
+							<option value="LK">Sri Lanka</option>
+							<option value="SD">Sudan</option>
+							<option value="SR">Suriname</option>
+							<option value="SJ">Svalbard</option>
+							<option value="SZ">Swaziland</option>
+							<option value="SE">Sweden</option>
+							<option value="CH">Switzerland</option>
+							<option value="SY">Syria</option>
+							<option value="TW">Taiwan</option>
+							<option value="TJ">Tajikistan</option>
+							<option value="TZ">Tanzania</option>
+							<option value="TH">Thailand</option>
+							<option value="TG">Togo</option>
+							<option value="TK">Tokelau</option>
+							<option value="TO">Tonga</option>
+							<option value="TT">Trinidad And Tobago</option>
+							<option value="TN">Tunisia</option>
+							<option value="TR">Turkey</option>
+							<option value="TM">Turkmenistan</option>
+							<option value="TC">Turks and Caicos</option>
+							<option value="TV">Tuvalu</option>
+							<option value="UG">Uganda</option>
+							<option value="UA">Ukraine</option>
+							<option value="AE">United Arab Emirates</option>
+							<option value="GB">United Kingdom</option>
+							<option value="US">United States</option>
+							<option value="UY">Uruguay</option>
+							<option value="UZ">Uzbekistan</option>
+							<option value="VU">Vanuatu</option>
+							<option value="VA">Vatican</option>
+							<option value="VE">Venezuela</option>
+							<option value="VN">Vietnam</option>
+							<option value="VG">Virgin Islands</option>
+							<option value="WF">Wallis and Futuna</option>
+							<option value="EH">Western Sahara</option>
+							<option value="YE">Yemen</option>
+							<option value="ZM">Zambia</option>
+							<option value="ZW">Zimbabwe</option>
+						</select>
+						<div ng-if="payment.cardcountry.$touched || payment.cardcountry.$dirty">
+							<p class="help-block" ng-if="payment.cardcountry.$error.required">This field cannot be blank</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-sm-6" ng-class="{ 'has-error' : payment.cardphone.$invalid && (payment.cardphone.$touched || payment.cardphone.$dirty) }">
+						<label for="cardphone">Phone Number <span class="required-field">*</span></label>
+						<input type="tel" class="form-control" ng-pattern="/^[0-9]*$/" name="cardphone" id="cardphone" ng-model="cardphone" required>
+						<div ng-if="payment.cardphone.$touched || payment.cardphone.$dirty">
+							<p class="help-block" ng-if="payment.cardphone.$error.required">This field cannot be blank</p>
+						</div>
+						<div ng-if="payment.cardphone.$error.pattern">
+							<p class="help-block">Numbers only in this field</p>
+						</div>
+					</div>
+
+					<div class="form-group col-sm-6" ng-class="{ 'has-error' : payment.email.$invalid && (payment.email.$touched || payment.email.$dirty) }">
+						<label for="email">E-Mail <span class="required-field">*</span></label>
+						<input type="email" class="form-control" name="email" id="email" ng-model="email" required>
+						<div ng-if="payment.email.$touched || payment.email.$dirty">
+							<p class="help-block" ng-if="payment.email.$error.required">This field cannot be blank</p>
+						</div>
+						<div ng-if="payment.email.$error.email">
+							<p class="help-block">Must be a valid email address</p>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<div class="button-group clearfix">
+			<button type="button" class="btn btn-success btn-lg pull-right" type="submit" value="Submit" id="formSubmit" ng-disabled="payment.$invalid || !(payment.cardnumber.$ccEagerType == 'Visa' || payment.cardnumber.$ccEagerType == 'American Express' || payment.cardnumber.$ccEagerType == 'MasterCard' || payment.cardnumber.$ccEagerType == 'Discover')">Submit</button>
+		</div>
+	</form>
+</div>
+
+<!-- Start Alt Payment -->
+<div class="help-request" ng-show="altpayment">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="button-group">
+				<button class="btn btn-default" ng-click="altpayment = false"><i class="fa fa-arrow-left"></i> Back</button>
+			</div>
+			<h4>School Vouchers have assigned numbers that the FAST system will accept for payment. If you do not have a MasterCard, Visa or American Express, please contact your school. You may pay them in return for a voucher number to complete your application.</h4>
+			<h4>Voucher numbers should be entered in the credit card field, and the current year and month should be entered as the expiration date.</h4>
+		</div>
+	</div>
+</div>

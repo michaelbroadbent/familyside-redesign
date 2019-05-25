@@ -1,0 +1,50 @@
+<!-- Step 2 - Selected No from Step 1 -->
+<div class="instructions" ng-controller="formSetup">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<!-- <div class="button-group">
+				<button class="btn btn-default" ui-sref="instructions"><i class="fa fa-arrow-left"></i> Back</button>
+			</div> -->
+
+			<h2>Form Setup</h2>
+			<p>To process your application, we need to collect some information about the family of the applicant(s).</p>
+
+			<div ng-include="" src=" 'instructions/formSetupSteps.html' "></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+
+			<form name="application">
+				<div class="form-group-wrapper">
+					<fieldset class="form-group">
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : application.applicationStudentsApplying.$invalid && (application.applicationStudentsApplying.$touched || application.applicationStudentsApplying.$dirty) }">
+								<label for="applicationStudentsApplying">How many students will be applying: <span class="required-field">*</span></label>
+								<input type="number" class="form-control" id="applicationStudentsApplying" name="applicationStudentsApplying" required ng-model="applicationStudentsApplying">
+								<div ng-if="application.applicationStudentsApplying.$touched || application.applicationStudentsApplying.$dirty">
+									<p class="help-block" ng-if="application.applicationStudentsApplying.$error.required">This field cannot be blank</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="button-group clearfix">
+					<span ng-if="applicationStudentsApplying==undefined">
+						<a class="btn btn-success btn-lg pull-right" ng-disabled="application.$invalid">Proceed</a>
+					</span>
+					<span ng-if="applicationStudentsApplying==1">
+						<a class="btn btn-success btn-lg pull-right" ui-sref="formSetup3b" ng-disabled="application.$invalid">Proceed</a>
+					</span>
+					<span ng-if="applicationStudentsApplying > 1">
+						<a class="btn btn-success btn-lg pull-right" ui-sref="formSetup3a" ng-disabled="application.$invalid">Proceed</a>
+					</span>
+
+
+					<!-- <a href="" class="btn btn-success btn-lg pull-right" ng-disabled="application.$invalid" ui-sref="formSetup3">Proceed</a> -->
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

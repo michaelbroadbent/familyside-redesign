@@ -1,0 +1,63 @@
+
+<!-- Selected Yes from Step 1 -->
+<div class="instructions" name="formSetup2Review" ng-hide="formSetup2 == 'formSetup2Review'">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<!-- <div class="button-group">
+				<button class="btn btn-default" ui-sref="instructions"><i class="fa fa-arrow-left"></i> Back</button>
+			</div> -->
+			<h2>Form Setup</h2>
+			<p>To process your application, we need to collect some information about the family of the applicant(s).</p>
+
+			<div ng-include="" src=" 'instructions/formSetupSteps.html' "></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<form name="application">
+				<div class="form-group-wrapper">
+					<p>The application will be set up for both parents filling out financial information jointly.</p>
+					<hr />
+					<p>If this is <strong>NOT</strong> correct click the "Make a change" button.</p>
+
+					<p>Otherwise click "Proceed".</p>
+				</div>
+				<div class="button-group clearfix">
+					<a class="btn btn-success btn-lg pull-right" ui-sref="formSetup3" ng-disabled="application.$invalid">Proceed</a>
+					<a class="btn btn-default btn-lg pull-right" ui-sref="formSetup" ng-disabled="application.$invalid">Make a change</a>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+<div class="instructions" ng-controller="formSetup" ng-if="formSetup2 == 'formSetup2'" name="formSetup2">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="button-group">
+				<button class="btn btn-default" ui-sref="instructions"><i class="fa fa-arrow-left"></i> Back</button>
+			</div>
+			<h2>Form Setup</h2>
+			<p>To process your application, we need to collect some information about the family of the applicant(s).</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+	
+			<form name="application">
+				<div class="form-group-wrapper">
+					<p>The application will be set up for both parents filling out financial information jointly.</p>
+					<hr />
+					<p>If this is <strong>NOT</strong> correct click the "Make a change" button.</p>
+
+					<p>Otherwise click "Proceed".</p>
+				</div>
+				<div class="button-group clearfix">
+					<a href="" class="btn btn-success btn-lg pull-right" ng-disabled="application.$invalid" ng-click="formSetup2 == 'formSetup2'">Proceed</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

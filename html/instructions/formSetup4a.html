@@ -1,0 +1,45 @@
+<!-- Entered No from Step 3 -->
+<div class="instructions">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<!-- <div class="button-group">
+				<button class="btn btn-default" ui-sref="instructions"><i class="fa fa-arrow-left"></i> Back</button>
+			</div> -->
+			<h2>Form Setup</h2>
+			<p>To process your application, we need to collect some information about the family of the applicant(s).</p>
+
+			<div ng-include="" src=" 'instructions/formSetupSteps.html' "></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<form name="application3">
+				<div class="form-group-wrapper">
+					<p>Currently this form can only process multiple applicants that share biological/adoptive parents. Situations where applicants share only one or no biological/adoptive parents will need to apply separately.</p>
+
+					<p>If you feel that your situation may be able to be accommodated by this form please contact the the school at 302-384-9340 to confirm the exception, and advise which form to use.</p>
+
+					<p>If two or more of the applicants share the same biological/adoptive parents, they may share the same form.</p>
+
+					<p>The proceed button will take you back to the beginning of the application. Answer the questions as they are relevant to each applicant (or set of applicants).</p>
+
+
+					<!-- Error message for email address that isn't found -->
+					<div class="hidden">
+						<p class="text-danger">No information has been found for this email address. Please check it and try again. If you need further assistance please call 1-877-326-FAST.</p>
+					</div>
+
+					<!-- Success message for email address -->
+					<div class="hidden">
+						<p class="text-success">Your username and password have been sent to the email address you provided.</p>
+					</div>
+
+				</div>
+				<div class="button-group clearfix">
+					<a href class="btn btn-success btn-lg pull-right" ui-sref="instructions">Proceed</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

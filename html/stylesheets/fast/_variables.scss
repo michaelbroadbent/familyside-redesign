@@ -1,0 +1,75 @@
+//
+// FAST Family Side Custom Variables
+// --------------------------------------------------
+
+//== Colors
+
+$primary-color:				#82B862 !default;
+$secondary-color:			#EBA716 !default;
+$system-color:				#528FCC !default;
+$dark-background-color:		#3B444D !default;
+
+$brand-primary:         darken($primary-color, 5%) !default;
+
+$not-received:			lighten($brand-danger, 5%);
+$pending:				lighten(#4285F4, 5%);
+$missing-information:	#B16EB6;
+$verified:				lighten($brand-success, 5%);
+
+// Background Colors
+$light-grey-background:		#f5f5f5;
+$secondary-color-hover:		#fbebcb;
+$title-background:			#677787;
+
+$editing-area-background:	darken($light-grey-background, 2.5%);
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif-fast:  'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-base-fast:        $font-family-sans-serif-fast !default;
+
+$font-size-base:          14px !default;
+$font-size-x-large:         ceil(($font-size-base * 2)) !default; // ~28px
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Global text color on `<body>`.
+$text-color-fast:            #484C55 !default;
+
+//== Forms
+//
+//##
+
+$checkboxset-size:				22px;
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height:                    40px !default;
+$navbar-margin-bottom:             $line-height-computed !default;
+$navbar-border-radius:             $border-radius-base !default;
+$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+$navbar-collapse-max-height:       340px !default;
+
+$navbar-default-color:             #777 !default;
+$navbar-default-bg:                $dark-background-color !default;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-fast-link-color:                lighten($dark-background-color, 50%) !default;
+$navbar-fast-link-hover-color:          #FFF !default;
+$navbar-default-link-hover-bg:             transparent !default;
+$navbar-default-link-active-color:         $secondary-color !default;
+$navbar-default-link-active-bg:            transparent !default;
+$navbar-default-link-disabled-color:       #ccc !default;
+$navbar-default-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-default-brand-color:               #FFF !default;
+$navbar-default-brand-hover-color:         $primary-color !default;
+$navbar-default-brand-hover-bg:            transparent !default;

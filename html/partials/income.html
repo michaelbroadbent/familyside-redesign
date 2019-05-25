@@ -1,0 +1,420 @@
+<!-- Start Income -->
+<div class="row">
+	<div class="col-xs-12 masthead">
+		<div class="masthead-title">
+			<h2 class="hidden-xs">Income Information</h2>
+			<h2 class="hidden-sm hidden-md hidden-lg pull-left">Income Information</h2>
+			<h3 class="hidden-sm hidden-md hidden-lg pull-right">6/9</h3>
+		</div>
+		<p>In this section, you will be asked to enter information about your income.	The following need to have blue checks for this section to be considered complete:</p>
+	</div>
+</div>
+
+<!-- Income tabs -->
+<div class="row">
+	<div class="col-xs-12">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#household" aria-controls="household" role="tab" data-toggle="tab">Household</a></li>
+			<!-- <li role="presentation"><a href="#student2" aria-controls="student2" role="tab" data-toggle="tab"><img src="img/people-icons-individual/applicant-daughter.png" class="user-icon" /> Jessica</a></li> -->
+		</ul>
+
+		<!-- Income tab panes -->
+		<div class="tab-content">
+			<!-- Tab 1 -->
+			<div role="tabpanel" class="tab-pane active" id="household">
+				<div ng-hide="review">
+					<p>Please fill in all the fields with income information for the year 2016.	If you do not know the dollar amount, place a question mark (?) in the box. This will put the field on hold. You can return later and fill in the dollar amount. If a question does not pertain to you, please enter a zero "0".</p>
+					<form name="income">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>601 - Annual Income <strong>(William)</strong>
+											<i class="fa fa-info-circle" uib-tooltip="Please enter your gross wages, prior to any deductions, as reported on your W-2(s) for the prior year. This number is typically listed in Box 5-Medicare Wages and tips on your W2(s), or in some cases, listed as Gross Wages at the top of your W2. If you have multiple W2s, you will want to add them together and enter the sum."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : income.incomeA601.$invalid && (income.incomeA601.$touched || income.incomeA601.$dirty) }">
+												<label for="incomeA601">Annual Income <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="incomeA601" ng-model="incomeA601" name="incomeA601" required>
+												<div ng-if="income.incomeA601.$touched || income.incomeA601.$dirty">
+													<p class="help-block" ng-if="income.incomeA601.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="income.incomeA601.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>601b - Annual Income <strong>(Nancy)</strong>
+											<i class="fa fa-info-circle" uib-tooltip="Please enter your gross wages, prior to any deductions, as reported on your W-2(s) for the prior year. This number is typically listed in Box 5-Medicare Wages and tips on your W2(s), or in some cases, listed as Gross Wages at the top of your W2. If you have multiple W2s, you will want to add them together and enter the sum."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : income.incomeB601.$invalid && (income.incomeB601.$touched || income.incomeB601.$dirty) }">
+												<label for="incomeB601">Annual Income <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="incomeB601" ng-model="incomeB601" name="incomeB601" required>
+												<div ng-if="income.incomeB601.$touched || income.incomeB601.$dirty">
+													<p class="help-block" ng-if="income.incomeB601.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="income.incomeB601.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group-wrapper">
+							<fieldset class="form-group">
+								<legend>602 - Business Income
+									<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of income reported on a 1040 tax form as a result of owning a business. If there was no income enter a zero. You may not enter a negative number"></i>
+								</legend>
+								<div class="row">
+									<div class="form-group col-md-4" ng-class="{ 'has-error' : income.businessIncome602.$invalid && (income.businessIncome602.$touched || income.businessIncome602.$dirty) }">
+										<label for="businessIncome602">Business Income <span class="required-field">*</span></label>
+										<strong class="prefix">$</strong>
+										<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="businessIncome602" ng-model="businessIncome602" name="businessIncome602" required>
+										<div ng-if="income.businessIncome602.$touched || income.businessIncome602.$dirty">
+											<p class="help-block" ng-if="income.businessIncome602.$error.required">This field cannot be blank</p>
+										</div>
+										<div ng-if="income.businessIncome602.$error.pattern">
+											<p class="help-block">Numbers only in this field</p>
+										</div>
+									</div>
+									<div class="form-group col-md-12">
+										<label for="businessIncomeDetail602">Please explain in detail</label>
+										<textarea class="form-control" rows="2" id="businessIncomeDetail602" name="businessIncomeDetail602" ng-model="businessIncomeDetail602"></textarea>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>603 - Dividend/Interest Income
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of all income received from dividend and interest bearing accounts as reported on a 1099 tax form. This should include interest received from savings accounts, money market accounts, etc. You should also include total amount of bond coupons redeemed during the tax year"></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : income.dividendInterestIncome603.$invalid && (income.dividendInterestIncome603.$touched || income.dividendInterestIncome603.$dirty) }">
+												<label for="dividendInterestIncome603">Dividend/Interest Income <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="dividendInterestIncome603" ng-model="dividendInterestIncome603" name="dividendInterestIncome603" required>
+												<div ng-if="income.dividendInterestIncome603.$touched || income.dividendInterestIncome603.$dirty">
+													<p class="help-block" ng-if="income.dividendInterestIncome603.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="income.dividendInterestIncome603.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>604 - Capital Gains Income
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of capital gains earned as reported on your federal tax return."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : income.capitalGainsIncome604.$invalid && (income.capitalGainsIncome604.$touched || income.capitalGainsIncome604.$dirty) }">
+												<label for="capitalGainsIncome604">Capital Gains Income <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="capitalGainsIncome604" ng-model="capitalGainsIncome604" name="capitalGainsIncome604" required>
+												<div ng-if="income.capitalGainsIncome604.$touched || income.capitalGainsIncome604.$dirty">
+													<p class="help-block" ng-if="income.capitalGainsIncome604.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="income.capitalGainsIncome604.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>605 - Real Estate Income
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of all monies received from real estate currently owned. Examples include rental properties, vacation homes, and time shares."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : income.realEstateIncome605.$invalid && (income.realEstateIncome605.$touched || income.realEstateIncome605.$dirty) }">
+												<label for="realEstateIncome605">Real Estate Income <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="realEstateIncome605" ng-model="realEstateIncome605" name="realEstateIncome605" required>
+												<div ng-if="income.realEstateIncome605.$touched || income.realEstateIncome605.$dirty">
+													<p class="help-block" ng-if="income.realEstateIncome605.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="income.realEstateIncome605.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>606 - Trusts
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the amount received annually, as listed on your K-1 schedule, from any trusts for which you or your child are beneficiaries. In the 'Optional further income explanation' at line 610, please describe the trust and tell us who created the trust, the intended purpose, as well as any restrictions/requirements as to use."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : income.trusts606.$invalid && (income.trusts606.$touched || income.trusts606.$dirty) }">
+												<label for="trusts606">Trusts <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="trusts606" ng-model="trusts606" name="trusts606" required>
+												<div ng-if="income.trusts606.$touched || income.trusts606.$dirty">
+													<p class="help-block" ng-if="income.trusts606.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="income.trusts606.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>607 - Alimony Income
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of alimony received during the last year"></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : income.alimonyIncome607.$invalid && (income.alimonyIncome607.$touched || income.alimonyIncome607.$dirty) }">
+												<label for="alimonyIncome607">Alimony Income <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="alimonyIncome607" ng-model="alimonyIncome607" name="alimonyIncome607" required>
+												<div ng-if="income.alimonyIncome607.$touched || income.alimonyIncome607.$dirty">
+													<p class="help-block" ng-if="income.alimonyIncome607.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="income.alimonyIncome607.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>608 - Child Support Received
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of Child Support received during the last year"></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : income.childSupportReceived608.$invalid && (income.childSupportReceived608.$touched || income.childSupportReceived608.$dirty) }">
+												<label for="childSupportReceived608">Child Support Received <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="childSupportReceived608" ng-model="childSupportReceived608" name="childSupportReceived608" required>
+												<div ng-if="income.childSupportReceived608.$touched || income.childSupportReceived608.$dirty">
+													<p class="help-block" ng-if="income.childSupportReceived608.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="income.childSupportReceived608.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>609 - Gifts
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total of any cash gifts you have received, such as a gift from a grandparent or any other relative."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : income.gifts609.$invalid && (income.gifts609.$touched || income.gifts609.$dirty) }">
+												<label for="gifts609">Gifts <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="gifts609" ng-model="gifts609" name="gifts609" required>
+												<div ng-if="income.gifts609.$touched || income.gifts609.$dirty">
+													<p class="help-block" ng-if="income.gifts609.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="income.gifts609.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group-wrapper">
+							<fieldset class="form-group">
+								<legend>610 - All Other Income
+									<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of any income not already listed, including money received for part time jobs for which a W-2 is not given, income as reported on a 1099 form and/or pay for moonlighting jobs.Also include earnings received from hobbies, court awards, disability benefits, gambling, or social security payments."></i>
+								</legend>
+								<div class="row">
+									<div class="form-group col-md-4" ng-class="{ 'has-error' : income.otherIncome610.$invalid && (income.otherIncome610.$touched || income.otherIncome610.$dirty) }">
+										<label for="otherIncome610">All Other Income <span class="required-field">*</span></label>
+										<strong class="prefix">$</strong>
+										<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="otherIncome610" ng-model="otherIncome610" name="otherIncome610" required>
+										<div ng-if="income.otherIncome610.$touched || income.otherIncome610.$dirty">
+											<p class="help-block" ng-if="income.otherIncome610.$error.required">This field cannot be blank</p>
+										</div>
+										<div ng-if="income.otherIncome610.$error.pattern">
+											<p class="help-block">Numbers only in this field</p>
+										</div>
+									</div>
+									<div class="form-group col-md-12">
+										<label for="otherIncomeDetail610">Please explain in detail</label>
+										<textarea class="form-control" rows="2" id="otherIncomeDetail610" name="otherIncomeDetail610" ng-model="otherIncomeDetail610"></textarea>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+
+						<div class="form-group-wrapper">
+							<fieldset class="form-group">
+								<legend>611 - Optional further income explanation</legend>
+								<div class="row">
+									<div class="form-group col-md-12">
+										<label for="optionalExplaination611">Optional further income explanation</label>
+										<textarea class="form-control" rows="2" id="optionalExplaination611" name="optionalExplaination611" ng-model="optionalExplaination611"></textarea>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+						
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="income.$invalid" ng-click="review=true">Proceed</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Tab 1 Review -->
+				<div ng-show="review">
+					<table class="table table-striped table-review">
+						<thead>
+							<tr>
+								<th colspan="2">Please check to make sure all values are correct.</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="form-section-label">
+									<strong>601 - Annual Income - William</strong>
+								</td>
+								<td>${{income.incomeA601.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>601b - Annual Income - Nancy</strong>
+								</td>
+								<td>${{income.incomeB601.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>602 - Business Income</strong>
+									<span ng-if="income.businessIncomeDetail602.$viewValue.length"><br><strong>Please explain in detail</strong></span>
+								</td>
+								<td>${{income.businessIncome602.$viewValue}}
+									<span ng-if="income.businessIncomeDetail602.$viewValue.length"><br>{{income.businessIncomeDetail602.$viewValue}}</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>603 - Dividend/Interest Income</strong>
+								</td>
+								<td>${{income.dividendInterestIncome603.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>604 - Capital Gains Income</strong>
+								</td>
+								<td>${{income.capitalGainsIncome604.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>605 - Real Estate Income</strong>
+								</td>
+								<td>${{income.realEstateIncome605.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>606 - Trusts</strong>
+								</td>
+								<td>${{income.trusts606.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>607 - Alimony Income</strong>
+								</td>
+								<td>${{income.alimonyIncome607.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>608 - Child Support Received</strong>
+								</td>
+								<td>${{income.childSupportReceived608.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>609 - Gifts</strong>
+								</td>
+								<td>${{income.gifts609.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>610 - All Other Income</strong>
+									<span ng-if="income.otherIncomeDetail610.$viewValue.length"><br><strong>Please explain in detail</strong></span>
+								</td>
+								<td>
+									${{income.otherIncome610.$viewValue}}
+									<span ng-if="income.otherIncomeDetail610.$viewValue.length"><br>{{income.otherIncomeDetail610.$viewValue}}</span>
+								</td>
+							</tr>
+							<tr ng-if="income.optionalExplaination611.$viewValue.length">
+								<td class="form-section-label">
+									<strong>611 - Optional further income explanation</strong>
+								</td>
+								<td>
+									{{income.optionalExplaination611.$viewValue}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<form>
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right">Proceed</button>
+							<button type="submit" class="btn btn-default btn-lg pull-right" ng-click="review=false">Edit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Tab 2 -->
+			<!-- <div role="tabpanel" class="tab-pane" id="student2">
+			</div> -->
+			
+
+		</div>
+	</div>
+</div>
+<!-- End Income -->

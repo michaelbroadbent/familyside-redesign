@@ -1,0 +1,791 @@
+<!-- Start Dependant Info -->
+<div class="row">
+	<div class="col-xs-12 masthead">
+		<div class="masthead-title">
+			<h2 class="hidden-xs">Dependant Information</h2>
+			<h2 class="hidden-sm hidden-md hidden-lg pull-left">Dependant Information</h2>
+			<h3 class="hidden-sm hidden-md hidden-lg pull-right">3/9</h3>
+		</div>
+		<p>In this section, you will be asked to enter information about dependants other than the applicant(s). The asterisked fields below need to be filled out for this section to be considered complete:</p>
+	</div>
+</div>
+
+<!-- Dependant Info tabs -->
+<div class="row">
+	<div class="col-xs-12">
+		<ul class="nav nav-tabs icon-tabs" role="tablist">
+			<li role="presentation" class="active">
+				<a href="dependentInfo/#student1" aria-controls="student1" role="tab" data-toggle="tab">
+					<div class="icon-tab type-icon pull-left">
+						<i class="circled-icon othchild"><strong>C</strong></i>
+					</div> Tommy
+				</a>
+			</li>
+			<li role="presentation">
+				<a href="dependentInfo/#student2" aria-controls="student2" role="tab" data-toggle="tab">
+					<div class="icon-tab type-icon pull-left">
+						<i class="circled-icon dependant"><strong>D</strong></i>
+					</div> Melissa
+				</a>
+			</li>
+			<li role="presentation" class="add-tab">
+				<div class="dropdown" dropdown="">
+					<a href="" aria-controls="add" class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>
+						<i class="fa fa-plus-circle" aria-hidden="true">&nbsp;</i>
+					</a>
+					<ul class="dropdown-menu add-dropdown" dropdown-menu="">
+						<div class="arrow"></div>
+						<div class="arrow-border"></div>
+						<li class="print-summary"><a href="" ng-click="newChild(0)">Child</a></li>
+						<li class="print-summary"><a href="" ng-click="newDependent(1)">Dependent</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+
+		<!-- Child Info tab panes -->
+		<div class="tab-content">
+			<!-- Tab 1 -->
+			<div role="tabpanel" class="tab-pane active" id="student1">
+				<div ng-hide="review">
+					<p>Please fill out all fields. If you do not know the dollar amount, place a question mark (?) in the box. This will put the field on hold. You can return later and fill in the dollar amount.</p>
+					<form name="otherChildInfo">
+						<div class="form-group-wrapper">
+							<fieldset class="form-group">
+								<legend>301 - Name</legend>
+								<div class="row">
+									<div class="form-group col-md-6" ng-class="{ 'has-error' : otherChildInfo.firstName301.$invalid && (otherChildInfo.firstName301.$touched || otherChildInfo.firstName301.$dirty) }">
+										<label for="firstName301">First <span class="required-field">*</span></label>
+										<input type="text" class="form-control" id="firstName301" name="firstName301" ng-model="firstName301" placeholder="First Name" ng-pattern="/^[a-zA-Z\s]*$/" required>
+										<div ng-if="otherChildInfo.firstName301.$touched || otherChildInfo.firstName301.$dirty">
+											<p class="help-block" ng-if="otherChildInfo.firstName301.$error.required">This field cannot be blank</p>
+										</div>
+										<div ng-if="otherChildInfo.firstName301.$error.pattern">
+											<p class="help-block">Letters only (a-z) in this field</p>
+										</div>
+									</div>
+									
+									<div class="form-group col-md-6" ng-class="{ 'has-error' : otherChildInfo.lastName301.$invalid && (otherChildInfo.lastName301.$touched || otherChildInfo.lastName301.$dirty) }">
+										<label for="lastName301">Last <span class="required-field">*</span></label>
+										<input type="text" class="form-control" id="lastName301" name="lastName301" ng-model="lastName301" placeholder="Last Name" ng-pattern="/^[a-zA-Z\s]*$/" required>
+										<div ng-if="otherChildInfo.lastName301.$touched || otherChildInfo.lastName301.$dirty">
+											<p class="help-block" ng-if="otherChildInfo.lastName301.$error.required">This field cannot be blank</p>
+										</div>
+										<div ng-if="otherChildInfo.lastName301.$error.pattern">
+											<p class="help-block">Letters only (a-z) in this field</p>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>302 - Birth Date</legend>
+										<div class="row">
+											<div class="form-group col-md-5" ng-class="{ 'has-error' : otherChildInfo.month302.$invalid && (otherChildInfo.month302.$dirty || otherChildInfo.month302.$touched) }">
+												<label for="month302">Month <span class="required-field">*</span></label>
+												<select name="month302" id="203-month" ng-model="month302" class="form-control" required>
+													<option value="" disabled></option>
+													<option value="01">January</option>
+													<option value="02">February</option>
+													<option value="03">March</option>
+													<option value="04">April</option>
+													<option value="05">May</option>
+													<option value="06">June</option>
+													<option value="07">July</option>
+													<option value="08">August</option>
+													<option value="09">September</option>
+													<option value="10">October</option>
+													<option value="11">November</option>
+													<option value="12">December</option>
+												</select>
+												<div ng-if="otherChildInfo.month302.$touched || otherChildInfo.month302.$dirty">
+													<p class="help-block" ng-if="otherChildInfo.month302.$error.required">This field cannot be blank</p>
+												</div>
+											</div>
+											<div class="form-group col-md-3" ng-class="{ 'has-error' : otherChildInfo.day302.$invalid && (otherChildInfo.day302.$dirty || otherChildInfo.day302.$touched) }">
+												<label for="day302">Day <span class="required-field">*</span></label>
+												<select name="day302" id="day302" ng-model="day302" class="form-control" required>
+													<option value="" disabled></option>
+													<option value="01">01</option>
+													<option value="02">02</option>
+													<option value="03">03</option>
+													<option value="04">04</option>
+													<option value="05">05</option>
+													<option value="06">06</option>
+													<option value="07">07</option>
+													<option value="08">08</option>
+													<option value="09">09</option>
+													<option value="10">10</option>
+													<option value="11">11</option>
+													<option value="12">12</option>
+													<option value="13">13</option>
+													<option value="14">14</option>
+													<option value="15">15</option>
+													<option value="16">16</option>
+													<option value="17">17</option>
+													<option value="18">18</option>
+													<option value="19">19</option>
+													<option value="20">20</option>
+													<option value="21">21</option>
+													<option value="22">22</option>
+													<option value="23">23</option>
+													<option value="24">24</option>
+													<option value="25">25</option>
+													<option value="26">26</option>
+													<option value="27">27</option>
+													<option value="28">28</option>
+													<option value="29">29</option>
+													<option value="30">30</option>
+													<option value="31">31</option>
+												</select>
+												<div ng-if="otherChildInfo.day302.$touched || otherChildInfo.day302.$dirty">
+													<p class="help-block" ng-if="otherChildInfo.day302.$error.required">This field cannot be blank</p>
+												</div>
+											</div>
+											<div class="form-group col-md-4" ng-class="{ 'has-error' : otherChildInfo.year302.$invalid && (otherChildInfo.year302.$dirty || otherChildInfo.year302.$touched) }">
+												<label for="year302">Year <span class="required-field">*</span></label>
+												<select name="year302" id="year302" ng-model="year302" class="form-control" required>
+													<option value="" disabled></option>
+													<option value="2017">2017</option>
+													<option value="2016">2016</option>
+													<option value="2015">2015</option>
+													<option value="2014">2014</option>
+													<option value="2013">2013</option>
+													<option value="2012">2012</option>
+													<option value="2011">2011</option>
+													<option value="2010">2010</option>
+													<option value="2009">2009</option>
+													<option value="2008">2008</option>
+													<option value="2007">2007</option>
+													<option value="2006">2006</option>
+													<option value="2005">2005</option>
+													<option value="2004">2004</option>
+													<option value="2003">2003</option>
+													<option value="2002">2002</option>
+													<option value="2001">2001</option>
+													<option value="2000">2000</option>
+													<option value="1999">1999</option>
+													<option value="1998">1998</option>
+													<option value="1997">1997</option>
+													<option value="1996">1996</option>
+													<option value="1995">1995</option>
+													<option value="1994">1994</option>
+													<option value="1993">1993</option>
+													<option value="1992">1992</option>
+													<option value="1991">1991</option>
+													<option value="1990">1990</option>
+													<option value="1989">1989</option>
+												</select>
+												<div ng-if="otherChildInfo.year302.$touched || otherChildInfo.year302.$dirty">
+													<p class="help-block" ng-if="otherChildInfo.year302.$error.required">This field cannot be blank</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group" ng-class="{ 'has-error' : (otherChildInfo.gender303m.$invalid || otherChildInfo.gender303f.$invalid || otherChildInfo.gender303other.$invalid) && (otherChildInfo.gender303m.$dirty || otherChildInfo.gender303m.$touched) && (otherChildInfo.gender303f.$dirty || otherChildInfo.gender303f.$touched) && (otherChildInfo.gender303other.$dirty || otherChildInfo.gender303other.$touched)}">
+										<legend>303 - Gender</legend>
+										<div class="row">
+											<label class="col-md-12">Please select one: <span class="required-field">*</span></label>
+											<ul class="radioset-wrapper form-group col-xs-12">
+												<li>
+													<div class="radioset">
+														<input type="radio" name="gender303m" id="male303" required ng-model="gender303" value="Male">
+														<label><span class="label-text">Male</span></label>
+													</div>
+												</li>
+												<li>
+													<div class="radioset">
+														<input type="radio" name="gender303f" id="female303" ng-model="gender303" required value="Female">
+														<label><span class="label-text">Female</span></label>
+													</div>
+												</li>
+												<li>
+													<div class="radioset">
+														<input type="radio" name="gender303other" id="other303" ng-model="gender303" required value="other303">
+														<label><span class="label-text">Prefer Not to Say/Other</span></label>
+													</div>
+												</li>
+												<div ng-if="(otherChildInfo.gender303m.$touched || otherChildInfo.gender303m.$dirty) && (otherChildInfo.gender303f.$touched || otherChildInfo.gender303f.$dirty) && (otherChildInfo.gender303other.$touched || otherChildInfo.gender303other.$dirty)">
+													<p class="help-block" ng-if="(otherChildInfo.gender303m.$error.required || otherChildInfo.gender303f.$error.required || otherChildInfo.gender303other.$error.required)">This field cannot be blank</p>
+  												</div>
+											</ul>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+					 			<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>304 - Present Grade</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : otherChildInfo.gradeEntering304.$invalid && (otherChildInfo.gradeEntering304.$dirty || otherChildInfo.gradeEntering304.$touched) }">
+												<label for="gradeEntering304">Present Grade <span class="required-field">*</span></label>
+												<select name="gradeEntering304" id="gradeEntering304" class="form-control" ng-model="gradeEntering304" required>
+													<option value="" disabled></option>
+													<option value="Pre-School">Pre-school</option>
+													<option value="Sixth">Sixth</option>
+													<option value="Seventh">Seventh</option>
+													<option value="Eighth">Eighth</option>
+													<option value="Ninth">Ninth</option>
+													<option value="Eleventh">Eleventh</option>
+													<option value="Twelfth">Twelfth</option>
+												</select>
+												<div ng-if="otherChildInfo.gradeEntering304.$touched || otherChildInfo.gradeEntering304.$dirty">
+													<p class="help-block" ng-if="otherChildInfo.gradeEntering304.$error.required">This field cannot be blank</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>305 - Present School</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : otherChildInfo.presentSchool305.$invalid && (otherChildInfo.presentSchool305.$touched || otherChildInfo.presentSchool305.$dirty) }">
+												<label for="presentSchool305">Present School <span class="required-field">*</span>
+												</label>
+												<input type="text" class="form-control" id="presentSchool305" name="presentSchool305" ng-model="presentSchool305" required>
+												<div ng-if="otherChildInfo.presentSchool305.$touched || otherChildInfo.presentSchool305.$dirty">
+													<p class="help-block" ng-if="otherChildInfo.presentSchool305.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="otherChildInfo.presentSchool305.$error.pattern">
+													<p class="help-block">Letters only (a-z) in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-6 col-md-12">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group" ng-class="{ 'has-error' : (otherChildInfo.tuition306y.$invalid || otherChildInfo.tuition306n.$invalid) && (otherChildInfo.tuition306y.$dirty || otherChildInfo.tuition306y.$touched) && (otherChildInfo.tuition306n.$dirty || otherChildInfo.tuition306n.$touched)}">
+										<legend>306 - Tuition</legend>
+										<div class="row">
+											<div class="form-group">
+												<label class="col-md-12" for="tuition306">Is there a tuition? <span class="required-field">*</span></label>
+												<ul class="radioset-wrapper col-md-6">
+													<li>
+														<div class="radioset">
+															<input type="radio" name="tuition306y" id="tuition306Yes" value="Yes" ng-model="tuition306" required>
+															<label><span class="label-text">Yes</span></label>
+														</div>
+													</li>
+													<li>
+														<div class="radioset">
+															<input type="radio" name="tuition306n" id="tuition306No" value="No" ng-model="tuition306" required>
+															<label><span class="label-text">No</span></label>
+														</div>
+													</li>
+													<div ng-if="(otherChildInfo.tuition306y.$touched || otherChildInfo.tuition306y.$dirty) && (otherChildInfo.tuition306n.$touched || otherChildInfo.tuition306n.$dirty)">
+														<p class="help-block" ng-if="(otherChildInfo.tuition306y.$error.required || otherChildInfo.tuition306n.$error.required)">This field cannot be blank</p>
+													</div>
+												</ul>
+											</div>
+											<div class="form-group" ng-if="tuition306 == 'Yes'">
+												<div class="col-md-6 tuition-amount" ng-if="tuition306 == 'Yes'" ng-class="{ 'has-error' : otherChildInfo.tuitionAmount306.$invalid && (otherChildInfo.tuitionAmount306.$touched || otherChildInfo.tuitionAmount306.$dirty) }">
+													<label for="tuitionAmount306">Amount (by year)<span class="required-field">*</span></label>
+													<strong class="prefix">$</strong>
+													<input type="text" format="number" class="form-control input-prefix" id="tuitionAmount306" ng-model="tuitionAmount306" name="tuitionAmount306" ng-pattern="/^[0-9,]+$/" required>
+													<div ng-if="otherChildInfo.tuitionAmount306.$touched || otherChildInfo.tuitionAmount306.$dirty">
+														<p class="text-danger" ng-if="otherChildInfo.tuitionAmount306.$error.required">This field is required</p>
+													</div>
+													<div ng-if="otherChildInfo.tuitionAmount306.$error.pattern">
+														<p class="help-block">Numbers only in this field</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-md-12">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group" ng-class="{ 'has-error' : (otherChildInfo.scholarship307y.$invalid || otherChildInfo.scholarship307n.$invalid) && (otherChildInfo.scholarship307y.$dirty || otherChildInfo.scholarship307y.$touched) && (otherChildInfo.scholarship307n.$dirty || otherChildInfo.scholarship307n.$touched)}">
+										<legend>307 - Aid or Scholarship</legend>
+										<div class="row">
+											<div class="form-group">
+												<label class="col-md-12" for="scholarship307">Do you receive aid or scholarship? <span class="required-field">*</span></label>
+												<ul class="radioset-wrapper col-md-6">
+													<li>
+														<div class="radioset">
+															<input type="radio" name="scholarship307y" id="scholarship307Yes" value="Yes" ng-model="scholarship307" required>
+															<label><span class="label-text">Yes</span></label>
+														</div>
+													</li>
+													<li>
+														<div class="radioset">
+															<input type="radio" name="scholarship307n" id="scholarship307No" value="No" ng-model="scholarship307" required>
+															<label><span class="label-text">No</span></label>
+														</div>
+													</li>
+													<div ng-if="(otherChildInfo.scholarship307y.$touched || otherChildInfo.scholarship307y.$dirty) && (otherChildInfo.scholarship307n.$touched || otherChildInfo.scholarship307n.$dirty)">
+														<p class="help-block" ng-if="(otherChildInfo.scholarship307y.$error.required || otherChildInfo.scholarship307n.$error.required)">This field cannot be blank</p>
+													</div>
+												</ul>
+											</div>
+											<div class="form-group" ng-if="scholarship307 == 'Yes'">
+												<div class="col-md-6 tuition-amount" ng-if="scholarship307 == 'Yes'" ng-class="{ 'has-error' : otherChildInfo.scholarshipAmount307.$invalid && (otherChildInfo.scholarshipAmount307.$touched || otherChildInfo.scholarshipAmount307.$dirty) }">
+													<label for="scholarshipAmount307">Amount (by year)<span class="required-field">*</span></label>
+													<strong class="prefix">$</strong>
+													<input type="text" format="number" class="form-control input-prefix" id="scholarshipAmount307" name="scholarshipAmount307" ng-model="scholarshipAmount307" ng-pattern="/^[0-9,]+$/" required>
+													<div ng-if="otherChildInfo.scholarshipAmount307.$touched || otherChildInfo.scholarshipAmount307.$dirty">
+														<p class="text-danger" ng-if="otherChildInfo.scholarshipAmount307.$error.required">This field is required</p>
+													</div>
+													<div ng-if="otherChildInfo.scholarshipAmount307.$error.pattern">
+														<p class="help-block">Numbers only in this field</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group" ng-class="{ 'has-error' : (otherChildInfo.living308y.$invalid || otherChildInfo.living308n.$invalid) && (otherChildInfo.living308y.$dirty || otherChildInfo.living308y.$touched) && (otherChildInfo.living308n.$dirty || otherChildInfo.living308n.$touched)}">
+										<legend>308 - Living Situation</legend>
+										<div class="row">
+											<div class="form-group">
+												<label class="col-xs-12" for="living308">Does this child live at the same address as applicant(s)? <span class="required-field">*</span></label>
+												<ul class="radioset-wrapper col-xs-12">
+													<li>
+														<div class="radioset">
+															<input type="radio" name="living308y" ng-model="living308" id="living308Yes" value="Yes" required>
+															<label><span class="label-text">Yes</span></label>
+														</div>
+													</li>
+													<li>
+														<div class="radioset">
+															<input type="radio" name="living308n" ng-model="living308" id="living308No" value="No" required>
+															<label><span class="label-text">No</span></label>
+														</div>
+													</li>
+													<div ng-if="(otherChildInfo.living308y.$touched || otherChildInfo.living308y.$dirty) && (otherChildInfo.living308n.$touched || otherChildInfo.living308n.$dirty)">
+														<p class="help-block" ng-if="(otherChildInfo.living308y.$error.required || otherChildInfo.living308n.$error.required)">This field cannot be blank</p>
+													</div>
+												</ul>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+						
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right" ng-click="review=true" ng-disabled="otherChildInfo.$invalid">Proceed</button>
+							<button type="submit" class="btn btn-default btn-lg pull-right">Delete</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Tab 1 Review -->
+				<div ng-show="review">
+					<table class="table table-striped table-review">
+						<thead>
+							<tr>
+								<th colspan="2">Review the information below:</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="form-section-label">
+									<strong>301 - Name</strong>
+								</td>
+								<td>{{otherChildInfo.firstName301.$viewValue}} {{otherChildInfo.lastName301.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>302 - Birth Date</strong>
+								</td>
+								<td>{{otherChildInfo.month302.$viewValue}}/{{otherChildInfo.day302.$viewValue}}/{{otherChildInfo.year302.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>303 - Gender</strong>
+								</td>
+								<td>{{otherChildInfo.gender303m.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>304 - Present Grade</strong>
+								</td>
+								<td>{{otherChildInfo.gradeEntering304.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>305 - Present School</strong>
+								</td>
+								<td>{{otherChildInfo.presentSchool305.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>306 - Is there a tuition?</strong>
+									<br>
+									<strong>(If Yes) Amount you pay</strong>
+								</td>
+								<td>
+									{{otherChildInfo.tuition306y.$viewValue}}
+									<span ng-if="otherChildInfo.tuition306y.$viewValue === 'Yes'"><br>${{otherChildInfo.tuitionAmount306.$viewValue}}</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>307 - Do you receive aid or scholarship?</strong>
+									<br>
+									<strong>(If Yes) Amount you receive</strong>
+								</td>
+								<td>
+									{{otherChildInfo.scholarship307y.$viewValue}}
+									<span ng-if="otherChildInfo.scholarship307y.$viewValue === 'Yes'"><br>${{otherChildInfo.scholarshipAmount307.$viewValue}}</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>308 - Does this child live at the same address as applicant(s)?</strong>
+								</td>
+								<td>
+									{{otherChildInfo.living308y.$viewValue}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<form>
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right">Proceed</button>
+							<button type="submit" class="btn btn-default btn-lg pull-right" ng-click="review=false">Edit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Tab 2 -->
+			<div role="tabpanel" class="tab-pane" id="student2">
+				<div ng-hide="review">
+					<p>Please fill out all fields. If you do not know the dollar amount, place a question mark (?) in the box. This will put the field on hold. You can return later and fill in the dollar amount.</p>
+					<form name="dependantInfo">
+						<div class="form-group-wrapper">
+							<fieldset class="form-group">
+								<legend>350 - Name</legend>
+								<div class="row">
+									<div class="form-group col-md-6" ng-class="{ 'has-error' : dependantInfo.firstName350.$invalid && (dependantInfo.firstName350.$touched || dependantInfo.firstName350.$dirty) }">
+										<label for="firstName350">First <span class="required-field">*</span></label>
+										<input type="text" class="form-control" id="firstName350" name="firstName350" ng-model="firstName350" placeholder="First Name" ng-pattern="/^[a-zA-Z\s]*$/" required>
+										<div ng-if="dependantInfo.firstName350.$touched || dependantInfo.firstName350.$dirty">
+											<p class="help-block" ng-if="dependantInfo.firstName350.$error.required">This field cannot be blank</p>
+										</div>
+										<div ng-if="dependantInfo.firstName350.$error.pattern">
+											<p class="help-block">Letters only (a-z) in this field</p>
+										</div>
+									</div>
+									
+									<div class="form-group col-md-6" ng-class="{ 'has-error' : dependantInfo.lastName350.$invalid && (dependantInfo.lastName350.$touched || dependantInfo.lastName350.$dirty) }">
+										<label for="lastName350">Last <span class="required-field">*</span></label>
+										<input type="text" class="form-control" id="lastName350" name="lastName350" ng-model="lastName350" placeholder="Last Name" ng-pattern="/^[a-zA-Z\s]*$/" required>
+										<div ng-if="dependantInfo.lastName350.$touched || dependantInfo.lastName350.$dirty">
+											<p class="help-block" ng-if="dependantInfo.lastName350.$error.required">This field cannot be blank</p>
+										</div>
+										<div ng-if="dependantInfo.lastName350.$error.pattern">
+											<p class="help-block">Letters only (a-z) in this field</p>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group" ng-class="{ 'has-error' : dependantInfo.relationship351.$invalid && (dependantInfo.relationship351.$touched || dependantInfo.relationship351.$dirty) }">
+										<legend>351 - Relationship</legend>
+										<div class="row">
+											<div class="form-group col-md-12">
+												<label for="relationship351">Relationship <span class="required-field">*</span></label>
+												<input type="text" class="form-control" id="relationship351" name="relationship351" ng-model="relationship351" required>
+												<div ng-if="dependantInfo.relationship351.$touched || dependantInfo.relationship351.$dirty">
+													<p class="help-block" ng-if="dependantInfo.relationship351.$error.required">This field cannot be blank</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group" ng-class="{ 'has-error' : (dependantInfo.livingSituation352y.$invalid || dependantInfo.livingSituation352n.$invalid) && (dependantInfo.livingSituation352y.$dirty || dependantInfo.livingSituation352y.$touched) && (dependantInfo.livingSituation352n.$dirty || dependantInfo.livingSituation352n.$touched)}">
+										<legend>352 - Living Situation</legend>
+										<div class="row">
+											<label class="col-md-12">Does this dependant live at the same address as applicant(s)? <span class="required-field">*</span></label>
+											<ul class="radioset-wrapper col-xs-12">
+												<li>
+													<div class="radioset">
+														<input type="radio" name="livingSituation352y" ng-model="livingSituation352" id="livingSituation352Yes" value="Yes" required>
+														<label><span class="label-text">Yes</span></label>
+													</div>
+												</li>
+												<li>
+													<div class="radioset">
+														<input type="radio" name="livingSituation352n" ng-model="livingSituation352" id="livingSituation352No" value="No" required>
+														<label><span class="label-text">No</span></label>
+													</div>
+												</li>
+												<div ng-if="(dependantInfo.livingSituation352y.$touched || dependantInfo.livingSituation352y.$dirty) && (dependantInfo.livingSituation352n.$touched || dependantInfo.livingSituation352n.$dirty)">
+													<p class="help-block" ng-if="(dependantInfo.livingSituation352y.$error.required || dependantInfo.livingSituation352n.$error.required)">This field cannot be blank</p>
+												</div>
+											</ul>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+					 			<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>353 - Household Contributions 
+											<i class="fa fa-info-circle" uib-tooltip="Enter the amount that the dependant contributes for food, rent, maintenance, etc. annually"></i>
+										</legend>
+										<div class="row">
+											<div class="col-md-12" ng-class="{ 'has-error' : dependantInfo.householdContribution353.$invalid && (dependantInfo.householdContribution353.$touched || dependantInfo.householdContribution353.$dirty) }">
+												<label for="householdContribution353">Amount (by year)<span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" class="form-control input-prefix" id="householdContribution353" name="householdContribution353" ng-model="householdContribution353" ng-pattern="/^[0-9,]+$/" required>
+												<div ng-if="dependantInfo.householdContribution353.$touched || dependantInfo.householdContribution353.$dirty">
+													<p class="help-block" ng-if="dependantInfo.householdContribution353.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="dependantInfo.householdContribution353.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group" ng-class="{ 'has-error' : (dependantInfo.schooling354y.$invalid || dependantInfo.schooling354n.$invalid) && (dependantInfo.schooling354y.$dirty || dependantInfo.schooling354y.$touched) && (dependantInfo.schooling354n.$dirty || dependantInfo.schooling354n.$touched)}">
+										<legend>354 - Current Schooling</legend>
+										<div class="row">
+											<label class="col-md-12">Does the dependant attend College/University/Trade school? <span class="required-field">*</span></label>
+											<ul class="radioset-wrapper col-xs-12">
+												<li>
+													<div class="radioset">
+														<input type="radio" name="schooling354y" id="schooling354Yes" value="Yes" ng-model="schooling354" required>
+														<label><span class="label-text">Yes</span></label>
+													</div>
+												</li>
+												<li>
+													<div class="radioset">
+														<input type="radio" name="schooling354n" id="schooling354No" value="No" ng-model="schooling354" required>
+														<label><span class="label-text">No</span></label>
+													</div>
+												</li>
+												<div ng-if="(dependantInfo.schooling354y.$touched || dependantInfo.schooling354y.$dirty) && (dependantInfo.schooling354n.$touched || dependantInfo.schooling354n.$dirty)">
+													<p class="help-block" ng-if="(dependantInfo.schooling354y.$error.required || dependantInfo.schooling354n.$error.required)">This field cannot be blank</p>
+												</div>
+											</ul>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row" ng-if="schooling354 == 'Yes'">
+							<div class="col-lg-6 col-md-12">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>355 - Tuition</legend>
+										<div class="row">
+											<div class="form-group" ng-class="{ 'has-error' : (dependantInfo.tuition355y.$invalid || dependantInfo.tuition355n.$invalid) && (dependantInfo.tuition355y.$dirty || dependantInfo.tuition355y.$touched) && (dependantInfo.tuition355n.$dirty || dependantInfo.tuition355n.$touched)}">
+												<label class="col-md-12" for="tuition355">Tuition family is paying <span class="required-field">*</span></label>
+												<ul class="radioset-wrapper col-md-6">
+													<li>
+														<div class="radioset">
+															<input type="radio" name="tuition355y" id="tuition355Yes" value="Yes" ng-model="tuition355" required>
+															<label><span class="label-text">Yes</span></label>
+														</div>
+													</li>
+													<li>
+														<div class="radioset">
+															<input type="radio" name="tuition355n" id="tuition355No" value="No" ng-model="tuition355" required>
+															<label><span class="label-text">No</span></label>
+														</div>
+													</li>
+													<div ng-if="(dependantInfo.tuition355y.$touched || dependantInfo.tuition355y.$dirty) && (dependantInfo.tuition355n.$touched || dependantInfo.tuition355n.$dirty)">
+														<p class="help-block" ng-if="(dependantInfo.tuition355y.$error.required || dependantInfo.tuition355n.$error.required)">This field cannot be blank</p>
+													</div>
+												</ul>
+												<div class="col-md-6 tuition-amount" ng-if="tuition355 == 'Yes'" ng-class="{ 'has-error' : dependantInfo.tuitionAmount355.$invalid && (dependantInfo.tuitionAmount355.$touched || dependantInfo.tuitionAmount355.$dirty) }">
+													<label for="tuitionAmount355">Amount (by year)<span class="required-field">*</span></label>
+													<strong class="prefix">$</strong>
+													<input type="text" format="number" class="form-control input-prefix" id="tuitionAmount355" name="tuitionAmount355" ng-model="tuitionAmount355" ng-pattern="/^[0-9,]+$/" required>
+													<div ng-if="dependantInfo.tuitionAmount355.$touched || dependantInfo.tuitionAmount355.$dirty">
+														<p class="help-block" ng-if="dependantInfo.tuitionAmount355.$error.required">This field cannot be blank</p>
+													</div>
+													<div ng-if="dependantInfo.tuitionAmount355.$error.pattern">
+														<p class="help-block">Numbers only in this field</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-md-12">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group" ng-class="{ 'has-error' : (dependantInfo.scholarship356y.$invalid || dependantInfo.scholarship356n.$invalid) && (dependantInfo.scholarship356y.$dirty || dependantInfo.scholarship356y.$touched) && (dependantInfo.scholarship356n.$dirty || dependantInfo.scholarship356n.$touched)}">
+										<legend>356 - Aid or Scholarship</legend>
+										<div class="row">
+											<div class="form-group clearfix">
+												<label class="col-md-12" for="scholarship356">Does the dependant receive aid or scholarship? <span class="required-field">*</span></label>
+												<ul class="radioset-wrapper col-md-12">
+													<li>
+														<div class="radioset">
+															<input type="radio" name="scholarship356y" id="scholarship356Yes" value="Yes" ng-model="scholarship356" required>
+															<label><span class="label-text">Yes</span></label>
+														</div>
+													</li>
+													<li>
+														<div class="radioset">
+															<input type="radio" name="scholarship356n" id="scholarship356No" value="No" ng-model="scholarship356" required>
+															<label><span class="label-text">No</span></label>
+														</div>
+													</li>
+													<div ng-if="(dependantInfo.scholarship356y.$touched || dependantInfo.scholarship356y.$dirty) && (dependantInfo.scholarship356n.$touched || dependantInfo.scholarship356n.$dirty)">
+														<p class="help-block" ng-if="(dependantInfo.scholarship356y.$error.required || dependantInfo.scholarship356n.$error.required)">This field cannot be blank</p>
+													</div>
+												</ul>
+											</div>
+											<div class="form-group" ng-if="scholarship356 == 'Yes'">
+												<div class="col-md-12" ng-class="{ 'has-error' : dependantInfo.scholarshipAmount356.$invalid && (dependantInfo.scholarshipAmount356.$touched || dependantInfo.scholarshipAmount356.$dirty) }">
+													<label for="scholarshipAmount356">Amount (by year)<span class="required-field">*</span></label>
+													<strong class="prefix">$</strong>
+													<input type="text" format="number" class="form-control input-prefix" id="scholarshipAmount356" name="scholarshipAmount356" ng-model="scholarshipAmount356" ng-pattern="/^[0-9,]+$/" required>
+													<div ng-if="dependantInfo.scholarshipAmount356.$touched || dependantInfo.scholarshipAmount356.$dirty">
+														<p class="help-block" ng-if="dependantInfo.scholarshipAmount356.$error.required">This field cannot be blank</p>
+													</div>
+													<div ng-if="dependantInfo.scholarshipAmount356.$error.pattern">
+														<p class="help-block">Numbers only in this field</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+						
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right" ng-click="review=true" ng-disabled="dependantInfo.$invalid">Proceed</button>
+							<button type="submit" class="btn btn-default btn-lg pull-right">Delete</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Tab 2 Review -->
+				<div ng-show="review">
+					<table class="table table-striped table-review">
+						<thead>
+							<tr>
+								<th colspan="2">Review the information below:</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="form-section-label">
+									<strong>350 - Name</strong>
+								</td>
+								<td>{{dependantInfo.firstName350.$viewValue}} {{dependantInfo.lastName350.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>351 - Relationship</strong>
+								</td>
+								<td>{{dependantInfo.relationship351.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>352 - Does this dependent live at the same address as applicant(s)?</strong>
+								</td>
+								<td>{{dependantInfo.livingSituation352y.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>353 - Contributions to household</strong>
+								</td>
+								<td>${{dependantInfo.householdContribution353.$viewValue}}</td>
+							</tr>
+							<tr>
+								<td class="form-section-label">
+									<strong>354 - Does the dependant attend College / University / Trade school?</strong>
+								</td>
+								<td>{{dependantInfo.schooling354y.$viewValue}}</td>
+							</tr>
+							<tr ng-if="dependantInfo.schooling354y.$viewValue === 'Yes'">
+								<td class="form-section-label">
+									<strong>355 - Family paying tuition?</strong>
+									<br>
+									<strong>(if yes) Amount</strong>
+								</td>
+								<td>
+									{{dependantInfo.tuition355y.$viewValue}}
+									<span ng-if="dependantInfo.tuition355y.$viewValue === 'Yes'"><br>${{dependantInfo.tuitionAmount355.$viewValue}}</span>
+								</td>
+							</tr>
+							<tr ng-if="dependantInfo.schooling354y.$viewValue === 'Yes'">
+								<td class="form-section-label">
+									<strong>356 - Receiving aid / scholarships?</strong>
+									<br>
+									<strong>(if yes) Amount</strong>
+								</td>
+								<td>
+									{{dependantInfo.scholarship356y.$viewValue}}
+									<span ng-if="dependantInfo.scholarship356y.$viewValue === 'Yes'"><br>${{dependantInfo.scholarshipAmount356.$viewValue}}</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<form>
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right">Proceed</button>
+							<button type="submit" class="btn btn-default btn-lg pull-right" ng-click="review=false">Edit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			
+			<!-- Tab 3 -->
+			<div role="tabpanel" class="tab-pane" id="add">
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- End Dependant Info

@@ -1,0 +1,153 @@
+<!-- Start Post Application Landing -->
+<div class="quick-processing" ng-hide="appeal || correction">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Post Application</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<h4>Application received by: <strong>FAST Demo School</strong></h4>
+					<h4>Tax Documents: <strong class="text-success">Received</strong></h4>
+				</div>
+				<div class="col-sm-6">
+					<a class="btn btn-primary-fast pull-right" href="" ui-sref="familyInput"><i class="fa fa-print" aria-hidden="true"></i> Print PDF of Completed Application</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<br>
+			<h4>Per the request of FAST Demo School, please send the following documents to FAST for processing:</h4>
+			<ul>
+				<li>Mortgage statement</li>
+				<li>Character reference letter from pastor</li>
+				<li>The first beard hair of your oldest son</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<br>
+			<br>
+			<h4><strong>Post Application Optional Steps</strong></h4>
+			<br>
+			<a class="btn btn-primary" href="" ng-click="correction = true">Request Correction</a>
+			<br>
+			<br>
+			<a class="btn btn-primary" href="" ng-click="appeal = true">File An Appeal</a>
+		</div>
+	</div>
+</div>
+<!-- End Post Application Landing -->
+
+
+<!-- Start Post Application Correction -->
+<div class="quick-processing" ng-show="correction">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Post Application: Request Correction</h2>
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<form name="requestCorrection">
+				<div class="row">
+					<div class="form-group col-md-12" ng-class="{ 'has-error' : requestCorrection.topic.$invalid && (requestCorrection.topic.$dirty || requestCorrection.topic.$touched) }">
+						<label for="topic">Correction Type <span class="required-field">*</span></label>
+						<select name="topic" id="topic" ng-model="topic" class="form-control" required>
+							<option value="" disabled></option>
+							<option value="1">Issue Type 1</option>
+							<option value="2">Issue Type 2</option>
+							<option value="3">Issue Type 3</option>
+							<option value="4">Issue Type 4</option>
+							<option value="5">Issue Type 5</option>
+						</select>
+						<div ng-if="requestCorrection.topic.$touched || requestCorrection.topic.$dirty">
+							<p class="help-block" ng-if="requestCorrection.topic.$error.required">This field cannot be blank</p>
+						</div>
+					</div>
+				</div>
+				<fieldset class="form-group">
+					<div class="row">
+						<div class="form-group col-md-12" ng-class="{ 'has-error' : requestCorrection.correctionText.$invalid && (requestCorrection.correctionText.$touched || requestCorrection.correctionText.$dirty) }">
+							<label for="correctionText">Please provide details regarding your requested correction: <span class="required-field">*</span></label>
+							<textarea class="form-control" rows="3" id="correctionText" name="correctionText" ng-model="correctionText" required></textarea>
+							<div ng-if="requestCorrection.correctionText.$touched || requestCorrection.correctionText.$dirty">
+								<p class="help-block" ng-if="requestCorrection.correctionText.$error.required">This field cannot be blank</p>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="button-group clearfix">
+					<button class="btn btn-danger btn-lg pull-left" ng-click="correction = false">Cancel</button>
+					<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="requestCorrection.$invalid">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- End Post Application Correction -->
+
+
+<!-- Start Post Application Appeal -->
+<div class="quick-processing" ng-show="appeal">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Post Application: Appeal Questions</h2>
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<form name="appealQuestions">
+				<fieldset class="form-group">
+					<div class="row">
+						<div class="form-group col-md-12" ng-class="{ 'has-error' : appealQuestions.appealQuestion1.$invalid && (appealQuestions.appealQuestion1.$touched || appealQuestions.appealQuestion1.$dirty) }">
+							<label for="appealQuestion1">Do you confirm that all information reported in application and all tax documentation is accurate and truthful?: <span class="required-field">*</span></label>
+							<textarea class="form-control" rows="3" id="appealQuestion1" name="appealQuestion1" ng-model="appealQuestion1" required></textarea>
+							<div ng-if="appealQuestions.appealQuestion1.$touched || appealQuestions.appealQuestion1.$dirty">
+								<p class="help-block" ng-if="appealQuestions.appealQuestion1.$error.required">This field cannot be blank</p>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="form-group">
+					<div class="row">
+						<div class="form-group col-md-12" ng-class="{ 'has-error' : appealQuestions.appealQuestion2.$invalid && (appealQuestions.appealQuestion2.$touched || appealQuestions.appealQuestion2.$dirty) }">
+							<label for="appealQuestion2">Do you confirm that all information reported in application and all tax documentation is accurate and truthful?: <span class="required-field">*</span></label>
+							<textarea class="form-control" rows="3" id="appealQuestion2" name="appealQuestion2" ng-model="appealQuestion2" required></textarea>
+							<div ng-if="appealQuestions.appealQuestion2.$touched || appealQuestions.appealQuestion2.$dirty">
+								<p class="help-block" ng-if="appealQuestions.appealQuestion2.$error.required">This field cannot be blank</p>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="form-group">
+					<div class="row">
+						<div class="form-group col-md-12" ng-class="{ 'has-error' : appealQuestions.appealQuestion3.$invalid && (appealQuestions.appealQuestion3.$touched || appealQuestions.appealQuestion3.$dirty) }">
+							<label for="appealQuestion3">Do you confirm that all information reported in application and all tax documentation is accurate and truthful?: <span class="required-field">*</span></label>
+							<textarea class="form-control" rows="3" id="appealQuestion3" name="appealQuestion3" ng-model="appealQuestion3" required></textarea>
+							<div ng-if="appealQuestions.appealQuestion3.$touched || appealQuestions.appealQuestion3.$dirty">
+								<p class="help-block" ng-if="appealQuestions.appealQuestion3.$error.required">This field cannot be blank</p>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="button-group clearfix">
+					<button class="btn btn-danger btn-lg pull-left" ng-click="appeal = false">Cancel</button>
+					<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="appealQuestions.$invalid">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- End Post Application Appeal -->

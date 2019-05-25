@@ -1,0 +1,675 @@
+<!-- Start Instructions -->
+<br>
+<a href="" class="btn btn-default" ng-click="returningUser = !returningUser; newUser = false; returningUserNewYear = false;">Returning User</a>
+<a href="" class="btn btn-default" ng-click="newUser = !newUser; returningUser = false; returningUserNewYear = false;">New User</a>
+<a href="" class="btn btn-default" ng-click="returningUserNewYear = !returningUserNewYear; returningUser = false; newUser = false;">Returning User from another year</a>
+
+<div ng-show="returningUserNewYear">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Instructions</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<hr>
+			<h3>Welcome Back!</h3>
+			<p>Please note in the grey Navigation Toolbar to the left of the page. While the majority of your information has transferred over from your previously submitted application, there are a few steps that need to be taken in order to complete and submit this application. </p>
+
+			<p>You will first need to click into <strong>Applicant Info</strong> and select the appropriate grade(s) for the applicant(s), as this information does not transfer over from school to school, since each school has different grade options. Once you are done selecting the appropriate grades, click Submit.</p>
+
+			<p>If there are any <strong>School Specific Questions</strong>, they will need to be answered as well. If the school requires School Specific Questions, click into the School Specific Questions section in the grey Navigation Toolbar and complete them. If the school does not have School Specific Questions, please continue on to the next step.</p>
+
+			<p>Lastly, you will want to click into the <strong>Letter/Agreement</strong> section and complete that section.</p>
+
+			<p>Once you have completed these steps, the option to make payment will be presented to you for the reduced fee of <strong>$10.00</strong>.</p>
+		</div>
+	</div>
+</div>
+
+<div ng-show="returningUser">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<h2>Instructions</h2>
+			<p>This section is where information about the student or students who is/are applying is collected. The following need to have blue checks for this section to be considered complete:</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<hr />
+			<h3>Welcome Back!</h3>
+			<p>Please use the navigation bars on your left to choose the section in which you wish to enter data.</p>
+
+			<p>To refresh your memory...</p>
+			<ul class="status-icon-guide list-unstyled">
+				<li><i class="fa status-icon open"></i> The section is open and ready for you to input information.</li>
+				<li><i class="fa status-icon complete"></i> The section is complete, but available if you need to change any information.</li>
+				<li><i class="fa status-icon locked"></i> This section is not available at this time.</li>
+			</ul>
+
+			<h3>Don't forget</h3>
+			<p>If you are filling out this form jointly as Parent 1 and Parent 2, please be very careful not to duplicate information. Any accounts or financial interests held jointly should be entered with the information for Parent 1. Parent 2 should only enter information pertaining to income or expenses not held in common with Parent 1.</p>
+
+			<p>If you need help, please contact <a href="mailto:help@ismfast.com">help@ismfast.com</a> or call 877-326-FAST. Thank you for using FAST powered by ISM.</p>
+		</div>
+	</div>
+</div>
+
+
+<div ng-show="newUser && !privacy && !separatedParents && !forgotPassword && !formSetup">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<h2>Instructions</h2>
+			<h3>Welcome, New User!</h3>
+			<p>FAST Demonstration School has chosen to use FAST – Financial Aid for School Tuition – by Independent School Management (ISM) to process your financial aid application. ISM will provide standardized and impartial processing in a confidential setting. If you would like to know more about how ISM protects your privacy please <a href="" ng-click="privacy = true">click here</a>.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<hr />
+			<h3>Before you begin</h3>
+			<p>We hope that you will find this application easy to complete online. There are a number of financial records you will need. If your school did not provide a list of the necessary financial records, please <a href="" ng-click="">click here</a> for a downloadable pdf. Once you have gathered your financial information, it takes approximately 30 to 45 minutes to complete the application online. Gathering your financial information is similar to collecting information to file your taxes and takes about the same length of time. You do not have to complete the entire application at one time. Your user name and password will allow you to access your data until you have completed the payment section. </p>
+
+			<p>There is a $43 US non-refundable application fee, payable by credit card (MasterCard, Visa, and American Express.) If you are unable to pay the application fee, please contact the school to which you are applying. If you do not have a credit card, you may purchase a voucher from your school that will allow you to complete the application.</p>
+
+			<p><strong>Upon completion of the FAST application, you will need to submit copies of your tax documentation to FAST for verification.</strong></p>
+
+			<h3>Navigating this program</h3>
+			<p>There is a color-coded system of icons to help you move through the various sections. A green arrow (<i class="fa status-icon open"></i>) means that the section is open and ready for you to enter information. A blue check mark (<i class="fa status-icon complete"></i>) means that you have completed that section, but it is still available if you need to go back and change any information. A gray arrow (<i class="fa status-icon locked"></i>) means that the section is not available at this time.</p>
+
+			<p>You may enter information in any order. If, for example, you wish to enter information about your expenses before you enter information about your income, you may do so, even though income comes before expenses on the navigation bar.</p>
+
+			<p>For more information about any question, click on the red number next to the question, or position your cursor in the answer box.</p>
+
+			<h3>Cautions</h3>
+			<p>Please do not use the "back" button on your browser. If you need to go back, use the gray Navigation bar on the left to select the section to which you wish to return. If your browser closes, you will have to log back into the system. Any section that you have completed – i.e., any section that has a blue check by it – will be saved. If you were in the middle of a section, you may have to reenter information in that section.</p>
+
+			<p>Use your mouse or the tab key to move from field to field. Do not hit return/enter until you have completed each section. If you press enter/return after completing a field but prior to completing the section, the program will return red error messages for all the fields you had not filled in.</p>
+
+			<p>Answer all questions. Do not leave any numeric fields blank. If you do not know the dollar amount, place a question mark (?) in the box. This will put the field on hold. You can return later and fill in the dollar amount. If a particular question does not apply to you, please enter 0 in that field.</p>
+
+
+			<p>If you are divorced, separated, widowed or never married, please <a href="" ng-click="separatedParents = true">click here</a> for more complete directions.</p>
+
+			<h3>General Information</h3>
+			<p>To change your username or password, go to the Account Settings section. If you forget your username or password <a href="" ng-click="forgotPassword = true">click here</a></p>
+
+			<p>If you have any questions about any required information on this application or if you experience any technical difficulties, please contact <a href="mailto:help@ismfast.com">help@ismfast.com</a> or call <a href="tel:+18773263278">1-877-326-FAST</a>. Our Call Center hours are 24/7/365.</p>
+
+			<p><strong>To get started with a new application click the "Get Started" button</strong></p>
+
+			<a href="" ng-click="formSetup = true" class="btn btn-primary">Get Started</a>
+		</div>
+	</div>
+</div>
+
+
+<div ng-show="privacy">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="button-group">
+				<button class="btn btn-default" ng-click="privacy = false"><i class="fa fa-arrow-left"></i> Back</button>
+			</div>
+			<h2>FAST Security and Privacy Statement</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<p>At ISM, we understand how important privacy is to both our schools and their families. The FAST software solution provides maximum protection against unauthorized access to all sensitive information. ISM takes numerous actions to guarantee a safe transaction.</p>
+
+			<p>The personal and financial information you enter into your FAST application will be used by authorized school administrators at the school to which you are applying expressly for the purpose of determining financial aid eligibility and determining awards. By entering this information into your application and submitting the application, you are giving your consent to this review of your personal and financial data.</p>
+
+			<h3>Security Standards</h3>
+			<p>For your protection, ISM uses a secure, dedicated server and 128-bit SSL encryption for all on-line services. What does this mean? All information you view is encrypted - or scrambled - making it virtually impossible for anyone other than you and ISM to read it.</p>
+
+			<p>If you are applying to a school that has contracted ISM to handle tax scanning and verification, you will send tax returns and supporting tax documentation to ISM. After processing all forms are shredded for your protection.</p>
+
+			<h3>Access to Information</h3>
+			<p>Only authorized ISM staff members and authorized administrators at the school to which you are applying have access to your information. This access enables the FAST staff to assist you in resolving any issues that may arise. In the case of divorced or separated families, all information is kept separate. Spouses who are separated cannot access one another's confidential information. Neither ISM nor authorized school administrators will release one spouse's information to the other spouse.</p>
+
+			<p>All ISM employees and school administrators implementing the FAST solution are subject to strict customer confidentiality policies and procedures. Any ISM staff member who knowingly violates these policies is subject to disciplinary action, including the possibility of termination.</p>
+
+			<p>ISM does not sell any customer information to third-party marketing companies.</p>
+
+			<p>If you have any specific questions related to the FAST Security and Privacy Statement, please <a href="mailto:help@ismfast.com">e-mail us</a> or call 877-326-FAST.</p>
+		</div>
+	</div>
+</div>
+
+
+<div ng-show="separatedParents">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="button-group">
+				<button class="btn btn-default" ng-click="separatedParents = false"><i class="fa fa-arrow-left"></i> Back</button>
+			</div>
+			<h2>Special Instructions for Divorced or Separated Parents</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<hr />
+			<p>After answering a few questions about family structure and custody, you will be asked to provide an e-mail address for the other parent, who then becomes known as <span class="family-two">Family 2</span>. If there is no other parent, living or if there is a reason why the other parent can't be contacted, please explain in the box provided.</p>
+
+			<p>The person designated as <span class="family-two">Family 2</span>, will receive a confidential username and password by e-mail. <span class="family-one">Family 1</span>(you) does not have access to <span class="family-two">Family 2's</span> username and password. When <span class="family-two">Family 2</span> uses the ISM-provided username and password, the applications from both parents will be appropriately linked.Only authorized ISM staff members and authorized administrators at the school to which you are applying have access to your information. This access enables the FAST staff to assist you in resolving any issues that may arise. In the case of divorced or separated families, all information is kept separate. Spouses who are separated can not access one another's confidential information.</p>
+
+			<p>There is only one fee for both applications. It is up to you to decide who will pay. The Application Status page displays which sections have been completed by each family. Payment will not be possible until both <span class="family-one">Family 1</span> and <span class="family-two">Family 2</span> have completed their applications.</p>
+
+			<h3>PLEASE NOTE:</h3>
+
+			<p>If <span class="family-two">Family 2</span> does not respond to the initial e-mail, it is possible for <span class="family-one">Family 1</span> to re-send the e-mail by clicking on the Account Settings link on the gray Navigation bar and then following the instructions.</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="instructions" ng-show="forgotPassword">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="button-group">
+				<button class="btn btn-default" ng-click="forgotPassword = false"><i class="fa fa-arrow-left"></i> Back</button>
+			</div>
+			<h2>Forgot Your Password?</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<form name="forgotPassword" autocomplete="off">
+				<div class="form-group-wrapper">
+					<fieldset class="form-group">
+						<div class="row">
+							<div class="form-group col-md-12" ng-class="{ 'has-error' : forgotPassword.forgotPasswordEmail.$invalid && (forgotPassword.forgotPasswordEmail.$touched || forgotPassword.forgotPasswordEmail.$dirty) }">
+								<label for="forgotPasswordEmail">Please Enter your email address to proceeed: <span class="required-field">*</span></label>
+								<input type="email" class="form-control" id="forgotPasswordEmail" required placeholder="Email address" name="forgotPasswordEmail" ng-model="forgotPasswordEmail" autocomplete="off">
+								<div ng-if="forgotPassword.forgotPasswordEmail.$touched || forgotPassword.forgotPasswordEmail.$dirty">
+									<p class="help-block" ng-if="forgotPassword.forgotPasswordEmail.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="forgotPassword.forgotPasswordEmail.$error.email">
+									<p class="help-block">Must be a valid email address</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="button-group clearfix">
+					<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="forgotPassword.$invalid">Submit</button>
+				</div>
+			</form>
+
+			<!-- Error message for email address that isn't found -->
+			<!-- <div class="hidden">
+				<p class="text-danger">No information has been found for this email address. Please check it and try again. If you need further assistance please call 1-877-326-FAST.</p>
+			</div> -->
+
+			<!-- Success message for email address -->
+			<!-- <div class="hidden">
+				<p class="text-success">Your username and password have been sent to the email address you provided.</p>
+			</div> -->
+
+		</div>
+	</div>
+</div>
+
+
+<div class="instructions" ng-show="formSetup">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="button-group">
+				<button class="btn btn-default" ng-click="formSetup = false"><i class="fa fa-arrow-left"></i> Back</button>
+			</div>
+			<h2>Form Setup</h2>
+			<p>To process your application, we need to collect some information about the family of the applicant(s).</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- Step 1 -->
+			<form name="application">
+				<div class="form-group-wrapper">
+					<fieldset class="form-group" ng-class="{ 'has-error' : application.applicationSetup.$invalid && application.applicationSetup.$untouched }">
+						<div class="row">
+							<label class="col-md-12">Is your family comprised of two biological and/or adoptive parents who reside in the same household and have sole custody of all applicants? <span class="required-field">*</span></label>
+							<ul class="radioset-wrapper col-xs-12">
+								<li>
+									<div class="form-group radioset">
+										<input type="radio" name="applicationSetup" id="applicationSetupYes" value="applicationSetupYes" required ng-model="applicationSetup">
+										<label><span class="label-text">Yes</span></label>
+									</div>
+								</li>
+								<li>
+									<div class="form-group radioset">
+										<input type="radio" name="applicationSetup" id="applicationSetupNo" value="applicationSetupNo" required ng-model="applicationSetup">
+										<label><span class="label-text">No</span></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</fieldset>
+				</div>
+				<div class="button-group clearfix">
+					<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="application.$invalid">Proceed</button>
+				</div>
+			</form>
+
+			<!-- Selected Yes from Step 1 -->
+			<form name="application">
+				<div class="form-group-wrapper">
+					<p>The application will be set up for both parents filling out financial information jointly.</p>
+					<hr />
+					<p>If this is <strong>NOT</strong> correct click the "Make a change" button.</p>
+
+					<p>Otherwise click "Proceed".</p>
+				</div>
+				<div class="button-group clearfix">
+					<button type="submit" class="btn btn-success btn-lg pull-right">Proceed</button>
+					<button type="submit" class="btn btn-default btn-lg pull-right">Make a change</button>
+				</div>
+			</form>
+
+
+			<!-- Step 2 - Selected No from Step 1 -->
+			<form name="application">
+				<div class="form-group-wrapper">
+					<fieldset class="form-group">
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : application.applicationStudentsApplying.$invalid && (application.applicationStudentsApplying.$touched || application.applicationStudentsApplying.$dirty) }">
+								<label for="applicationStudentsApplying">How many students will be applying: <span class="required-field">*</span></label>
+								<input type="number" class="form-control" id="applicationStudentsApplying" name="applicationStudentsApplying" required ng-model="applicationStudentsApplying">
+								<div ng-if="application.applicationStudentsApplying.$touched || application.applicationStudentsApplying.$dirty">
+									<p class="help-block" ng-if="application.applicationStudentsApplying.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="application.applicationStudentsApplying.$error.number">
+									<p class="help-block">Numbers only in this field</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="button-group clearfix">
+					<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="application.$invalid">Proceed</button>
+				</div>
+			</form>
+
+
+			<!-- Step 3 - Entered 2 from Step 2 -->
+			<form name="application">
+				<div class="form-group-wrapper">
+					<p>Currently this form can only process multiple students who share biological/adoptive parents. If these students share only one or no biological/adoptive parents, please fill out a separate application for each student.</p>
+					<hr />
+					<fieldset class="form-group" ng-class="{ 'has-error' : application.setupShareParents.$invalid && application.setupShareParents.$untouched }">
+						<div class="row">
+							<label class="col-md-12">Do all applicants share both biological/adoptive parents? <span class="required-field">*</span></label>
+							<ul class="radioset-wrapper col-xs-12">
+								<li>
+									<div class="form-group radioset">
+										<input type="radio" name="setupShareParents" id="setupShareParentsYes" value="setupShareParentsYes" required ng-model="setupShareParents">
+										<label><span class="label-text">Yes</span></label>
+									</div>
+								</li>
+								<li>
+									<div class="form-group radioset">
+										<input type="radio" name="setupShareParents" id="ssetupShareParentsNo" value="setupShareParentsNo" required ng-model="setupShareParents">
+										<label><span class="label-text">No</span></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</fieldset>
+				</div>
+				<div class="button-group clearfix">
+					<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="application.$invalid">Proceed</button>
+				</div>
+			</form>
+
+
+			<!-- Entered No from Step 3 -->
+			<p>Currently this form can only process multiple applicants that share biological/adoptive parents. Situations where applicants share only one or no biological/adoptive parents will need to apply separately.</p>
+
+			<p>If you feel that your situation may be able to be accommodated by this form please contact the the school at 302-384-9340 to confirm the exception, and advise which form to use.</p>
+
+			<p>If two or more of the applicants share the same biological/adoptive parents, they may share the same form.</p>
+
+			<p>The proceed button will take you back to the beginning of the application. Answer the questions as they are relevant to each applicant (or set of applicants).</p>
+			<div class="button-group clearfix">
+				<button type="submit" class="btn btn-success btn-lg pull-right">Proceed</button>
+			</div>
+
+
+			<!-- Error message for email address that isn't found -->
+			<div class="hidden">
+				<p class="text-danger">No information has been found for this email address. Please check it and try again. If you need further assistance please call 1-877-326-FAST.</p>
+			</div>
+
+			<!-- Success message for email address -->
+			<div class="hidden">
+				<p class="text-success">Your username and password have been sent to the email address you provided.</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+<div class="instructions" ng-show="accountSetup">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="button-group">
+				<button class="btn btn-default" ng-click="accountSetup = false"><i class="fa fa-arrow-left"></i> Back</button>
+			</div>
+			<h2>Account Setup</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<form name="accountSetup" autocomplete="off">
+				<div class="form-group-wrapper">
+					<fieldset class="form-group" ng-class="{ 'has-error' : accountSetup.userAgreement.$invalid && accountSetup.userAgreement.$untouched }">
+						<div class="row">
+							<p class="col-md-12">In order to use this product to apply for financial aid, you must agree to the terms and conditions of the <a href="" ng-click="EULA = true">ISM FAST End User License Agreement</a></p>
+							<ul class="col-md-12 checkboxset-wrapper">
+								<li>
+									<div class="checkboxset">
+										<input type="checkbox" id="userAgreement" value="userAgreement" required ng-model="userAgreement" name="userAgreement">
+										<label for="userAgreement"><span class="label-text">I agree</span></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<hr />
+					</fieldset>
+
+					<fieldset class="form-group">
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupNumberApplying.$invalid && (accountSetup.setupNumberApplying.$touched || accountSetup.setupNumberApplying.$dirty) }">
+								<label for="setupNumberApplying">How many students will be applying? <span class="required-field">*</span></label>
+								<input type="number" class="form-control" id="setupNumberApplying" required name="setupNumberApplying" ng-model="setupNumberApplying">
+								<div ng-if="accountSetup.setupNumberApplying.$touched || accountSetup.setupNumberApplying.$dirty">
+									<p class="help-block" ng-if="accountSetup.setupNumberApplying.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="accountSetup.setupNumberApplying.$error.number">
+									<p class="help-block">Numbers only in this field</p>
+								</div>
+							</div>
+						</div>
+					
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupEmail.$invalid && (accountSetup.setupEmail.$touched || accountSetup.setupEmail.$dirty) }">
+								<label for="setupEmail">Email Address <span class="required-field">*</span></label>
+								<input type="email" class="form-control" id="setupEmail" name="setupEmail" ng-model="setupEmail" required autocomplete="off">
+								<div ng-if="accountSetup.setupEmail.$touched || accountSetup.setupEmail.$dirty">
+									<p class="help-block" ng-if="accountSetup.setupEmail.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="accountSetup.setupEmail.$error.email">
+									<p class="help-block">Must be a valid email address</p>
+								</div>
+							</div>
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupEmailConfirm.$invalid && (accountSetup.setupEmailConfirm.$touched || accountSetup.setupEmailConfirm.$dirty) }">
+								<label for="setupEmailConfirm">Confirm Email <span class="required-field">*</span></label>
+								<input type="email" class="form-control" id="setupEmailConfirm" name="setupEmailConfirm" ng-model="setupEmailConfirm" placeholder="Confirm email address" required autocomplete="off">
+								<div ng-if="accountSetup.setupEmailConfirm.$touched || accountSetup.setupEmailConfirm.$dirty">
+									<p class="help-block" ng-if="accountSetup.setupEmailConfirm.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="accountSetup.setupEmailConfirm.$dirty && accountSetup.setupEmailConfirm.$dirty && setupEmail != setupEmailConfirm">
+									<p class="help-block">Email addresses do not match!</p>
+								</div>
+							</div>
+						</div>
+		
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupUsername.$invalid && (accountSetup.setupUsername.$touched || accountSetup.setupUsername.$dirty) }">
+								<label for="setupUsername">Create a Username <small>(min 6 characters)</small> <span class="required-field">*</span></label>
+								<input type="text" class="form-control" pattern=".{6,}" id="setupUsername" name="setupUsername" ng-model="setupUsername" required autocomplete="off">
+								<div ng-if="accountSetup.setupUsername.$touched || accountSetup.setupUsername.$dirty">
+									<p class="help-block" ng-if="accountSetup.setupUsername.$error.required">This field cannot be blank</p>
+									<p class="text-danger" ng-if="accountSetup.setupUsername.$error.pattern">Minumim 6 characters</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupPassword.$invalid && (accountSetup.setupPassword.$touched || accountSetup.setupPassword.$dirty) }">
+								<label for="setupPassword">Create a Password <small>(min 6 characters)</small> <span class="required-field">*</span></label>
+								<input type="password" class="form-control" id="setupPassword" name="setupPassword" ng-model="setupPassword" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="6" ng-maxlength="12" required autocomplete="off">
+								<div class="validation-errors">
+									<div ng-if="accountSetup.setupPassword.$touched || accountSetup.setupPassword.$dirty">
+										<p class="help-block" ng-if="accountSetup.setupPassword.$error.required">This field cannot be blank</p>
+									</div>
+									<div ng-if="accountSetup.setupPassword.$error.minlength">
+										<p class="help-block">Passwords must be at least 6 characters long</p>
+									</div>
+									<div ng-if="accountSetup.setupPassword.$error.pattern">
+										<p class="help-block">Please use numbers and letters only</p>
+									</div>
+									<div ng-if="accountSetup.setupPassword.$error.maxlength">
+										<p class="help-block">Passwords cannot be longer than 12 characters long</p>
+									</div>
+								</div>
+							</div>
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : accountSetup.setupPasswordConfirm.$invalid && (accountSetup.setupPasswordConfirm.$touched || accountSetup.setupPasswordConfirm.$dirty) }">
+								<label for="setupPasswordConfirm">Confirm Password <span class="required-field">*</span></label>
+								<input type="password" class="form-control" id="setupPasswordConfirm" ng-model="setupPasswordConfirm" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="6" name="setupPasswordConfirm" ng-maxlength="12" required autocomplete="off">
+								<div class="validation-errors">
+									<div ng-if="accountSetup.setupPasswordConfirm.$touched || accountSetup.setupPasswordConfirm.$dirty">
+										<p class="help-block" ng-if="accountSetup.setupPasswordConfirm.$error.required">This field cannot be blank</p>
+									</div>
+									<div ng-if="accountSetup.setupPasswordConfirm.$error.minlength">
+										<p class="help-block">Passwords must be at least 6 characters long</p>
+									</div>
+									<div ng-if="accountSetup.setupPasswordConfirm.$error.pattern">
+										<p class="help-block">Please use numbers and letters only</p>
+									</div>
+									<div ng-if="accountSetup.setupPasswordConfirm.$error.maxlength">
+										<p class="help-block">Passwords cannot be longer than 12 characters long</p>
+									</div>
+									<div ng-if="accountSetup.setupPassword.$dirty && accountSetup.setupPasswordConfirm.$dirty && setupPassword != setupPasswordConfirm">
+										<p class="help-block">Passwords do not match!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="button-group clearfix">
+					<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="accountSetup.$invalid">Proceed</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<!--  Account Setup for Step 1 (No) and 1 applying-->
+<!-- <div class="instructions" ng-show="accountSetup2"> -->
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="button-group">
+				<button class="btn btn-default" ng-click="accountSetup2 = false"><i class="fa fa-arrow-left"></i> Back</button>
+			</div>
+			<h2>Account Setup</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<form name="application">
+				<div class="form-group-wrapper">
+					<fieldset class="form-group">
+						<div class="row">
+							<p class="col-md-12">In order to use this product to apply for financial aid, you must agree to the terms and conditions of the <a href="" ng-click="EULA = true">ISM FAST End User License Agreement</a></p>
+							<ul class="col-md-12 checkboxset-wrapper">
+								<li>
+									<div class="checkboxset">
+										<input type="checkbox" id="210-occupation-homemaker" value="210-occupation-homemaker">
+										<label for="210-occupation-homemaker"><span class="label-text">I agree</span></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<hr />
+					</fieldset>
+
+					<fieldset class="form-group">
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : application.setupEmail.$invalid && (application.setupEmail.$touched || application.setupEmail.$dirty) }">
+								<label for="setupEmail">Email Address <span class="required-field">*</span></label>
+								<input type="email" class="form-control" id="setupEmail" name="setupEmail" ng-model="setupEmail" required autocomplete="off">
+								<div ng-if="application.setupEmail.$touched || application.setupEmail.$dirty">
+									<p class="help-block" ng-if="application.setupEmail.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="application.setupEmail.$error.email">
+									<p class="help-block">Must be a valid email address</p>
+								</div>
+							</div>
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : application.setupEmailConfirm.$invalid && (application.setupEmailConfirm.$touched || application.setupEmailConfirm.$dirty) }">
+								<label for="setupEmailConfirm">Confirm Email <span class="required-field">*</span></label>
+								<input type="email" class="form-control" id="setupEmailConfirm" name="setupEmailConfirm" ng-model="setupEmailConfirm" placeholder="Confirm email address" required autocomplete="off">
+								<div ng-if="application.setupEmailConfirm.$touched || application.setupEmailConfirm.$dirty">
+									<p class="help-block" ng-if="application.setupEmailConfirm.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="application.setupEmailConfirm.$dirty && application.setupEmailConfirm.$dirty && setupEmail != setupEmailConfirm">
+									<p class="help-block">Email addresses do not match!</p>
+								</div>
+							</div>
+						</div>
+		
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : application.setupUsername.$invalid && (application.setupUsername.$touched || application.setupUsername.$dirty) }">
+								<label for="setupUsername">Create a Username <small>(min 6 characters)</small> <span class="required-field">*</span></label>
+								<input type="text" class="form-control" pattern=".{6,}" id="setupUsername" name="setupUsername" ng-model="setupUsername" required autocomplete="off">
+								<div ng-if="application.setupUsername.$touched || application.setupUsername.$dirty">
+									<p class="help-block" ng-if="application.setupUsername.$error.required">This field cannot be blank</p>
+									<p class="text-danger" ng-if="application.setupUsername.$error.pattern">Minumim 6 characters</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : application.setupPassword.$invalid && (application.setupPassword.$touched || application.setupPassword.$dirty) }">
+								<label for="setupPassword">Create a Password <small>(min 6 characters)</small> <span class="required-field">*</span></label>
+								<input type="password" class="form-control" id="setupPassword" name="setupPassword" ng-model="setupPassword" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="6" ng-maxlength="12" required autocomplete="off">
+								<div class="validation-errors">
+									<div ng-if="application.setupPassword.$touched || application.setupPassword.$dirty">
+										<p class="help-block" ng-if="application.setupPassword.$error.required">This field cannot be blank</p>
+									</div>
+									<div ng-if="application.setupPassword.$error.minlength">
+										<p class="help-block">Passwords must be at least 6 characters long</p>
+									</div>
+									<div ng-if="application.setupPassword.$error.pattern">
+										<p class="help-block">Please use numbers and letters only</p>
+									</div>
+									<div ng-if="application.setupPassword.$error.maxlength">
+										<p class="help-block">Passwords cannot be longer than 12 characters long</p>
+									</div>
+								</div>
+							</div>
+							<div class="form-group col-md-6" ng-class="{ 'has-error' : application.setupPasswordConfirm.$invalid && (application.setupPasswordConfirm.$touched || application.setupPasswordConfirm.$dirty) }">
+								<label for="setupPasswordConfirm">Confirm Password <span class="required-field">*</span></label>
+								<input type="password" class="form-control" id="setupPasswordConfirm" ng-model="setupPasswordConfirm" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="6" name="setupPasswordConfirm" ng-maxlength="12" required autocomplete="off">
+								<div class="validation-errors">
+									<div ng-if="application.setupPasswordConfirm.$touched || application.setupPasswordConfirm.$dirty">
+										<p class="help-block" ng-if="application.setupPasswordConfirm.$error.required">This field cannot be blank</p>
+									</div>
+									<div ng-if="application.setupPasswordConfirm.$error.minlength">
+										<p class="help-block">Passwords must be at least 6 characters long</p>
+									</div>
+									<div ng-if="application.setupPasswordConfirm.$error.pattern">
+										<p class="help-block">Please use numbers and letters only</p>
+									</div>
+									<div ng-if="application.setupPasswordConfirm.$error.maxlength">
+										<p class="help-block">Passwords cannot be longer than 12 characters long</p>
+									</div>
+									<div ng-if="application.setupPassword.$dirty && application.setupPasswordConfirm.$dirty && setupPassword != setupPasswordConfirm">
+										<p class="help-block">Passwords do not match!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="form-group-wrapper">
+					<p><strong>Please read:</strong></p>
+
+					<p>You are considered "<span class="family-one">Family 1</span>".</p>
+
+					<p>IF there will be a 2nd party (living in another household) who will be filling out this application, they will be designated as "<span class="family-two">Family 2</span>". </p>
+
+					<p>You will not be able to see each other's information.</p>
+
+					<p>If you are divorced, separated, widowed or never married, please <a href="" ng-click="separatedFamily = true">click here</a> for more complete directions.</p>
+
+					<p><strong>Example:</strong> A divorced family: the mother and stepfather may be "<span class="family-one">Family 1</span>", and the father may be "<span class="family-two">Family 2</span>".</p>
+
+					<hr />
+
+					<fieldset class="form-group">
+						<div class="row form-group">
+							<div class="col-md-12">Please check all that apply to "<span class="family-one">Family 1</span>":</div>
+							<div class="checkboxset col-md-12">
+								<input type="checkbox" id="setup-family1-primary-residence" value="setup-family1-primary-residence">
+								<label for="setup-family1-primary-residence"><span class="label-text">is student's primary residence</span></label>
+							</div>
+							<div class="checkboxset col-md-12">
+								<input type="checkbox" id="setup-family1-biological-parent" value="setup-family1-biological-parent">
+								<label for="setup-family1-biological-parent"><span class="label-text">contains a biological/adoptive parent of a student</span></label>
+							</div>
+							<div class="checkboxset col-md-12">
+								<input type="checkbox" id="setup-family1-other-guardian" value="setup-family1-other-guardian">
+								<label for="setup-family1-other-guardian"><span class="label-text">contains a legal guardian other than a biological/adoptive parent</span></label>
+							</div>
+						</div>
+					</fieldset>
+
+					<fieldset class="form-group" ng-class="{ 'has-error' : application.setupFamily1Custody.$invalid && (application.setupFamily1Custody.$touched || application.setupFamily1Custody.$dirty) }">
+						<div class="row form-group">
+							<div class="col-md-12">Which of these applies to "<span class="family-one">Family 1</span>": <span class="required-field">*</span></div>
+							<div class="radioset col-md-12">
+								<input type="radio" name="setupFamily1Custody" id="setupFamily1CustodySole" value="setupFamily1CustodySole" ng-model="setupFamily1Custody" required>
+								<label for="setupFamily1Custody"><span class="label-text">has sole custody</span></label>
+							</div>
+							<div class="radioset col-md-12">
+								<input type="radio" name="setupFamily1Custody" id="setupFamily1CustodyCustodialJoint" value="setupFamily1CustodyCustodialJoint" required ng-model="setupFamily1Custody">
+								<label for="setupFamily1CustodyCustodialJoint"><span class="label-text">has custodial joint custody</span></label>
+							</div>
+							<div class="radioset col-md-12">
+								<input type="radio" name="setupFamily1Custody" id="setupFamily1CustodyNonCustodialJoint" value="setupFamily1CustodyNonCustodialJoint" required ng-model="setupFamily1Custody">
+								<label for="setupFamily1CustodyNonCustodialJoint"><span class="label-text">has non-custodial joint custody</span></label>
+							</div>
+							<div class="radioset col-md-12">
+								<input type="radio" name="setupFamily1Custody" id="setupFamily1CustodyNone" value="setupFamily1CustodyNone" required ng-model="setupFamily1Custody">
+								<label for="setupFamily1CustodyNone"><span class="label-text">does not have custody</span></label>
+							</div>
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<div class="row form-group" ng-class="{ 'has-error' : application.setupFamily1Filing.$invalid && (application.setupFamily1Filing.$touched || application.setupFamily1Filing.$dirty) }">
+							<div class="col-md-12">Which best describes the way "<span class="family-one">Family 1</span>" will be filling out the form: <span class="required-field">*</span></div>
+							<div class="radioset col-md-12">
+								<input type="radio" name="setupFamily1Filing" id="setupFamily1FilingTwoFiling" value="setupFamily1FilingTwoFiling" ng-model="setupFamily1Filing" required>
+								<label for="setupFamily1FilingTwoFiling"><span class="label-text">Two adults filing jointly</span></label>
+							</div>
+							<div class="radioset col-md-12">
+								<input type="radio" name="setupFamily1Filing" id="setupFamily1FilingOneFiling" value="setupFamily1FilingOneFiling" ng-model="setupFamily1Filing" required>
+								<label for="setupFamily1FilingOneFiling"><span class="label-text">One adult filing</span></label>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="button-group clearfix">
+					<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="application.$invalid">Proceed</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

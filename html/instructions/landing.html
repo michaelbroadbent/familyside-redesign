@@ -1,0 +1,231 @@
+<!-- Start Instructions -->
+<br>
+<a href="" class="btn btn-default" ng-click="returningUser = !returningUser; newUser = false; returningUserNewYear = false;">Returning User</a>
+<a href="" class="btn btn-default" ng-click="newUser = !newUser; returningUser = false; returningUserNewYear = false;">New User</a>
+<a href="" class="btn btn-default" ng-click="returningUserNewYear = !returningUserNewYear; returningUser = false; newUser = false;">Returning User from another year</a>
+
+<div ng-show="returningUserNewYear">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Instructions</h2>
+			</div>
+			<h3>Welcome Back!</h3>
+			<!-- Custom School Welcome Message Area -->
+			<div class="alert alert-warning" style="margin-bottom: 0;">Custom School Message Here</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+
+			<p>Please note in the grey Navigation Toolbar to the left of the page. While the majority of your information has transferred over from your previously submitted application, there are a few steps that need to be taken in order to complete and submit this application. </p>
+
+			<p>You will first need to click into <strong>Applicant Info</strong> and select the appropriate grade(s) for the applicant(s), as this information does not transfer over from school to school, since each school has different grade options. Once you are done selecting the appropriate grades, click Submit.</p>
+
+			<p>If there are any <strong>School Specific Questions</strong>, they will need to be answered as well. If the school requires School Specific Questions, click into the School Specific Questions section in the grey Navigation Toolbar and complete them. If the school does not have School Specific Questions, please continue on to the next step.</p>
+
+			<p>Lastly, you will want to click into the <strong>Letter/Agreement</strong> section and complete that section.</p>
+
+			<p>Once you have completed these steps, the option to make payment will be presented to you for the reduced fee of <strong>$10.00</strong>.</p>
+		</div>
+	</div>
+</div>
+
+<div ng-show="returningUser">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Instructions</h2>
+			</div>
+			<h3>Welcome Back!</h3>
+			<!-- Custom School Welcome Message Area -->
+			<div class="alert alert-warning" style="margin-bottom: 0;">Custom School Message Here</div>
+			<p>Please use the navigation bars on your left to choose the section in which you wish to enter data.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<p>To refresh your memory...</p>
+			<ul class="status-icon-guide list-unstyled">
+				<li><i class="fa status-icon open"></i> The section is open and ready for you to input information.</li>
+				<li><i class="fa status-icon complete"></i> The section is complete, but available if you need to change any information.</li>
+				<li><i class="fa status-icon locked"></i> This section is not available at this time.</li>
+			</ul>
+
+			<h3>Don't forget</h3>
+			<p>If you are filling out this form jointly as Parent 1 and Parent 2, please be very careful not to duplicate information. Any accounts or financial interests held jointly should be entered with the information for Parent 1. Parent 2 should only enter information pertaining to income or expenses not held in common with Parent 1.</p>
+
+			<p>If you need help, please contact <a href="mailto:help@ismfast.com">help@ismfast.com</a> or call 877-326-FAST. Thank you for using FAST powered by ISM.</p>
+		</div>
+	</div>
+</div>
+
+
+<div ng-show="newUser && !privacy && !separatedParents && !forgotPassword && !formSetup">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Instructions</h2>
+			</div>
+			<h3>Welcome, New User!</h3>
+			<!-- Custom School Welcome Message Area -->
+			<div class="alert alert-warning" style="margin-bottom: 0;">Custom School Message Here</div>
+			<p>FAST Demonstration School has chosen to use FAST – Financial Aid for School Tuition – by Independent School Management (ISM) to process your financial aid application. ISM will provide standardized and impartial processing in a confidential setting. If you would like to know more about how ISM protects your privacy please <a href="" ng-click="privacy = true">click here</a>.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<hr />
+			<h3>Before you begin</h3>
+			<p>We hope that you will find this application easy to complete online. There are a number of financial records you will need. If your school did not provide a list of the necessary financial records, please <a href="" ng-click="">click here</a> for a downloadable pdf. Once you have gathered your financial information, it takes approximately 30 to 45 minutes to complete the application online. Gathering your financial information is similar to collecting information to file your taxes and takes about the same length of time. You do not have to complete the entire application at one time. Your user name and password will allow you to access your data until you have completed the payment section. </p>
+
+			<p>There is a $43 US non-refundable application fee, payable by credit card (MasterCard, Visa, and American Express.) If you are unable to pay the application fee, please contact the school to which you are applying. If you do not have a credit card, you may purchase a voucher from your school that will allow you to complete the application.</p>
+
+			<p><strong>Upon completion of the FAST application, you will need to submit copies of your tax documentation to FAST for verification.</strong></p>
+
+			<h3>Navigating this program</h3>
+			<p>There is a color-coded system of icons to help you move through the various sections. A green arrow (<i class="fa status-icon open"></i>) means that the section is open and ready for you to enter information. A blue check mark (<i class="fa status-icon complete"></i>) means that you have completed that section, but it is still available if you need to go back and change any information. A gray arrow (<i class="fa status-icon locked"></i>) means that the section is not available at this time.</p>
+
+			<p>You may enter information in any order. If, for example, you wish to enter information about your expenses before you enter information about your income, you may do so, even though income comes before expenses on the navigation bar.</p>
+
+			<p>For more information about any question, click on the red number next to the question, or position your cursor in the answer box.</p>
+
+			<h3>Cautions</h3>
+			<p>Please do not use the "back" button on your browser. If you need to go back, use the gray Navigation bar on the left to select the section to which you wish to return. If your browser closes, you will have to log back into the system. Any section that you have completed – i.e., any section that has a blue check by it – will be saved. If you were in the middle of a section, you may have to reenter information in that section.</p>
+
+			<p>Use your mouse or the tab key to move from field to field. Do not hit return/enter until you have completed each section. If you press enter/return after completing a field but prior to completing the section, the program will return red error messages for all the fields you had not filled in.</p>
+
+			<p>Answer all questions. Do not leave any numeric fields blank. If you do not know the dollar amount, place a question mark (?) in the box. This will put the field on hold. You can return later and fill in the dollar amount. If a particular question does not apply to you, please enter 0 in that field.</p>
+
+
+			<p>If you are divorced, separated, widowed or never married, please <a href="" ng-click="separatedParents = true">click here</a> for more complete directions.</p>
+
+			<h3>General Information</h3>
+			<p>To change your username or password, go to the Account Settings section. If you forget your username or password <a href="" ng-click="forgotPassword = true">click here</a></p>
+
+			<p>If you have any questions about any required information on this application or if you experience any technical difficulties, please contact <a href="mailto:help@ismfast.com">help@ismfast.com</a> or call <a href="tel:+18773263278">1-877-326-FAST</a>. Our Call Center hours are 24/7/365.</p>
+
+			<p><strong>To get started with a new application click the "Get Started" button</strong></p>
+
+			<a href="" ui-sref="formSetup" class="btn btn-lg btn-primary">Get Started</a>
+		</div>
+	</div>
+</div>
+
+<div ng-show="privacy">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<div class="button-group">
+					<button class="btn btn-default" ng-click="privacy = false"><i class="fa fa-arrow-left"></i> Back</button>
+				</div>
+				<h2>FAST Security and Privacy Statement</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<p>At ISM, we understand how important privacy is to both our schools and their families. The FAST software solution provides maximum protection against unauthorized access to all sensitive information. ISM takes numerous actions to guarantee a safe transaction.</p>
+
+			<p>The personal and financial information you enter into your FAST application will be used by authorized school administrators at the school to which you are applying expressly for the purpose of determining financial aid eligibility and determining awards. By entering this information into your application and submitting the application, you are giving your consent to this review of your personal and financial data.</p>
+
+			<h3>Security Standards</h3>
+			<p>For your protection, ISM uses a secure, dedicated server and 128-bit SSL encryption for all on-line services. What does this mean? All information you view is encrypted - or scrambled - making it virtually impossible for anyone other than you and ISM to read it.</p>
+
+			<p>If you are applying to a school that has contracted ISM to handle tax scanning and verification, you will send tax returns and supporting tax documentation to ISM. After processing all forms are shredded for your protection.</p>
+
+			<h3>Access to Information</h3>
+			<p>Only authorized ISM staff members and authorized administrators at the school to which you are applying have access to your information. This access enables the FAST staff to assist you in resolving any issues that may arise. In the case of divorced or separated families, all information is kept separate. Spouses who are separated cannot access one another's confidential information. Neither ISM nor authorized school administrators will release one spouse's information to the other spouse.</p>
+
+			<p>All ISM employees and school administrators implementing the FAST solution are subject to strict customer confidentiality policies and procedures. Any ISM staff member who knowingly violates these policies is subject to disciplinary action, including the possibility of termination.</p>
+
+			<p>ISM does not sell any customer information to third-party marketing companies.</p>
+
+			<p>If you have any specific questions related to the FAST Security and Privacy Statement, please <a href="mailto:help@ismfast.com">e-mail us</a> or call 877-326-FAST.</p>
+		</div>
+	</div>
+</div>
+
+
+<div ng-show="separatedParents">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<div class="button-group">
+					<button class="btn btn-default" ng-click="separatedParents = false"><i class="fa fa-arrow-left"></i> Back</button>
+				</div>
+				<h2>Special Instructions for Divorced or Separated Parents</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<hr />
+			<p>After answering a few questions about family structure and custody, you will be asked to provide an e-mail address for the other parent, who then becomes known as <span class="family-two">Family 2</span>. If there is no other parent, living or if there is a reason why the other parent can't be contacted, please explain in the box provided.</p>
+
+			<p>The person designated as <span class="family-two">Family 2</span>, will receive a confidential username and password by e-mail. <span class="family-one">Family 1</span>(you) does not have access to <span class="family-two">Family 2's</span> username and password. When <span class="family-two">Family 2</span> uses the ISM-provided username and password, the applications from both parents will be appropriately linked.Only authorized ISM staff members and authorized administrators at the school to which you are applying have access to your information. This access enables the FAST staff to assist you in resolving any issues that may arise. In the case of divorced or separated families, all information is kept separate. Spouses who are separated can not access one another's confidential information.</p>
+
+			<p>There is only one fee for both applications. It is up to you to decide who will pay. The Application Status page displays which sections have been completed by each family. Payment will not be possible until both <span class="family-one">Family 1</span> and <span class="family-two">Family 2</span> have completed their applications.</p>
+
+			<h3>PLEASE NOTE:</h3>
+
+			<p>If <span class="family-two">Family 2</span> does not respond to the initial e-mail, it is possible for <span class="family-one">Family 1</span> to re-send the e-mail by clicking on the Account Settings link on the gray Navigation bar and then following the instructions.</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="instructions" ng-show="forgotPassword">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<div class="button-group">
+					<button class="btn btn-default" ng-click="forgotPassword = false"><i class="fa fa-arrow-left"></i> Back</button>
+				</div>
+				<h2>Forgot Your Password?</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<form name="forgotPassword">
+				<div class="form-group-wrapper">
+					<fieldset class="form-group">
+						<div class="row">
+							<div class="form-group col-md-12" ng-class="{ 'has-error' : forgotPassword.forgotPasswordEmail.$invalid && forgotPassword.forgotPasswordEmail.$touched }">
+								<label for="forgotPasswordEmail">Please Enter your email address to proceeed: <span class="required-field">*</span></label>
+								<input type="email" class="form-control" id="forgotPasswordEmail" required placeholder="Email address" name="forgotPasswordEmail" ng-model="forgotPasswordEmail">
+								<div ng-if="forgotPassword.forgotPasswordEmail.$touched || forgotPassword.forgotPasswordEmail.$dirty">
+									<p class="help-block" ng-if="forgotPassword.forgotPasswordEmail.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="forgotPassword.forgotPasswordEmail.$error.email">
+									<p class="help-block">Must be a valid email address</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="button-group clearfix">
+					<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="forgotPassword.$invalid">Submit</button>
+				</div>
+			</form>
+
+			<!-- Error message for email address that isn't found -->
+			<!-- <div class="hidden">
+				<p class="text-danger">No information has been found for this email address. Please check it and try again. If you need further assistance please call 1-877-326-FAST.</p>
+			</div> -->
+
+			<!-- Success message for email address -->
+			<!-- <div class="hidden">
+				<p class="text-success">Your username and password have been sent to the email address you provided.</p>
+			</div> -->
+
+		</div>
+	</div>
+</div>

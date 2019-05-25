@@ -1,0 +1,26 @@
+<div class="login-page" id="login">
+	<div class="container">
+		<form id="loginForm" class="form-signin" method="post" ng-hide="forgotpassword" autocomplete="off">
+			<div class="text-center">
+				<img src="../img/logos/fast-aid-logo.png" class="login-logo" alt="FAST logo">
+			</div>
+			<div class="text-not-received">
+				{{ message }}
+			</div>
+			<input class="input-block-level" type="text" name="name" placeholder="login" ng-model="form.user" autocomplete="off"/>
+			<input type="password" name="password" placeholder="password" ng-model="form.pass" autocomplete="off"/>
+			<button class="btn btn-lg btn-primary-fast btn-block" type="submit" value="Submit" ng-click="login(form.user, form.pass)">Submit</button>
+			<div><a ng-click="forgotpassword = true" class="forgot-password">I Forgot My Password</a></div>
+		</form>
+		<form id="forgotForm" class="form-signin" ng-show="forgotpassword">
+			<div class="text-center">
+				<img src="../img/logos/fast-aid-logo.png"  class="login-logo" alt="FAST logo">
+			</div>
+			<input class="input-block-level" type="text" name="name" placeholder="email" ng-disabled="loading" ng-model="form1.email" autocomplete="off"/>
+			<input class="btn btn-lg btn-primary-fast btn-block" ng-click="sendemail()" ng-disabled="loading" type="submit" value="Submit" autocomplete="off"/>
+		</form>
+	</div>
+	<div class="text-muted text-center">
+		<p><small>&copy; 2000-2017 Independent School Management<br>All Rights Reserved.</small></p>
+	</div>
+</div>

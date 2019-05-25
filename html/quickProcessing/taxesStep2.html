@@ -1,0 +1,95 @@
+<!-- Start Tax Step 2 -->
+<div class="quick-processing">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Choose your 2016 Federal Tax Form</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="row">
+				<ul class="radioset-wrapper form-group col-xs-12">
+					<li>
+						<div class="radioset">
+							<input type="radio" name="tax-form" id="1040" value="1040" ng-model="taxDoc">
+							<label><span class="label-text">1040</span></label>
+						</div>
+					</li>
+					<li>
+						<div class="radioset">
+							<input type="radio" name="tax-form" id="1040a" value="1040a" ng-model="taxDoc">
+							<label><span class="label-text">1040A</span></label>
+						</div>
+					</li>
+					<li>
+						<div class="radioset">
+							<input type="radio" name="tax-form" id="1040ez" value="1040ez" ng-model="taxDoc">
+							<label><span class="label-text">1040-EZ</span></label>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<label for="joint-filed">Did you file taxes jointly for 2016?</label>
+				</div>
+				<ul class="col-xs-12 radioset-wrapper">
+					<li>
+						<div class="form-group radioset">
+							<input type="radio" name="joint-filed" id="joint-yes" value="joint-yes" ng-model="jointFiled"required>
+							<label><span class="label-text">Yes</span></label>
+						</div>
+					</li>
+					<li>
+						<div class="form-group radioset">
+							<input type="radio" name="joint-filed" id="joint-no" value="joint-no" ng-model="jointFiled"required>
+							<label><span class="label-text">No</span></label>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-6">
+					<a class="btn btn-primary-fast btn-lg btn-block" href="" ui-sref="quickProcessingTaxesStep1">Back</a>
+				</div>
+				<div class="col-xs-6">
+					<a class="btn btn-primary-fast btn-lg btn-block" href="" ui-sref="quickProcessingTaxesStep3" ng-disabled="!taxDoc || !jointFiled">Next</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-9">
+			<div class="taxes-container" ng-show="taxDoc == '1040'">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text-center">Form 1040 (page 1)</p>
+						<img class="img-responsive center-block" src="../img/taxes/tax_2014/2014_1040p1.png">
+					</div>
+				</div>
+			</div>
+			<div class="taxes-container" ng-show="taxDoc == '1040a'">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text-center">Form 1040A (page 1)</p>
+						<img class="img-responsive center-block" src="../img/taxes/tax_2014/2014_1040Ap1.png">
+					</div>
+				</div>
+			</div>
+			<div class="taxes-container" ng-show="taxDoc == '1040ez'">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text-center">Form 1040EZ (page 1)</p>
+						<img class="img-responsive center-block" src="../img/taxes/tax_2014/2014_1040EZp1.png">
+					</div>
+				</div>
+			</div>
+			<p ng-show="taxDoc != null" class="text-center">If you need more information about tax returns, visit the <a href="https://www.irs.gov/">www.IRS.gov</a> site.</p>
+		</div>
+	</div>
+</div>
+<!-- End Tax Step 2 -->

@@ -1,0 +1,235 @@
+<html lang="en" ng-app="" id="ng-app">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=10">
+		<title>FAST V4 Family Side</title>
+
+		<!-- FONTS -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,700italic,800italic,300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+		<!--CSS Source -->
+		<link rel="stylesheet" href="stylesheets/css/source.css">
+
+
+		<!--JS Libs -->
+		<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		
+		<!-- Latest compiled and minified Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+
+	</head>
+	<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<!-- Mobile Nav -->
+			<div class="fixed-width">
+				<div class="navbar-header mobile">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-mobile" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<ul class="nav language-toggle">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe" aria-hidden="true"></i> Language <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							<li><a href="#">English</a></li>
+							<li><a href="#">Espanol</a></li>
+							<li><a href="#">עברית</a></li>
+							<li><a href="#">Français</a></li>
+							</ul>
+						</li>
+					</ul>
+					<a class="navbar-brand" href="index.html">Brand</a>
+				</div>
+
+				<!-- Mobile Nav-pulls in sidebar links -->
+				<div id="main-nav-mobile" class="mobile collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Instructions</a></li>
+						<li><a href="#">Account Settings</a></li>
+						<li><a href="#">Applicant Info</a></li>
+						<li><a href="#">Household Info</a></li>
+						<li><a href="#">Dependent Info</a></li>
+						<li><a href="#">Real Estate/Vehicles</a></li>
+						<li><a href="#">Assets/Liabilities</a></li>
+						<li><a href="#">Income</a></li>
+						<li><a href="#">Expenses</a></li>
+						<li><a href="#">School Questions</a></li>
+						<li><a href="#">Letter/Agreement</a></li>
+						<li><a href="#">Application Status</a></li>
+						<li><a href="#">Payment </a></li>
+						<li><a href="#">Quick Processing</a></li>
+						
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Log Out/In</a></li>
+						
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Download Worksheet</a></li>
+						<li><a href="#">Download User Guide</a></li>
+					</ul>
+				</div>
+
+				<!-- Default Nav -->
+				<div id="main-nav" class="desktop collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe" aria-hidden="true"></i> Switch Language <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							<li><a href="#">English</a></li>
+							<li><a href="#">Espanol</a></li>
+							<li><a href="#">עברית</a></li>
+							<li><a href="#">Français</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a></li>
+						<li><a href="#">Log Out/In</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Start Content -->
+	<div ui-view class="off-canvas-wrap">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- Desktop navigation -->
+				<div class="sidebar desktop col-md-3">
+					<nav class="sidebar-nav">
+						<ul class="nav">
+							<li><a href="#">Instructions</a></li>
+							<li><a href="#">Account Settings</a></li>
+							<li><a href="#">Applicant Info</a></li>
+							<li><a href="#">Household Info</a></li>
+							<li><a href="#">Dependent Info</a></li>
+							<li><a href="#">Real Estate/Vehicles</a></li>
+							<li><a href="#">Assets/Liabilities</a></li>
+							<li><a href="#">Income</a></li>
+							<li><a href="#">Expenses</a></li>
+							<li><a href="#">School Questions</a></li>
+							<li><a href="#">Letter/Agreement</a></li>
+							<li><a href="#">Application Status</a></li>
+							<li><a href="#">Payment </a></li>
+							<li><a href="#">Quick Processing</a></li>
+							<li role="separator" class="divider"><li>
+							<li><a href="#" class="btn btn-primary">Download Worksheet</a></li>
+							<li><a href="#" class="btn btn-primary">Download User Guide</a></li>
+						</ul>
+
+					</nav>
+				</div>
+
+				<!-- Main content -->
+				<div class="main-content col-md-9">
+					<button class="btn btn-primary" ng-click="showme=true">Show</button>
+					<button class="btn btn-danger" ng-click="showme=false">Hide</button>
+					
+
+
+					<h2 ng-show="showme">Derp</h2>
+					<h2 ng-hide="showme">FAST Family Side redesign is finally happening!</h2>
+
+					<!-- Applicant Info tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#student1" aria-controls="student1" role="tab" data-toggle="tab">Student 1 (Jake)</a></li>
+						<li role="presentation"><a href="#student2" aria-controls="student2" role="tab" data-toggle="tab">Student 2 (Jessica)</a></li>
+						<li role="presentation"><a href="#add" aria-controls="add" role="tab" data-toggle="tab"><i class="fa fa-user-plus" aria-hidden="true"></i> Add</a></li>
+					</ul>
+
+					<!-- Applicant Info tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="student1">
+							<form>
+								<fieldset class="form-group">
+									<legend>101 - Name</legend>
+									<div class="form-group">
+										<label for="101-firstname">First</label>
+										<input type="text" class="form-control" id="101-firstname" placeholder="First Name">
+									</div>
+									<div class="form-group">
+										<label for="101-middle">Middle</label>
+										<input type="text" class="form-control" id="101-middle" placeholder="Middle">
+									</div>
+									<div class="form-group">
+										<label for="101-lastname">Last</label>
+										<input type="text" class="form-control" id="101-lastname" placeholder="Last Name">
+									</div>
+								</fieldset>
+
+								<fieldset class="form-group">
+									<legend>102 - Birth Date</legend>
+									<div class="form-group">
+										<label for="102-month">Month</label>
+										<input type="number" class="form-control" id="102-month" placeholder="Month">
+									</div>
+									<div class="form-group">
+										<label for="102-day">Day</label>
+										<input type="number" class="form-control" id="102-day" placeholder="Day">
+									</div>
+									<div class="form-group">
+										<label for="102-year">Year</label>
+										<input type="number" class="form-control" id="102-year" placeholder="Year">
+									</div>
+								</fieldset>
+
+								<fieldset class="form-group">
+									<legend>103 - Gender</legend>
+									<div class="form-group">
+										<label class="radio-inline">
+											<input type="radio" name="103-gender" id="103-male" value="103-male"> Male
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="radio-inline">
+											<input type="radio" name="103-gender" id="103-female" value="103-female"> Female
+										</label>
+									</div>
+								</fieldset>
+								<button type="submit" class="btn btn-default">Submit</button>
+							</form>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="student2">
+
+						</div>
+						<div role="tabpanel" class="tab-pane" id="add">
+
+						</div>
+					</div>
+
+
+
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+					<p>Right contents</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

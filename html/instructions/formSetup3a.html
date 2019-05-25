@@ -1,0 +1,58 @@
+<!-- Step 3 - Entered 2 from Step 2 -->
+<div class="instructions" ng-controller="formSetup">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<!-- <div class="button-group">
+				<button class="btn btn-default" ui-sref="instructions"><i class="fa fa-arrow-left"></i> Back</button>
+			</div> -->
+			<h2>Form Setup</h2>
+			<p>To process your application, we need to collect some information about the family of the applicant(s).</p>
+
+			<div ng-include="" src=" 'instructions/formSetupSteps.html' "></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<form name="application3">
+				<div class="form-group-wrapper">
+					<p>Currently this form can only process multiple students who share biological/adoptive parents. If these students share only one or no biological/adoptive parents, please fill out a separate application for each student.</p>
+					<hr />
+					<fieldset class="form-group" ng-class="{ 'has-error' : application3.setupShareParents.$invalid && application.setupShareParents.$untouched }">
+						<div class="row">
+							<label class="col-md-12">Do all applicants share both biological/adoptive parents? <span class="required-field">*</span></label>
+							<ul class="radioset-wrapper col-xs-12" ng-class="{ 'has-error' : (application3.setupShareParentsYes.$invalid || application3.setupShareParentsNo.$invalid) && (application3.setupShareParentsYes.$dirty || application3.setupShareParentsYes.$touched) && (application3.setupShareParentsNo.$dirty || application3.setupShareParentsNo.$touched)}">
+								<li>
+									<div class="form-group radioset">
+										<input type="radio" name="setupShareParentsYes" id="setupShareParentsYes" value="setupShareParentsYes" required ng-model="setupShareParents">
+										<label><span class="label-text">Yes</span></label>
+									</div>
+								</li>
+								<li>
+									<div class="form-group radioset">
+										<input type="radio" name="setupShareParentsNo" id="setupShareParentsNo" value="setupShareParentsNo" required ng-model="setupShareParents">
+										<label><span class="label-text">No</span></label>
+									</div>
+								</li>
+								<div ng-if="(application3.setupShareParentsYes.$touched || application3.setupShareParentsYes.$dirty) && (application3.setupShareParentsNo.$touched || application3.setupShareParentsNo.$dirty)">
+									<p class="help-block" ng-if="(application3.setupShareParentsYes.$error.required || application3.setupShareParentsNo.$error.required)">This field cannot be blank</p>
+								</div>
+							</ul>
+						</div>
+					</fieldset>
+				</div>
+				<div class="button-group clearfix">
+					<span ng-if="!(setupShareParents=='setupShareParentsYes' || setupShareParents=='setupShareParentsNo')">
+						<button class="btn btn-success btn-lg pull-right" disabled>Proceed</button>
+					</span>
+					<span ng-if="setupShareParents=='setupShareParentsYes'">
+						<a class="btn btn-success btn-lg pull-right" ng-disabled="application.$invalid" ui-sref="formSetup2a">Proceed</a>
+					</span>
+					<span ng-if="setupShareParents=='setupShareParentsNo'">
+						<a class="btn btn-success btn-lg pull-right" ng-disabled="application.$invalid" ui-sref="formSetup4a">Proceed</a>
+					</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

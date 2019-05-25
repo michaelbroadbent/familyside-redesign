@@ -1,0 +1,182 @@
+<!-- Start Applicant Settings -->
+<div class="row">
+	<div class="col-xs-12 masthead">
+		<div class="masthead-title">
+			<h2>Account Settings</h2>
+		</div>
+	</div>
+</div>
+
+<!-- Applicant Settings tabs -->
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table table-striped table-review">
+			<thead>
+				<tr>
+					<th colspan="2">Account Information</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="form-section-label">
+						<strong>Username</strong>
+					</td>
+					<td>delaware</td>
+				</tr>
+				<tr>
+					<td class="form-section-label">
+						<strong>Email Address</strong>
+					</td>
+					<td>name@isminc.com 
+						<a ng-click="edit = 'email'" ng-hide="edit == 'email'"><i class="fa fa-pencil"></i></a>
+						<a ng-click="edit = ''" ng-show="edit == 'email'"><i class="fa fa-pencil"></i></a>
+					</td>
+				</tr>
+				<tr>
+					<td class="form-section-label">
+						<strong>Password </strong>
+					</td>
+					<td>xxxxxx 
+						<a ng-click="edit = 'password'" ng-hide="edit == 'password'"><i class="fa fa-pencil"></i></a>
+						<a ng-click="edit = ''" ng-show="edit == 'password'"><i class="fa fa-pencil"></i></a>
+					</td>
+				</tr>
+				<tr>
+					<td class="form-section-label">
+						<strong>Language</strong>
+					</td>
+					<td>
+						
+						<span class="dropdown">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">English <i class="fa fa-pencil"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="">English</a></li>
+								<li><a href="">Espanol</a></li>
+								<li><a href="">עברית</a></li>
+								<li><a href="">Français</a></li>
+							</ul>
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<form ng-if="edit == 'email'" name="editemail">
+			<div class="form-group-wrapper">
+				<fieldset class="form-group">
+					<legend>Edit Email Address</legend>
+					<div class="row">
+						<div class="form-group col-md-12">
+							<p>FAST will use the e-mail address provided to notify you of your tax status and provide updates on tax information received. You will never receive solicitation or spam messages from FAST.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6" ng-class="{ 'has-error' : editemail.newemail.$invalid && (editemail.newemail.$touched || editemail.newemail.$dirty) }">
+							<label for="">New email address <span class="required-field">*</span></label>
+							<input type="email" class="form-control" id="" name="newemail" ng-model="newemail" placeholder="New email address" required>
+							<div ng-if="editemail.newemail.$touched || editemail.newemail.$dirty">
+								<p class="help-block" ng-if="editemail.newemail.$error.required">This field cannot be blank</p>
+							</div>
+						</div>
+						<div class="form-group col-md-6" ng-class="{ 'has-error' : editemail.confirmemail.$invalid && (editemail.confirmemail.$touched || editemail.confirmemail.$dirty) }">
+							<label for="">Confirm email address <span class="required-field">*</span></label>
+							<input type="email" class="form-control" id="" name="confirmemail" ng-model="confirmemail" placeholder="Confirm email address" required>
+							<div ng-if="editemail.confirmemail.$touched || editemail.confirmemail.$dirty">
+								<p class="help-block" ng-if="editemail.confirmemail.$error.required">This field cannot be blank</p>
+							</div>
+							<div ng-if="editemail.newemail.$dirty && editemail.confirmemail.$dirty && newemail != confirmemail">
+								<p class="help-block">Email addresses do not match!</p>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="button-group clearfix">
+				<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="editemail.$invalid || newemail != confirmemail">Proceed</button>
+			</div>
+		</form>
+
+
+		<form ng-if="edit == 'password'" name="editpassword">
+			<div class="form-group-wrapper">
+				<fieldset class="form-group">
+					<legend>Edit Password</legend>
+					<div class="row">
+						<div class="form-group col-md-12">
+							<p>Please enter /edit your password here.The updates to your password are effective immediately. You do not have to notify FAST of password changes. Please do not share your password to ensure your account information is secure.</p>
+
+							<p><span class="text-danger">Important:</span> passwords must be 6-12 characters long and contain only numbers and letters. Spaces and characters such as hyphens are not permitted.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-4" ng-class="{ 'has-error' : editpassword.currentpassword.$invalid && (editpassword.currentpassword.$touched || editpassword.currentpassword.$dirty) }">
+							<label for="">Current Password <span class="required-field">*</span></label>
+							<input name="currentpassword" type="password" class="form-control" id="currentpassword" placeholder="Current Password" ng-model="currentpassword" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="6" ng-maxlength="12" required>
+							<div class="validation-errors">
+								<div ng-if="editpassword.currentpassword.$touched || editpassword.currentpassword.$dirty">
+									<p class="help-block" ng-if="editpassword.currentpassword.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="editpassword.currentpassword.$error.pattern">
+									<p class="help-block">Please use numbers and letters only</p>
+								</div>
+								<div ng-if="editpassword.currentpassword.$error.minlength">
+									<p class="help-block">Passwords must be at least 6 characters long</p>
+								</div>
+								<div ng-if="editpassword.currentpassword.$error.maxlength">
+									<p class="help-block">Passwords cannot be longer than 12 characters long</p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-md-4" ng-class="{ 'has-error' : editpassword.newpassword.$invalid && (editpassword.newpassword.$touched || editpassword.newpassword.$dirty) }">
+							<label for="">Enter new Password <span class="required-field">*</span></label>
+							<input name="newpassword" type="password" class="form-control" id="newpassword" placeholder="Enter new Password" ng-model="newpassword" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="6" ng-maxlength="12" required>
+							<div class="validation-errors">
+								<div ng-if="editpassword.newpassword.$touched || editpassword.newpassword.$dirty">
+									<p class="help-block" ng-if="editpassword.newpassword.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="editpassword.newpassword.$error.pattern">
+									<p class="help-block">Please use numbers and letters only</p>
+								</div>
+								<div ng-if="editpassword.newpassword.$error.minlength">
+									<p class="help-block">Passwords must be at least 6 characters long</p>
+								</div>
+								<div ng-if="editpassword.newpassword.$error.maxlength">
+									<p class="help-block">Passwords cannot be longer than 12 characters long</p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-md-4" ng-class="{ 'has-error' : editpassword.confirmpassword.$invalid && (editpassword.confirmpassword.$touched || editpassword.confirmpassword.$dirty) }">
+							<label for="">Confirm Password <span class="required-field">*</span></label>
+							<input name="confirmpassword" type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" ng-model="confirmpassword" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="6" ng-maxlength="12" required>
+							<div class="validation-errors">
+								<div ng-if="editpassword.confirmpassword.$touched || editpassword.confirmpassword.$dirty">
+									<p class="help-block" ng-if="editpassword.confirmpassword.$error.required">This field cannot be blank</p>
+								</div>
+								<div ng-if="editpassword.confirmpassword.$error.pattern">
+									<p class="help-block">Please use numbers and letters only</p>
+								</div>
+								<div ng-if="editpassword.confirmpassword.$error.minlength">
+									<p class="help-block">Passwords must be at least 6 characters long</p>
+								</div>
+								<div ng-if="editpassword.confirmpassword.$error.maxlength">
+									<p class="help-block">Passwords cannot be longer than 12 characters long</p>
+								</div>
+								<div ng-if="editpassword.newpassword.$dirty && editpassword.confirmpassword.$dirty && newpassword != confirmpassword">
+									<p class="help-block">Passwords do not match!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="button-group clearfix">
+				<button type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="editpassword.$invalid">Proceed</button>
+			</div>
+		</form>
+	</div>
+
+</div>
+
+<!-- End Account Settings -->

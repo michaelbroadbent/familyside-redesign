@@ -1,0 +1,11 @@
+.DS_Store
+.vagrant/
+.sass-cache/
+.idea/
+coverage
+yarn.lock
+/html/coverage
+/node_modules/
+/bower_components/
+/html/phpunit/
+/html/production/

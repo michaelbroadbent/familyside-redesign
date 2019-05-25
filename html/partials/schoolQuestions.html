@@ -1,0 +1,95 @@
+<!-- Start School Specific Questions -->
+<div class="row">
+	<div class="col-xs-12 masthead">
+		<div class="masthead-title">
+			<h2 class="hidden-xs">School Specific Questions</h2>
+			<h2 class="hidden-sm hidden-md hidden-lg pull-left">School Specific Questions</h2>
+			<h3 class="hidden-sm hidden-md hidden-lg pull-right">8/9</h3>
+		</div>
+		<p>In this section, you will be asked questions that are specific to the school you are applying to.</p>
+	</div>
+</div>
+
+<!-- School Specific Questions tab -->
+<div class="row">
+	<div class="col-xs-12">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#household" aria-controls="household" role="tab" data-toggle="tab">FAST Demonstration School</a></li>
+		</ul>
+
+		<!-- School Specific Questions tab panes -->
+		<div class="tab-content">
+			<!-- Tab 1 -->
+			<div role="tabpanel" class="tab-pane active" id="household">
+				<p><strong>FAST Demonstration School</strong> has chosen to ask these additional questions. If you need help answering any question on <strong>this</strong> page you will need to contact the school.</p>
+				<br>
+				<form name="schoolQuestions">
+					<div class="row">
+						<div class="col-md-12">
+							<fieldset class="form-group">
+								<div class="row">
+									<div class="form-group col-md-12" ng-class="{ 'has-error' : schoolQuestions.schoolQuestion1.$invalid && (schoolQuestions.schoolQuestion1.$touched || schoolQuestions.schoolQuestion1.$dirty) }">
+										<label for="schoolQuestion1">Do you confirm that all information reported in application and all tax documentation is accurate and truthful?: <span class="required-field">*</span></label>
+										<textarea class="form-control" rows="3" id="schoolQuestion1" name="schoolQuestion1" ng-model="schoolQuestion1" required></textarea>
+										<div ng-if="schoolQuestions.schoolQuestion1.$touched || schoolQuestions.schoolQuestion1.$dirty">
+											<p class="help-block" ng-if="schoolQuestions.schoolQuestion1.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-group">
+								<div class="row">
+									<div class="form-group col-md-12" ng-class="{ 'has-error' : schoolQuestions.schoolQuestion2.$invalid && (schoolQuestions.schoolQuestion2.$touched || schoolQuestions.schoolQuestion2.$dirty) }">
+										<label for="schoolQuestion2">Do you confirm that all information reported in application and all tax documentation is accurate and truthful?: <span class="required-field">*</span></label>
+										<textarea class="form-control" rows="3" id="schoolQuestion2" name="schoolQuestion2" ng-model="schoolQuestion2" required></textarea>
+										<div ng-if="schoolQuestions.schoolQuestion2.$touched || schoolQuestions.schoolQuestion2.$dirty">
+											<p class="help-block" ng-if="schoolQuestions.schoolQuestion2.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-group">
+								<div class="row">
+									<div class="form-group col-md-12" ng-class="{ 'has-error' : schoolQuestions.schoolQuestion3.$invalid && (schoolQuestions.schoolQuestion3.$touched || schoolQuestions.schoolQuestion3.$dirty) }">
+										<label for="schoolQuestion3">Do you confirm that all information reported in application and all tax documentation is accurate and truthful?: <span class="required-field">*</span></label>
+										<textarea class="form-control" rows="3" id="schoolQuestion3" name="schoolQuestion3" ng-model="schoolQuestion3" required></textarea>
+										<div ng-if="schoolQuestions.schoolQuestion3.$touched || schoolQuestions.schoolQuestion3.$dirty">
+											<p class="help-block" ng-if="schoolQuestions.schoolQuestion3.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-group">
+								<div class="row">
+									<div class="form-group col-md-12" ng-class="{ 'has-error' : schoolQuestions.schoolQuestion4.$invalid && (schoolQuestions.schoolQuestion4.$touched || schoolQuestions.schoolQuestion4.$dirty) }">
+										<label for="schoolQuestion4">Do you confirm that all information reported in application and all tax documentation is accurate and truthful?: <span class="required-field">*</span></label>
+										<textarea class="form-control" rows="3" id="schoolQuestion4" name="schoolQuestion4" ng-model="schoolQuestion4" required></textarea>
+										<div ng-if="schoolQuestions.schoolQuestion4.$touched || schoolQuestions.schoolQuestion4.$dirty">
+											<p class="help-block" ng-if="schoolQuestions.schoolQuestion4.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-group">
+								<div class="row">
+									<div class="form-group col-md-12" ng-class="{ 'has-error' : schoolQuestions.schoolQuestion5.$invalid && (schoolQuestions.schoolQuestion5.$touched || schoolQuestions.schoolQuestion5.$dirty) }">
+										<label for="schoolQuestion5">Do you confirm that all information reported in application and all tax documentation is accurate and truthful?: <span class="required-field">*</span></label>
+										<textarea class="form-control" rows="3" id="schoolQuestion5" name="schoolQuestion5" ng-model="schoolQuestion5" required></textarea>
+										<div ng-if="schoolQuestions.schoolQuestion5.$touched || schoolQuestions.schoolQuestion5.$dirty">
+											<p class="help-block" ng-if="schoolQuestions.schoolQuestion5.$error.required">This field cannot be blank</p>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					
+					<div class="button-group clearfix">
+						<button type="submit" class="btn btn-success btn-lg pull-right" ng-click="review=true" ng-disabled="schoolQuestions.$invalid">Proceed</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End School Specific Questions -->

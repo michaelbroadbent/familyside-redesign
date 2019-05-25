@@ -1,0 +1,73 @@
+<!-- Start Tax Step 1 -->
+<div class="quick-processing">
+	<div class="row">
+		<div class="col-xs-12 masthead">
+			<div class="masthead-title">
+				<h2>Choose Tax Year</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<br>
+			<div class="row">
+				<ul class="radioset-wrapper form-group col-xs-12">
+					<li>
+						<div class="radioset">
+							<input type="radio" name="tax-year1" id="2015-taxes" value="2015-taxes" ng-model="taxYear">
+							<label><span class="label-text">2015</span></label>
+						</div>
+					</li>
+					<li>
+						<div class="form-group radioset">
+							<input type="radio" name="tax-year1" id="2016-taxes" value="2016-taxes" ng-model="taxYear">
+							<label><span class="label-text">2016</span></label>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<a class="btn btn-primary-fast btn-lg btn-block" href="" ui-sref="quickProcessingTaxesStep2" ng-disabled="!taxYear">Next</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-9">
+			<div class="taxes-container" ng-show="taxYear == '2015-taxes'">
+				<div class="row">
+					<div class="col-md-12">
+						<strong class="text-danger">Please Note:</strong>
+						<p class="text-danger">FAST Demonstration School requires <strong>2016 & 2015</strong> tax documents for verification.</p>
+						<p class="text-danger">You may send in your 2015 tax documents, but your 2016 tax documentation is needed as soon as it becomes available.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<br>
+						<a class="btn btn-primary-fast btn-lg btn-block" href="" ui-sref="quickProcessingNotFiled">I have not filed 2016 yet</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<br>
+						<br>
+						<p>Click 'Next' button to continue.</p>
+					</div>
+				</div>
+			</div>
+			<div class="taxes-container" ng-hide="taxYear == '2015-taxes'">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text-center">Example of a 2014 Tax Form</p>
+						<img class="img-responsive center-block" src="../img/taxes/tax_2014/2014_1040Ap1.png">
+					</div>
+				</div>
+			</div>
+			<p class="text-center">If you need more information about tax returns, visit the <a href="https://www.irs.gov/">www.IRS.gov</a> site.</p>
+		</div>
+	</div>
+</div>
+
+<!-- End Tax Step 1 -->

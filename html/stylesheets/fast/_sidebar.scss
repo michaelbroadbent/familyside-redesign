@@ -1,0 +1,116 @@
+.sidebar {
+	height: 100vh;
+	background-color: $light-grey-background;
+	border-right: 1px solid darken($light-grey-background, 5%);
+	padding: 15px 0;
+
+	.nav {
+		> li {
+			> a {
+				padding: 10px 15px 10px 35px;
+				font-weight: 600;
+				font-size: 14px;
+				color: $dark-background-color;
+				
+				.status {
+					position: relative;
+				}
+
+				.status.complete {
+					color: $primary-color;
+				}
+
+				.status.locked {
+					color: lighten($dark-background-color, 45%);
+					cursor: not-allowed;
+				}
+
+				.status.open::after, .status.complete::after, .status.locked::after {
+					position: absolute;
+					top: 1px;
+					left: -18px;
+					font-family: FontAwesome;
+				}
+
+				.status.open::after {
+					content: $fa-var-circle-o;
+				}
+
+				.status.complete::after {
+					content: $fa-var-check-circle;
+				}
+
+				.status.locked::after {
+					content: $fa-var-ban;
+				}
+			}
+
+			> a:hover, a:focus {
+				color: $secondary-color;
+				background-color: $secondary-color-hover;
+			}
+
+			> a:active {
+				color: darken($secondary-color, 5%);
+				background-color: darken($secondary-color-hover, 5%);
+			}
+		}
+
+		> li::before {
+			content : "";
+			position: absolute;
+			left    : 5%;
+			bottom  : 0;
+			height  : 1px;
+			width   : 90%;  /* or 100px */
+			border-bottom: 1px solid darken($light-grey-background, 5%);
+
+		}
+		> li.unavailable-step {
+			cursor: not-allowed;
+			> a:hover, a:focus {
+				color: lighten($dark-background-color, 45%);
+				background-color: transparent;
+				cursor: not-allowed;
+			}
+		}
+	}
+
+	.sidenav-button-container {
+		width: 90%;
+		margin-left: 5%;
+		margin-top: 15px;
+	}
+
+	.sidenav-button-container.user-guide {
+		margin-top: 10px;
+	}
+
+	@media (max-width: 768px) {
+		&.desktop {
+			display: none;
+		}
+	}
+
+	@media (min-width: 768px) {
+		overflow-y: scroll; 
+
+		&.desktop {
+			display: block;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 992px) {
+		.nav {
+			> li {
+				> a {
+					font-size: 12px;
+				}
+			}
+		}
+
+		.btn-primary-fast {
+			font-size: 12px;
+		}
+	}
+}

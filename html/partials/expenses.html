@@ -1,0 +1,877 @@
+<!-- Start Expenses -->
+<div class="row">
+	<div class="col-xs-12 masthead">
+		<div class="masthead-title">
+			<h2 class="hidden-xs">Expense Information</h2>
+			<h2 class="hidden-sm hidden-md hidden-lg pull-left">Expense Information</h2>
+			<h3 class="hidden-sm hidden-md hidden-lg pull-right">7/9</h3>
+		</div>
+		<p>In this section, you will be asked to enter information about your household expenses.</p>
+	</div>
+</div>
+
+<!-- Expenses tabs -->
+<div class="row">
+	<div class="col-xs-12">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#household" aria-controls="household" role="tab" data-toggle="tab">Household</a></li>
+		</ul>
+
+		<!-- Expenses tab panes -->
+		<div class="tab-content">
+			<!-- Tab 1 -->
+			<div role="tabpanel" class="tab-pane active" id="household">
+				<div ng-hide="review">
+					<p>Please fill in all the fields with income information for the year 2016.	If you do not know the dollar amount, place a question mark (?) in the box. This will put the field on hold. You can return later and fill in the dollar amount. If a question does not pertain to you, please enter a zero "0".</p>
+					<form name="expensesInfo">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>701 - Home Mortgage</legend>
+										<div class="row">
+											<div class="col-md-12">
+												<strong>Home Mortgage Payment: </strong>
+											</div>
+											<div class="col-md-12">
+												<h4>$12,500</h4>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>702 - Other Mortgage</legend>
+										<div class="row">
+											<div class="col-md-12">
+												<strong>Other Mortgage Payments: </strong>
+											</div>
+											<div class="col-md-12">
+												<h4>$10,500</h4>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>703 - Vehicle</legend>
+										<div class="row">
+											<div class="col-md-12">
+												<strong>Vehicle Payments: </strong>
+											</div>
+											<div class="col-md-12">
+												<h4>$5,200</h4>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>704 - Rent
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the yearly amount of rent you pay for your home or apartment. If you do not pay rent, please place a zero in this space."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.rent704.$invalid && (expensesInfo.rent704.$touched || expensesInfo.rent704.$dirty) }">
+												<label for="rent704">Rent: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="rent704" name="rent704" ng-model="rent704" required>
+												<div ng-if="expensesInfo.rent704.$touched || expensesInfo.rent704.$dirty">
+													<p class="help-block" ng-if="expensesInfo.rent704.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.rent704.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>705 - Homeowner Insurance
+											<i class="fa fa-info-circle" uib-tooltip="If you own your own home and your home insurance is not paid through your mortgage, please enter the amount you pay annually here. This number should only reDect data from your primary residence."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.homeownerInsurance705.$invalid && (expensesInfo.homeownerInsurance705.$touched || expensesInfo.homeownerInsurance705.$dirty) }">
+												<label for="homeownerInsurance705">Homeowner Insurance: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="homeownerInsurance705" name="homeownerInsurance705" ng-model="homeownerInsurance705" required>
+												<div ng-if="expensesInfo.homeownerInsurance705.$touched || expensesInfo.homeownerInsurance705.$dirty">
+													<p class="help-block" ng-if="expensesInfo.homeownerInsurance705.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.homeownerInsurance705.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>706 - Life Insurance
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total of the annual premiums you pay for life insurance. If you do not have any life insurance, please place a zero in this space."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.lifeInsurance706.$invalid && (expensesInfo.lifeInsurance706.$touched || expensesInfo.lifeInsurance706.$dirty) }">
+												<label for="lifeInsurance706">Life Insurance: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="lifeInsurance706" name="lifeInsurance706" ng-model="lifeInsurance706" required>
+												<div ng-if="expensesInfo.lifeInsurance706.$touched || expensesInfo.lifeInsurance706.$dirty">
+													<p class="help-block" ng-if="expensesInfo.lifeInsurance706.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.lifeInsurance706.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>707 - Auto Insurance
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total of the annual premiums you pay for auto insurance. If you do not have auto insurance, please place a zero in this space."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.autoInsurance707.$invalid && (expensesInfo.autoInsurance707.$touched || expensesInfo.autoInsurance707.$dirty) }">
+												<label for="autoInsurance707">Auto Insurance: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="autoInsurance707" name="autoInsurance707" ng-model="autoInsurance707" required>
+												<div ng-if="expensesInfo.autoInsurance707.$touched || expensesInfo.autoInsurance707.$dirty">
+													<p class="help-block" ng-if="expensesInfo.autoInsurance707.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.autoInsurance707.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>708 - Health Insurance
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the amount you pay annually for health insurance. Please include any supplemental policies in addition to your primary policy. If you do not have health insurance, please place a zero in this space."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.healthInsurance708.$invalid && (expensesInfo.healthInsurance708.$touched || expensesInfo.healthInsurance708.$dirty) }">
+												<label for="healthInsurance708">Health Insurance: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="healthInsurance708" name="healthInsurance708" ng-model="healthInsurance708" required>
+												<div ng-if="expensesInfo.healthInsurance708.$touched || expensesInfo.healthInsurance708.$dirty">
+													<p class="help-block" ng-if="expensesInfo.healthInsurance708.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.healthInsurance708.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>709 - Electricity
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the amount you pay annually for electricity. If you do not have this number, sometimes your electric company is able to give it to you. This number should only reDect data from your primary residence."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.electricity709.$invalid && (expensesInfo.electricity709.$touched || expensesInfo.electricity709.$dirty) }">
+												<label for="electricity709">Electricity: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="electricity709" name="electricity709" ng-model="electricity709" required>
+												<div ng-if="expensesInfo.electricity709.$touched || expensesInfo.electricity709.$dirty">
+													<p class="help-block" ng-if="expensesInfo.electricity709.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.electricity709.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>710 - Heating
+											<i class="fa fa-info-circle" uib-tooltip="If your heating costs are not included in your electric payments, please enter the amount you pay annually to heat your house. If your heating costs are included in your electric bill, please place a zero in this space. This number should only reDect data from your primary residence."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.heating710.$invalid && (expensesInfo.heating710.$touched || expensesInfo.heating710.$dirty) }">
+												<label for="heating710">Heating: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="heating710" name="heating710" ng-model="heating710" required>
+												<div ng-if="expensesInfo.heating710.$touched || expensesInfo.heating710.$dirty">
+													<p class="help-block" ng-if="expensesInfo.heating710.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.heating710.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>711 - Other Utilities
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the sum of everything you spend annually for land line or Internet phone service, Internet service, cell phones, water, and sewer. This number should only reDect data from your primary residence."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.otherUtilities711.$invalid && (expensesInfo.otherUtilities711.$touched || expensesInfo.otherUtilities711.$dirty) }">
+												<label for="otherUtilities711">All Other Utilities/Phone: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="otherUtilities711" name="otherUtilities711" ng-model="otherUtilities711" required>
+												<div ng-if="expensesInfo.otherUtilities711.$touched || expensesInfo.otherUtilities711.$dirty">
+													<p class="help-block" ng-if="expensesInfo.otherUtilities711.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.otherUtilities711.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>712 - Child Support Paid
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total annual amount of child support payments you are required to make. If you are not required to pay any child support, please place a zero in this space."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.childSupport712.$invalid && (expensesInfo.childSupport712.$touched || expensesInfo.childSupport712.$dirty) }">
+												<label for="childSupport712">Child Support Paid: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="childSupport712" name="childSupport712" ng-model="childSupport712" required>
+												<div ng-if="expensesInfo.childSupport712.$touched || expensesInfo.childSupport712.$dirty">
+													<p class="help-block" ng-if="expensesInfo.childSupport712.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.childSupport712.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>713 - Alimony Paid
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of alimony you are required to pay annually. If you are not required to pay any alimony, please place a zero in this space"></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.alimony713.$invalid && (expensesInfo.alimony713.$touched || expensesInfo.alimony713.$dirty) }">
+												<label for="alimony713">Alimony Paid: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="alimony713" name="alimony713" ng-model="alimony713" required>
+												<div ng-if="expensesInfo.alimony713.$touched || expensesInfo.alimony713.$dirty">
+													<p class="help-block" ng-if="expensesInfo.alimony713.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.alimony713.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>714 - Charity/Tithing
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of all monetary charitable and/or tithing donations that you made for the prior calendar year to organizations recognized as charities by the IRS. If you did not make any charitable contributions, please enter zero"></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.charity714.$invalid && (expensesInfo.charity714.$touched || expensesInfo.charity714.$dirty) }">
+												<label for="charity714">Charity/Tithing: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="charity714" name="charity714" ng-model="charity714" required>
+												<div ng-if="expensesInfo.charity714.$touched || expensesInfo.charity714.$dirty">
+													<p class="help-block" ng-if="expensesInfo.charity714.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.charity714.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>715 - Federal Taxes
+											<i class="fa fa-info-circle" uib-tooltip="If you have already filed your federal income tax, please enter your total tax. If you have not yet filed your taxes, please check the box below this field."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.federalTaxes715.$invalid && (expensesInfo.federalTaxes715.$touched || expensesInfo.federalTaxes715.$dirty) }">
+												<label for="federalTaxes715">Federal Taxes: <span class="required-field">*</span></label>
+												<span ng-if="!federal">
+													<strong class="prefix">$</strong>
+													<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="federalTaxes715" name="federalTaxes715" ng-model="federalTaxes715" required>
+												</span>
+												<input type="number" class="form-control" id="federalTaxes715" name="federalTaxes715" ng-model="federalTaxes715" ng-if="federal" placeholder="Not Filed" disabled>
+												<div ng-if="expensesInfo.federalTaxes715.$touched || expensesInfo.federalTaxes715.$dirty">
+													<p class="help-block" ng-if="expensesInfo.federalTaxes715.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.federalTaxes715.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+											<div class="checkboxset col-md-12">
+												<input type="checkbox" id="notFiled715" value="notFiled715" ng-model="federal">
+												<label for="notFiled715"><span class="label-text">I have not filed my taxes yet.</span></label>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>716 - Local Taxes
+											<i class="fa fa-info-circle" uib-tooltip="If you have already filed your state, county and/or city taxes, please enter your total tax. If you have not yet filed your taxes, please check the box below this field."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.localTaxes716.$invalid && (expensesInfo.localTaxes716.$touched || expensesInfo.localTaxes716.$dirty) }">
+												<label for="localTaxes716">State / County / City Taxes Taxes: <span class="required-field">*</span></label>
+												<span ng-if="!local">
+													<strong class="prefix">$</strong>
+													<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="localTaxes716" name="localTaxes716" ng-model="localTaxes716" ng-disabled="local" required>
+												</span>
+												<input type="number" class="form-control" id="localTaxes716" name="localTaxes716" ng-model="localTaxes716" disabled ng-if="local" placeholder="Not Filed">
+												<div ng-if="expensesInfo.localTaxes716.$touched || expensesInfo.localTaxes716.$dirty">
+													<p class="help-block" ng-if="expensesInfo.localTaxes716.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.localTaxes716.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+											<div class="checkboxset col-md-12">
+												<input type="checkbox" id="notFiled716" value="notFiled716" ng-model="local">
+												<label for="notFiled716"><span class="label-text">I have not filed my taxes yet.</span></label>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>717 - Medical Expenses
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the total amount of all medical expenses that you paid in the prior calendar year. This may include copays, prescriptions, physical exams, glasses, physical or psychological therapy, prosthetics, etc. Do not include any expenses which are covered by insurance. In the space provided, please explain what you have included in this number."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.otherLoans717.$invalid && (expensesInfo.otherLoans717.$touched || expensesInfo.otherLoans717.$dirty) }">
+												<label for="otherLoans717">Medical Expenses: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="otherLoans717" name="otherLoans717" ng-model="otherLoans717" required>
+												<div ng-if="expensesInfo.otherLoans717.$touched || expensesInfo.otherLoans717.$dirty">
+													<p class="help-block" ng-if="expensesInfo.otherLoans717.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.otherLoans717.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<label for="otherLoansDetail717">Please explain in detail</label>
+												<textarea class="form-control" rows="2" id="otherLoansDetail717" name="otherLoansDetail717" ng-model="otherLoansDetail717"></textarea>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>718 - Other Loans
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the annual amount of any other loan expenses you incur during the year. These may include credit card payments, personal loans and bank loans that do not use your home equity as collateral. Do not include car payments, your mortgage or any other loans against equity in this Celd. In the space provided below, please explain what you have included in this number."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.otherLoans718.$invalid && (expensesInfo.otherLoans718.$touched || expensesInfo.otherLoans718.$dirty) }">
+												<label for="otherLoans718">Other Loan Expenses: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="otherLoans718" name="otherLoans718" ng-model="otherLoans718" required>
+												<div ng-if="expensesInfo.otherLoans718.$touched || expensesInfo.otherLoans718.$dirty">
+													<p class="help-block" ng-if="expensesInfo.otherLoans718.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.otherLoans718.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<label for="otherLoansDetail718">Please explain in detail</label>
+												<textarea class="form-control" rows="2" id="otherLoansDetail718" name="otherLoansDetail718" ng-model="otherLoansDetail718"></textarea>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>719 - Support of Dependants
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the annual amount you pay to support any adult dependants in your home. In the space provided below, please explain what you have included in this number."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.dependants719.$invalid && (expensesInfo.dependants719.$touched || expensesInfo.dependants719.$dirty) }">
+												<label for="dependants719">Support of Dependants: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="dependants719" name="dependants719" ng-model="dependants719" required>
+												<div ng-if="expensesInfo.dependants719.$touched || expensesInfo.dependants719.$dirty">
+													<p class="help-block" ng-if="expensesInfo.dependants719.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.dependants719.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<label for="dependantsDetail719">Please explain in detail</label>
+												<textarea class="form-control" rows="2" id="dependantsDetail719" name="dependantsDetail719" ng-model="dependantsDetail719"></textarea>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>720 - Childcare
+											<i class="fa fa-info-circle" uib-tooltip="Please list your childcare expenses. This might include daycare, after school programs, camps, lessons, special needs, etc. In the space provided, please explain what you have included in this number."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.childcare720.$invalid && (expensesInfo.childcare720.$touched || expensesInfo.childcare720.$dirty) }">
+												<label for="childcare720">Childcare Expenses: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="childcare720" name="childcare720" ng-model="childcare720" required>
+												<div ng-if="expensesInfo.childcare720.$touched || expensesInfo.childcare720.$dirty">
+													<p class="help-block" ng-if="expensesInfo.childcare720.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.childcare720.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<label for="childcareDetail720">Please explain in detail</label>
+												<textarea class="form-control" rows="2" id="childcareDetail720" name="childcareDetail720" ng-model="childcareDetail720"></textarea>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>721 - Other Expenses
+											<i class="fa fa-info-circle" uib-tooltip="Please enter the annual amount of any other expenses you incur during the year. These might include condo expenses, neighborhood dues, club memberships, etc. In the space provided below, please explain what you have included in this number. Do not include car payments, house payments or credit card payments. Do not include expenses for food, clothes or transportation."></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.other721.$invalid && (expensesInfo.other721.$touched || expensesInfo.other721.$dirty) }">
+												<label for="other721">Other Expenses: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="other721" name="other721" ng-model="other721" required>
+												<div ng-if="expensesInfo.other721.$touched || expensesInfo.other721.$dirty">
+													<p class="help-block" ng-if="expensesInfo.other721.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.other721.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<label for="otherDetail721">Please explain in detail</label>
+												<textarea class="form-control" rows="2" id="otherDetail721" name="otherDetail721" ng-model="otherDetail721"></textarea>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>722 - (Optional) Further Explanation</legend>
+										<div class="row">
+											<div class="form-group col-md-12">
+												<label for="otherDetail722">Optional further expense explanation:</label>
+												<textarea class="form-control" rows="2" id="otherDetail722" name="otherDetail722" ng-model="otherDetail722"></textarea>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						<!-- Extra Expense Questions -->
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>723 - Extra Expense Question
+											<i class="fa fa-info-circle" uib-tooltip="Extra expense tooltip message here"></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.otherQuestion1723.$invalid && (expensesInfo.otherQuestion1723.$touched || expensesInfo.otherQuestion1723.$dirty) }">
+												<label for="otherQuestion1723">Amount: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="otherQuestion1723" name="otherQuestion1723" ng-model="otherQuestion1723" required>
+												<div ng-if="expensesInfo.otherQuestion1723.$touched || expensesInfo.otherQuestion1723.$dirty">
+													<p class="help-block" ng-if="expensesInfo.otherQuestion1723.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.otherQuestion1723.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<label for="otherQuestionDetail1723">Please explain in detail</label>
+												<textarea class="form-control" rows="2" id="otherQuestionDetail1723"></textarea>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group-wrapper">
+									<fieldset class="form-group">
+										<legend>724 - Extra Expense Question
+											<i class="fa fa-info-circle" uib-tooltip="Extra expense tooltip message here"></i>
+										</legend>
+										<div class="row">
+											<div class="form-group col-md-12" ng-class="{ 'has-error' : expensesInfo.otherQuestion2724.$invalid && (expensesInfo.otherQuestion2724.$touched || expensesInfo.otherQuestion2724.$dirty) }">
+												<label for="otherQuestion2724">Amount: <span class="required-field">*</span></label>
+												<strong class="prefix">$</strong>
+												<input type="text" format="number" ng-pattern="/^[0-9,]+$/" class="form-control input-prefix" id="otherQuestion2724" name="otherQuestion2724" ng-model="otherQuestion2724" required>
+												<div ng-if="expensesInfo.otherQuestion2724.$touched || expensesInfo.otherQuestion2724.$dirty">
+													<p class="help-block" ng-if="expensesInfo.otherQuestion1724.$error.required">This field cannot be blank</p>
+												</div>
+												<div ng-if="expensesInfo.otherQuestion2724.$error.pattern">
+													<p class="help-block">Numbers only in this field</p>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<label for="otherQuestionDetail2724">Please explain in detail</label>
+												<textarea class="form-control" rows="2" id="otherQuestionDetail2724"></textarea>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+
+						
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right" ng-click="review=true" ng-disabled="expensesInfo.$invalid">Proceed</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Tab 1 Review -->
+				<div ng-show="review">
+					<table class="table table-striped table-review">
+						<thead>
+							<tr>
+								<th colspan="2">Please check to make sure all values are correct.</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="form-section-label">
+									<strong>701 - Home Mortgage</strong>
+								</td>
+								<td>$92,000</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>702 - Other Mortgage</strong>
+								</td>
+								<td>$0</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>703 - Vehicle Payments</strong>
+								</td>
+								<td>$1,203</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>704 - Rent</strong>
+								</td>
+								<td>${{expensesInfo.rent704.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>705 - Homeowner Insurance</strong>
+								</td>
+								<td>${{expensesInfo.homeownerInsurance705.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>706 - Life Insurance</strong>
+								</td>
+								<td>${{expensesInfo.lifeInsurance706.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>707 - Auto Insurance</strong>
+								</td>
+								<td>${{expensesInfo.autoInsurance707.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>708 - Health Insurance</strong>
+								</td>
+								<td>${{expensesInfo.healthInsurance708.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>709 - Electricity</strong>
+								</td>
+								<td>${{expensesInfo.electricity709.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>710 - Heating</strong>
+								</td>
+								<td>${{expensesInfo.heating710.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>711 - All Other Utilties/Phone</strong>
+								</td>
+								<td>${{expensesInfo.otherUtilities711.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>712 - Child Support Paid</strong>
+								</td>
+								<td>${{expensesInfo.childSupport712.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>713 - Alimony Paid</strong>
+								</td>
+								<td>${{expensesInfo.alimony713.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>714 - Charity / Tithing</strong>
+								</td>
+								<td>${{expensesInfo.charity714.$viewValue}}</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>715 - Federal Taxes</strong>
+								</td>
+								<td>
+									<span ng-if="expensesInfo.federalTaxes715.$viewValue.length">${{expensesInfo.federalTaxes715.$viewValue}}</span>
+									<span ng-if="!expensesInfo.federalTaxes715.$viewValue.length">Federal Taxes have not yet been filed.</span>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>716 - State / County / City Taxes</strong>
+								</td>
+								<td>
+									<span ng-if="expensesInfo.localTaxes716.$viewValue.length">${{expensesInfo.localTaxes716.$viewValue}}</span>
+									<span ng-if="!expensesInfo.localTaxes716.$viewValue.length">Local Taxes have not yet been filed.</span>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>717 - Medical Expenses</strong>
+									<span ng-if="expensesInfo.otherLoansDetail717.$viewValue.length"><br>
+									<br>
+									<strong>Please explain in detail</strong></span>
+								</td>
+								<td>
+									${{expensesInfo.otherLoans717.$viewValue}}
+									<span ng-if="expensesInfo.otherLoansDetail717.$viewValue.length"><br>
+									<br>
+									{{expensesInfo.otherLoansDetail717.$viewValue}}</span>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>718 - Other Loan Expenses</strong>
+									<span ng-if="expensesInfo.otherLoansDetail718.$viewValue.length"><br>
+									<br>
+									<strong>Please explain in detail</strong></span>
+								</td>
+								<td>
+									${{expensesInfo.otherLoans718.$viewValue}}
+									<span ng-if="expensesInfo.otherLoansDetail718.$viewValue.length"><br>
+									<br>
+									{{expensesInfo.otherLoansDetail718.$viewValue}}</span>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>719 - Support of Dependents</strong>
+									<span ng-if="expensesInfo.dependantsDetail719.$viewValue.length"><br>
+									<br>
+									<strong>Please explain in detail</strong></span>
+								</td>
+								<td>
+									${{expensesInfo.dependants719.$viewValue}}
+									<span ng-if="expensesInfo.dependantsDetail719.$viewValue.length"><br>
+									<br>
+									{{expensesInfo.dependantsDetail719.$viewValue}}</span>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>720 - Childcare Expenses</strong>
+									<span ng-if="expensesInfo.childcareDetail720.$viewValue.length"><br>
+									<br>
+									<strong>Please explain in detail</strong></span>
+								</td>
+								<td>
+									${{expensesInfo.childcare720.$viewValue}}
+									<span ng-if="expensesInfo.childcareDetail720.$viewValue.length"><br>
+									<br>
+									{{expensesInfo.childcareDetail720.$viewValue}}</span>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>721 - Other Expenses</strong>
+									<span ng-if="expensesInfo.otherDetail721.$viewValue.length"><br>
+									<br>
+									<strong>Please explain in detail</strong></span>
+								</td>
+								<td>
+									${{expensesInfo.other721.$viewValue}}
+									<span ng-if="expensesInfo.otherDetail721.$viewValue.length"><br>
+									<br>
+									{{expensesInfo.otherDetail721.$viewValue}}</span>
+								</td>
+							</tr>
+
+							<tr ng-if="expensesInfo.otherDetail722.$viewValue.length">
+								<td class="form-section-label">
+									<strong>722 - (Optional) Further Explanation</strong>
+								</td>
+								<td>
+									{{expensesInfo.otherDetail722.$viewValue}}
+								</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>723 - Extra Expense Question</strong>
+									<br>
+									<br>
+									<strong>Please explain in detail</strong>
+								</td>
+								<td>
+									$0
+									<br>
+									<br>
+									More detail on this question goes here...
+								</td>
+							</tr>
+
+							<tr>
+								<td class="form-section-label">
+									<strong>724 - Extra Expense Question</strong>
+									<br>
+									<br>
+									<strong>Please explain in detail</strong>
+								</td>
+								<td>
+									$0
+									<br>
+									<br>
+									More detail on this question goes here...
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<form>
+						<div class="button-group clearfix">
+							<button type="submit" class="btn btn-success btn-lg pull-right">Proceed</button>
+							<button type="submit" class="btn btn-default btn-lg pull-right" ng-click="review=false">Edit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Expenses -->
